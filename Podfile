@@ -7,6 +7,8 @@ target 'movilog' do
 
   # Pods for movilog
 
+  pod 'Firebase/Analytics'
+  
   target 'movilogTests' do
     inherit! :search_paths
     # Pods for testing

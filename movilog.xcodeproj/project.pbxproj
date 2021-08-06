@@ -15,6 +15,7 @@
 		7371F56626BBF42B0099F69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7371F56426BBF42B0099F69C /* LaunchScreen.storyboard */; };
 		7371F57126BBF42B0099F69C /* movilogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57026BBF42B0099F69C /* movilogTests.swift */; };
 		7371F57C26BBF42B0099F69C /* movilogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57B26BBF42B0099F69C /* movilogUITests.swift */; };
+		7371F58A26BD29D10099F69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371F58926BD29D10099F69C /* GoogleService-Info.plist */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -57,6 +58,7 @@
 		7371F57726BBF42B0099F69C /* movilogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = movilogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371F57B26BBF42B0099F69C /* movilogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogUITests.swift; sourceTree = "<group>"; };
 		7371F57D26BBF42B0099F69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7371F58926BD29D10099F69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +113,6 @@
 				67B40B20039E2061D2ACC8B4 /* Pods-movilogTests.debug.xcconfig */,
 				F3E3454634D0268609917CFE /* Pods-movilogTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +147,7 @@
 				7371F55F26BBF4290099F69C /* Main.storyboard */,
 				7371F56226BBF42B0099F69C /* Assets.xcassets */,
 				7371F56426BBF42B0099F69C /* LaunchScreen.storyboard */,
+				7371F58926BD29D10099F69C /* GoogleService-Info.plist */,
 				7371F56726BBF42B0099F69C /* Info.plist */,
 			);
 			path = movilog;
@@ -180,6 +182,7 @@
 				7371F55226BBF4290099F69C /* Sources */,
 				7371F55326BBF4290099F69C /* Frameworks */,
 				7371F55426BBF4290099F69C /* Resources */,
+				A762CD27B151FC771D57ADD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +220,7 @@
 				7371F57326BBF42B0099F69C /* Sources */,
 				7371F57426BBF42B0099F69C /* Frameworks */,
 				7371F57526BBF42B0099F69C /* Resources */,
+				7F63C4E9DE4928E7B387F3F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7371F58A26BD29D10099F69C /* GoogleService-Info.plist in Resources */,
 				7371F56626BBF42B0099F69C /* LaunchScreen.storyboard in Resources */,
 				7371F56326BBF42B0099F69C /* Assets.xcassets in Resources */,
 				7371F56126BBF4290099F69C /* Main.storyboard in Resources */,
@@ -318,6 +323,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F63C4E9DE4928E7B387F3F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A762CD27B151FC771D57ADD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movilog/Pods-movilog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movilog/Pods-movilog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-movilog/Pods-movilog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B25CD444A3B1455C1EDB15B2 /* [CP] Check Pods Manifest.lock */ = {
