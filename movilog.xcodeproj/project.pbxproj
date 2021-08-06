@@ -15,6 +15,9 @@
 		7371F56626BBF42B0099F69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7371F56426BBF42B0099F69C /* LaunchScreen.storyboard */; };
 		7371F57126BBF42B0099F69C /* movilogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57026BBF42B0099F69C /* movilogTests.swift */; };
 		7371F57C26BBF42B0099F69C /* movilogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57B26BBF42B0099F69C /* movilogUITests.swift */; };
+		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
+		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
+		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog_movilogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F23F833E9F951D9A8429A6C /* Pods-movilog-movilogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.release.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		67B40B20039E2061D2ACC8B4 /* Pods-movilogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilogTests.debug.xcconfig"; path = "Target Support Files/Pods-movilogTests/Pods-movilogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		68AA2A7E4E06DDC6A536AA4F /* Pods-movilog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.release.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.release.xcconfig"; sourceTree = "<group>"; };
 		7371F55626BBF4290099F69C /* movilog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movilog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371F55926BBF4290099F69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7371F55B26BBF4290099F69C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		7371F57726BBF42B0099F69C /* movilogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = movilogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371F57B26BBF42B0099F69C /* movilogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogUITests.swift; sourceTree = "<group>"; };
 		7371F57D26BBF42B0099F69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
+		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E3454634D0268609917CFE /* Pods-movilogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilogTests.release.xcconfig"; path = "Target Support Files/Pods-movilogTests/Pods-movilogTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D32B5765CE1AA93EF025A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E32681BB46259DD495F88DC2 /* Pods_movilog.framework */,
+				1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */,
+				101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		369864386B0E2ACD31ED09DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */,
+				68AA2A7E4E06DDC6A536AA4F /* Pods-movilog.release.xcconfig */,
+				E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */,
+				4F23F833E9F951D9A8429A6C /* Pods-movilog-movilogUITests.release.xcconfig */,
+				67B40B20039E2061D2ACC8B4 /* Pods-movilogTests.debug.xcconfig */,
+				F3E3454634D0268609917CFE /* Pods-movilogTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7371F54D26BBF4290099F69C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				7371F56F26BBF42B0099F69C /* movilogTests */,
 				7371F57A26BBF42B0099F69C /* movilogUITests */,
 				7371F55726BBF4290099F69C /* Products */,
+				369864386B0E2ACD31ED09DF /* Pods */,
+				18D32B5765CE1AA93EF025A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7371F58026BBF42B0099F69C /* Build configuration list for PBXNativeTarget "movilog" */;
 			buildPhases = (
+				F066E01E33094C5CDFB5D783 /* [CP] Check Pods Manifest.lock */,
 				7371F55226BBF4290099F69C /* Sources */,
 				7371F55326BBF4290099F69C /* Frameworks */,
 				7371F55426BBF4290099F69C /* Resources */,
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7371F58326BBF42B0099F69C /* Build configuration list for PBXNativeTarget "movilogTests" */;
 			buildPhases = (
+				B25CD444A3B1455C1EDB15B2 /* [CP] Check Pods Manifest.lock */,
 				7371F56826BBF42B0099F69C /* Sources */,
 				7371F56926BBF42B0099F69C /* Frameworks */,
 				7371F56A26BBF42B0099F69C /* Resources */,
@@ -170,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7371F58626BBF42B0099F69C /* Build configuration list for PBXNativeTarget "movilogUITests" */;
 			buildPhases = (
+				0773F8D1D57AA83ABF9C9E62 /* [CP] Check Pods Manifest.lock */,
 				7371F57326BBF42B0099F69C /* Sources */,
 				7371F57426BBF42B0099F69C /* Frameworks */,
 				7371F57526BBF42B0099F69C /* Resources */,
@@ -252,6 +296,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0773F8D1D57AA83ABF9C9E62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-movilog-movilogUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B25CD444A3B1455C1EDB15B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-movilogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F066E01E33094C5CDFB5D783 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-movilog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7371F55226BBF4290099F69C /* Sources */ = {
@@ -433,6 +546,7 @@
 		};
 		7371F58126BBF42B0099F69C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +566,7 @@
 		};
 		7371F58226BBF42B0099F69C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68AA2A7E4E06DDC6A536AA4F /* Pods-movilog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +586,7 @@
 		};
 		7371F58426BBF42B0099F69C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67B40B20039E2061D2ACC8B4 /* Pods-movilogTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +609,7 @@
 		};
 		7371F58526BBF42B0099F69C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E3454634D0268609917CFE /* Pods-movilogTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +632,7 @@
 		};
 		7371F58726BBF42B0099F69C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +653,7 @@
 		};
 		7371F58826BBF42B0099F69C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F23F833E9F951D9A8429A6C /* Pods-movilog-movilogUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

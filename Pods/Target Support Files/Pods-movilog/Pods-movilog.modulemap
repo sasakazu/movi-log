@@ -1,0 +1,6 @@
+framework module Pods_movilog {
+  umbrella header "Pods-movilog-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B6D2B516BE9E86488EC9EB8E383D045 /* Pods-movilog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC0054A50FCA3E8D5221422A873837DE /* Pods-movilog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4519F882571E8A25458AB1FC900EE400 /* Pods-movilog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD807EDC81C51621C756B2EE420FDF /* Pods-movilog-dummy.m */; };
+		5D1D9D91C5F6094510C1C424ABD2FD0C /* Pods-movilogTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B09B6B51DFD4B6EFEB2D1ABB1C8E8912 /* Pods-movilogTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		702782DEE13A32E8B0271FE60D27E446 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		907E50813BBF76FC7CD55166D592AB56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B554E9A5A85EE2AD0F957C7F9E5513AF /* Pods-movilog-movilogUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E860A97EA4EA08EBD43A3482D3EE750D /* Pods-movilog-movilogUITests-dummy.m */; };
+		C6E4823261581A06D6FDA251FA7DB69F /* Pods-movilog-movilogUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F01DC1D7B015D0E3AA862E7B3FC3A78A /* Pods-movilog-movilogUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E95D2637E7534BB478D3ED5A1A1C089B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FF0CBCFF90E54506E74A94A1F2775935 /* Pods-movilogTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 450732D3447C5B40F7D0EE1D9115C27C /* Pods-movilogTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08FEDC4A92281FE65E9FCC97320BDF60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6CEFE1D52AAF94B307B439071C4E6F;
+			remoteInfo = "Pods-movilog";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37594E42EF731FE51EF35D519AA050E5 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_movilog.framework; path = "Pods-movilog.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F2C7A21AFAF50603A90350DE7E242E /* Pods-movilogTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-movilogTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		450732D3447C5B40F7D0EE1D9115C27C /* Pods-movilogTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-movilogTests-dummy.m"; sourceTree = "<group>"; };
+		5CD60F8A4140734A16EECC2063003C6E /* Pods-movilog-movilogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilog-movilogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EA63270F6CBE3B1526D2D25B34FFD13 /* Pods_movilogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_movilogTests.framework; path = "Pods-movilogTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DBFF0BE2E4B8C776A17ABFB90D0ACC /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		709ED82F87C98848F92A08C77B214790 /* Pods-movilogTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-movilogTests.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7B634EF192CECE24980F45E75D0969DD /* Pods-movilog-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilog-acknowledgements.plist"; sourceTree = "<group>"; };
+		88B206B7B8E96911FCFDE17E29153B36 /* Pods-movilogTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilogTests-Info.plist"; sourceTree = "<group>"; };
+		8A27C4AFB9F6210211728D51AEB54F4B /* Pods_movilog_movilogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_movilog_movilogUITests.framework; path = "Pods-movilog-movilogUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA2492E82654A95FD88A8BD159EABE8 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AA605C7614580F0E2890F2B8FC3094BC /* Pods-movilogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilogTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0054A50FCA3E8D5221422A873837DE /* Pods-movilog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-movilog-umbrella.h"; sourceTree = "<group>"; };
+		B09B6B51DFD4B6EFEB2D1ABB1C8E8912 /* Pods-movilogTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-movilogTests-umbrella.h"; sourceTree = "<group>"; };
+		B111CA7E8E6415A48C540ACF047BA400 /* Pods-movilogTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilogTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B90FBF0BD78F5F176D42ECEE57AD624E /* Pods-movilog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilog.release.xcconfig"; sourceTree = "<group>"; };
+		BA5E511C09F166C682364AA96CC71CA6 /* Pods-movilog-movilogUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilog-movilogUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C2CD807EDC81C51621C756B2EE420FDF /* Pods-movilog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-movilog-dummy.m"; sourceTree = "<group>"; };
+		CB78DD783879A46325DB224468A71FA7 /* Pods-movilog-movilogUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-movilog-movilogUITests.modulemap"; sourceTree = "<group>"; };
+		D679A0C5256A40A76B776938546CCF46 /* Pods-movilog-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-movilog-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DD7606E9230D3252AD5E05D8C0EB3A59 /* Pods-movilog-movilogUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-movilog-movilogUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DD9168506A704E986868AA3378A96308 /* Pods-movilogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movilogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E860A97EA4EA08EBD43A3482D3EE750D /* Pods-movilog-movilogUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-movilog-movilogUITests-dummy.m"; sourceTree = "<group>"; };
+		F01DC1D7B015D0E3AA862E7B3FC3A78A /* Pods-movilog-movilogUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-movilog-movilogUITests-umbrella.h"; sourceTree = "<group>"; };
+		F48DA7A04BD43D084746EFE116C0B369 /* Pods-movilog-movilogUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilog-movilogUITests-Info.plist"; sourceTree = "<group>"; };
+		FA23D551676CF1B2F392A2DEB0C34662 /* Pods-movilog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-movilog.modulemap"; sourceTree = "<group>"; };
+		FC566ECE993EFBDC2B90229928422102 /* Pods-movilog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movilog-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34346F210BF6BC89AE85615DF4204DE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				702782DEE13A32E8B0271FE60D27E446 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6266B06EA79DAE1E83985F3E56A93743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E95D2637E7534BB478D3ED5A1A1C089B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E42D74233F642B3DAB62B8F583E9FB38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907E50813BBF76FC7CD55166D592AB56 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2989A29B97A9EDA9DE4F8D9A6F50F3D1 /* Pods-movilog */ = {
+			isa = PBXGroup;
+			children = (
+				FA23D551676CF1B2F392A2DEB0C34662 /* Pods-movilog.modulemap */,
+				D679A0C5256A40A76B776938546CCF46 /* Pods-movilog-acknowledgements.markdown */,
+				7B634EF192CECE24980F45E75D0969DD /* Pods-movilog-acknowledgements.plist */,
+				C2CD807EDC81C51621C756B2EE420FDF /* Pods-movilog-dummy.m */,
+				FC566ECE993EFBDC2B90229928422102 /* Pods-movilog-Info.plist */,
+				AC0054A50FCA3E8D5221422A873837DE /* Pods-movilog-umbrella.h */,
+				9BA2492E82654A95FD88A8BD159EABE8 /* Pods-movilog.debug.xcconfig */,
+				B90FBF0BD78F5F176D42ECEE57AD624E /* Pods-movilog.release.xcconfig */,
+			);
+			name = "Pods-movilog";
+			path = "Target Support Files/Pods-movilog";
+			sourceTree = "<group>";
+		};
+		3BBA64658A4EA6EAF206F55513CF74E6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2989A29B97A9EDA9DE4F8D9A6F50F3D1 /* Pods-movilog */,
+				ADED2DD826F08553A2E6158851650B17 /* Pods-movilog-movilogUITests */,
+				55A5789681FEA96D68D3AA54EBE5BD4B /* Pods-movilogTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		55A5789681FEA96D68D3AA54EBE5BD4B /* Pods-movilogTests */ = {
+			isa = PBXGroup;
+			children = (
+				709ED82F87C98848F92A08C77B214790 /* Pods-movilogTests.modulemap */,
+				43F2C7A21AFAF50603A90350DE7E242E /* Pods-movilogTests-acknowledgements.markdown */,
+				B111CA7E8E6415A48C540ACF047BA400 /* Pods-movilogTests-acknowledgements.plist */,
+				450732D3447C5B40F7D0EE1D9115C27C /* Pods-movilogTests-dummy.m */,
+				88B206B7B8E96911FCFDE17E29153B36 /* Pods-movilogTests-Info.plist */,
+				B09B6B51DFD4B6EFEB2D1ABB1C8E8912 /* Pods-movilogTests-umbrella.h */,
+				DD9168506A704E986868AA3378A96308 /* Pods-movilogTests.debug.xcconfig */,
+				AA605C7614580F0E2890F2B8FC3094BC /* Pods-movilogTests.release.xcconfig */,
+			);
+			name = "Pods-movilogTests";
+			path = "Target Support Files/Pods-movilogTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ADED2DD826F08553A2E6158851650B17 /* Pods-movilog-movilogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB78DD783879A46325DB224468A71FA7 /* Pods-movilog-movilogUITests.modulemap */,
+				DD7606E9230D3252AD5E05D8C0EB3A59 /* Pods-movilog-movilogUITests-acknowledgements.markdown */,
+				BA5E511C09F166C682364AA96CC71CA6 /* Pods-movilog-movilogUITests-acknowledgements.plist */,
+				E860A97EA4EA08EBD43A3482D3EE750D /* Pods-movilog-movilogUITests-dummy.m */,
+				F48DA7A04BD43D084746EFE116C0B369 /* Pods-movilog-movilogUITests-Info.plist */,
+				F01DC1D7B015D0E3AA862E7B3FC3A78A /* Pods-movilog-movilogUITests-umbrella.h */,
+				65DBFF0BE2E4B8C776A17ABFB90D0ACC /* Pods-movilog-movilogUITests.debug.xcconfig */,
+				5CD60F8A4140734A16EECC2063003C6E /* Pods-movilog-movilogUITests.release.xcconfig */,
+			);
+			name = "Pods-movilog-movilogUITests";
+			path = "Target Support Files/Pods-movilog-movilogUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				F552B0D1773F8EE10BFF3232BBA28321 /* Products */,
+				3BBA64658A4EA6EAF206F55513CF74E6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F552B0D1773F8EE10BFF3232BBA28321 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37594E42EF731FE51EF35D519AA050E5 /* Pods_movilog.framework */,
+				8A27C4AFB9F6210211728D51AEB54F4B /* Pods_movilog_movilogUITests.framework */,
+				5EA63270F6CBE3B1526D2D25B34FFD13 /* Pods_movilogTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		59792172B7EE940A06273878F90BD5BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D1D9D91C5F6094510C1C424ABD2FD0C /* Pods-movilogTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82CDA7F0E0A4A4E3C364330197E27479 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6E4823261581A06D6FDA251FA7DB69F /* Pods-movilog-movilogUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9778848AA73160F0CBB1D3223CA3C5BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B6D2B516BE9E86488EC9EB8E383D045 /* Pods-movilog-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AA6CEFE1D52AAF94B307B439071C4E6F /* Pods-movilog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F8AED7FA5D9E6D927B56F788CF524BB /* Build configuration list for PBXNativeTarget "Pods-movilog" */;
+			buildPhases = (
+				9778848AA73160F0CBB1D3223CA3C5BC /* Headers */,
+				7F6C9649A4C756DCF1583377D02D35D2 /* Sources */,
+				6266B06EA79DAE1E83985F3E56A93743 /* Frameworks */,
+				3C952D1D9E9208C116887D8059758099 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-movilog";
+			productName = "Pods-movilog";
+			productReference = 37594E42EF731FE51EF35D519AA050E5 /* Pods_movilog.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B1EEE3450D50880ADC160D9D4FBD9F16 /* Pods-movilogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21C198CAD9AE3C39BD9C756E3E994943 /* Build configuration list for PBXNativeTarget "Pods-movilogTests" */;
+			buildPhases = (
+				59792172B7EE940A06273878F90BD5BF /* Headers */,
+				42BB747B6AAE6F19B20DB6A88E611E68 /* Sources */,
+				34346F210BF6BC89AE85615DF4204DE1 /* Frameworks */,
+				76C2D77BBAE7982255881374386FF3C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F35BBD093C01C1217FE3E0E53E639FB /* PBXTargetDependency */,
+			);
+			name = "Pods-movilogTests";
+			productName = "Pods-movilogTests";
+			productReference = 5EA63270F6CBE3B1526D2D25B34FFD13 /* Pods_movilogTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D253EA883A40B5818F2A8541975BAB90 /* Pods-movilog-movilogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20936B347312211D8FBA94B1B8BC5A46 /* Build configuration list for PBXNativeTarget "Pods-movilog-movilogUITests" */;
+			buildPhases = (
+				82CDA7F0E0A4A4E3C364330197E27479 /* Headers */,
+				9CD12B97D2B33E6BBDC3CDC4A5115D72 /* Sources */,
+				E42D74233F642B3DAB62B8F583E9FB38 /* Frameworks */,
+				9293D55292C5C2C52127D9C1E970F3EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-movilog-movilogUITests";
+			productName = "Pods-movilog-movilogUITests";
+			productReference = 8A27C4AFB9F6210211728D51AEB54F4B /* Pods_movilog_movilogUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = F552B0D1773F8EE10BFF3232BBA28321 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA6CEFE1D52AAF94B307B439071C4E6F /* Pods-movilog */,
+				D253EA883A40B5818F2A8541975BAB90 /* Pods-movilog-movilogUITests */,
+				B1EEE3450D50880ADC160D9D4FBD9F16 /* Pods-movilogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C952D1D9E9208C116887D8059758099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76C2D77BBAE7982255881374386FF3C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9293D55292C5C2C52127D9C1E970F3EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42BB747B6AAE6F19B20DB6A88E611E68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0CBCFF90E54506E74A94A1F2775935 /* Pods-movilogTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F6C9649A4C756DCF1583377D02D35D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4519F882571E8A25458AB1FC900EE400 /* Pods-movilog-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD12B97D2B33E6BBDC3CDC4A5115D72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B554E9A5A85EE2AD0F957C7F9E5513AF /* Pods-movilog-movilogUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F35BBD093C01C1217FE3E0E53E639FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-movilog";
+			target = AA6CEFE1D52AAF94B307B439071C4E6F /* Pods-movilog */;
+			targetProxy = 08FEDC4A92281FE65E9FCC97320BDF60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19770254A6B7079546A97CF1898E2C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B90FBF0BD78F5F176D42ECEE57AD624E /* Pods-movilog.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilog/Pods-movilog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilog/Pods-movilog.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3565F0FC5C05B71DD755BF817F967EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD60F8A4140734A16EECC2063003C6E /* Pods-movilog-movilogUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		49D03A5A4084758B5A7173468351F940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DBFF0BE2E4B8C776A17ABFB90D0ACC /* Pods-movilog-movilogUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4F13DFEDEBDBD5A8BCBC582EFF619F7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD9168506A704E986868AA3378A96308 /* Pods-movilogTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilogTests/Pods-movilogTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilogTests/Pods-movilogTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9006B7FEE61F372035184552B4D39E23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BA2492E82654A95FD88A8BD159EABE8 /* Pods-movilog.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilog/Pods-movilog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilog/Pods-movilog.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BACDE209A8732BCCC8CB631827ABF769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA605C7614580F0E2890F2B8FC3094BC /* Pods-movilogTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-movilogTests/Pods-movilogTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movilogTests/Pods-movilogTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20936B347312211D8FBA94B1B8BC5A46 /* Build configuration list for PBXNativeTarget "Pods-movilog-movilogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D03A5A4084758B5A7173468351F940 /* Debug */,
+				3565F0FC5C05B71DD755BF817F967EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21C198CAD9AE3C39BD9C756E3E994943 /* Build configuration list for PBXNativeTarget "Pods-movilogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F13DFEDEBDBD5A8BCBC582EFF619F7E /* Debug */,
+				BACDE209A8732BCCC8CB631827ABF769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F8AED7FA5D9E6D927B56F788CF524BB /* Build configuration list for PBXNativeTarget "Pods-movilog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9006B7FEE61F372035184552B4D39E23 /* Debug */,
+				19770254A6B7079546A97CF1898E2C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
+				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
