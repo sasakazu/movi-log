@@ -107,14 +107,68 @@
                     <view key="view" contentMode="scaleToFill" id="LVV-Bk-fqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-C8-oS9">
+                                <rect key="frame" x="20" y="297" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="NDN-a4-ShE"/>
+                                    <constraint firstAttribute="width" constant="374" id="g0f-YS-ZpB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作品・監督・タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-ra-wJO">
+                                <rect key="frame" x="84" y="148" width="219" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="QNt-C5-OVG"/>
+                                    <constraint firstAttribute="height" constant="37" id="aZy-vq-anK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キーワードでさがす" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-Kl-1kb">
+                                <rect key="frame" x="84" y="193" width="247" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="QNo-d3-C5P"/>
+                                    <constraint firstAttribute="width" constant="247" id="iaJ-du-7JZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-w4-5kb">
+                                <rect key="frame" x="140" y="482" width="135" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="D9e-w5-0mF"/>
+                                    <constraint firstAttribute="height" constant="81" id="UVd-Lj-sh3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="GO!"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BL9-2i-RL9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yxf-ra-wJO" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" constant="84" id="0J4-wb-ted"/>
+                            <constraint firstItem="wlu-Kl-1kb" firstAttribute="top" secondItem="Yxf-ra-wJO" secondAttribute="bottom" constant="8" symbolic="YES" id="3xx-47-VQR"/>
+                            <constraint firstItem="yTS-C8-oS9" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" constant="20" id="Mhr-iF-YVm"/>
+                            <constraint firstItem="wlu-Kl-1kb" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" constant="84" id="TVd-Q0-Le8"/>
+                            <constraint firstItem="Yxf-ra-wJO" firstAttribute="top" secondItem="BL9-2i-RL9" secondAttribute="top" constant="104" id="UCA-AW-Bqa"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="bottom" secondItem="aTq-w4-5kb" secondAttribute="bottom" constant="250" id="g3H-eW-qF0"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="trailing" secondItem="yTS-C8-oS9" secondAttribute="trailing" constant="20" id="kLb-2n-yku"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="trailing" secondItem="wlu-Kl-1kb" secondAttribute="trailing" constant="83" id="sXi-jF-Jpg"/>
+                            <constraint firstItem="aTq-w4-5kb" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" constant="140" id="spA-sC-dE3"/>
+                            <constraint firstItem="yTS-C8-oS9" firstAttribute="top" secondItem="wlu-Kl-1kb" secondAttribute="bottom" constant="55" id="unO-Ih-wtZ"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="trailing" secondItem="Yxf-ra-wJO" secondAttribute="trailing" constant="111" id="vIq-2c-Kj3"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="trailing" secondItem="aTq-w4-5kb" secondAttribute="trailing" constant="139" id="w2r-0n-kgq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="EYe-JZ-i07"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGa-i8-4PI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="1317"/>
+            <point key="canvasLocation" x="986.95652173913049" y="1316.5178571428571"/>
         </scene>
         <!--新着情報-->
         <scene sceneID="cdp-MR-GkE">
