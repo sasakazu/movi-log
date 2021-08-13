@@ -16,6 +16,8 @@
 		7371F57126BBF42B0099F69C /* movilogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57026BBF42B0099F69C /* movilogTests.swift */; };
 		7371F57C26BBF42B0099F69C /* movilogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F57B26BBF42B0099F69C /* movilogUITests.swift */; };
 		7371F58A26BD29D10099F69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371F58926BD29D10099F69C /* GoogleService-Info.plist */; };
+		738400EE26C679DD0070F8CF /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400ED26C679DD0070F8CF /* login.swift */; };
+		738400F026C67A8C0070F8CF /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400EF26C67A8C0070F8CF /* signup.swift */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -59,6 +61,8 @@
 		7371F57B26BBF42B0099F69C /* movilogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogUITests.swift; sourceTree = "<group>"; };
 		7371F57D26BBF42B0099F69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7371F58926BD29D10099F69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		738400ED26C679DD0070F8CF /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		738400EF26C67A8C0070F8CF /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +179,8 @@
 		7371F58B26BE8F990099F69C /* login */ = {
 			isa = PBXGroup;
 			children = (
+				738400ED26C679DD0070F8CF /* login.swift */,
+				738400EF26C67A8C0070F8CF /* signup.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -420,7 +426,9 @@
 			files = (
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
+				738400F026C67A8C0070F8CF /* signup.swift in Sources */,
 				7371F55C26BBF4290099F69C /* SceneDelegate.swift in Sources */,
+				738400EE26C679DD0070F8CF /* login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
