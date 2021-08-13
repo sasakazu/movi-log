@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhN-5x-cV7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1xT-8a-dfk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="987" y="-273"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="j9f-LQ-zsZ">
             <objects>
-                <viewController id="HRm-jz-FNW" sceneMemberID="viewController">
+                <viewController id="HRm-jz-FNW" customClass="login" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaC-jN-FSo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,11 +57,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="log in"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="HRm-jz-FNW" eventType="touchUpInside" id="weh-Nb-nNp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dMo-Go-WdH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="ADg-Jy-Sxt" id="r1K-TQ-kJO"/>
+                        <outlet property="passwordTF" destination="2ZR-bT-cLK" id="eWt-NA-gne"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H2-we-h4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,11 +112,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="sign up"/>
+                                <connections>
+                                    <action selector="signupBtn:" destination="1xT-8a-dfk" eventType="touchUpInside" id="J3i-x7-UWx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FsP-mO-IB2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmTF" destination="byv-WF-Dqr" id="CRr-xl-hRn"/>
+                        <outlet property="email" destination="ewn-2q-4iR" id="S4x-bj-HBJ"/>
+                        <outlet property="password" destination="Ql0-ZD-BLw" id="aLf-Xz-jaA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8X-2t-LEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +154,7 @@
         <!--映画棚-->
         <scene sceneID="kUx-UH-UqR">
             <objects>
-                <viewController id="ibM-Zt-Mxq" sceneMemberID="viewController">
+                <viewController id="ibM-Zt-Mxq" customClass="movilog" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hmf-OP-SAB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="495.53571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View-->
         <scene sceneID="dlX-3M-D5Z">
             <objects>
-                <viewController id="DWP-6l-d1M" sceneMemberID="viewController">
+                <viewController id="DWP-6l-d1M" customClass="searchView" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVV-Bk-fqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

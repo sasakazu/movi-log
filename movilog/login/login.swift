@@ -9,6 +9,10 @@ import UIKit
 
 class login: UIViewController {
 
+    
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,5 +20,10 @@ class login: UIViewController {
     }
     
 
-
+    @IBAction func loginBtn(_ sender: Any) {
+        
+    }
+    
+    
+    
 }

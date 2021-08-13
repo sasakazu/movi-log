@@ -6,16 +6,25 @@
 //
 
 import UIKit
+import Firebase
 
 class signup: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmTF: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
-
+    @IBAction func signupBtn(_ sender: Any) {
+        
+        
+    }
+    
 
 }
