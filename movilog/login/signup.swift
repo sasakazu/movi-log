@@ -10,7 +10,8 @@ import Firebase
 
 class signup: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmTF: UITextField!
     
@@ -18,12 +19,18 @@ class signup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
     }
     
 
     @IBAction func signupBtn(_ sender: Any) {
         
-        
+        Auth.auth().createUser(withEmail: emailTF.text!, password: password.text!) { authResult, error in
+          
+            
+            
+        }
     }
     
 

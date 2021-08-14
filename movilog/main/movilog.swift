@@ -6,16 +6,32 @@
 //
 
 import UIKit
+import Firebase
 
 class movilog: UIViewController {
 
+    
+    @IBOutlet weak var username: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let user = Auth.auth().currentUser
+        if let user = user {
+    
+            let email = user.email! as String
+
+            //ボタンにユーザーネームの表示
+            username.setTitle("\(email) >", for: UIControl.State.normal)
+            
+        }
     }
     
 
+    
+    
+    
 
 
 }

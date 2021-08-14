@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1xT-8a-dfk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhN-5x-cV7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -90,19 +90,19 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ewn-2q-4iR">
-                                <rect key="frame" x="79" y="134" width="256" height="34"/>
+                                <rect key="frame" x="79" y="188" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ql0-ZD-BLw">
-                                <rect key="frame" x="79" y="190" width="256" height="34"/>
+                                <rect key="frame" x="79" y="244" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password(確認)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byv-WF-Dqr">
-                                <rect key="frame" x="79" y="259" width="256" height="34"/>
+                                <rect key="frame" x="79" y="313" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -122,13 +122,13 @@
                     </view>
                     <connections>
                         <outlet property="confirmTF" destination="byv-WF-Dqr" id="CRr-xl-hRn"/>
-                        <outlet property="email" destination="ewn-2q-4iR" id="S4x-bj-HBJ"/>
+                        <outlet property="emailTF" destination="ewn-2q-4iR" id="hu3-YB-VYN"/>
                         <outlet property="password" destination="Ql0-ZD-BLw" id="aLf-Xz-jaA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8X-2t-LEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2101" y="448"/>
+            <point key="canvasLocation" x="-2101.449275362319" y="447.99107142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Mud-Ns-TJS">
@@ -166,8 +166,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-Zf-jLB">
-                                <rect key="frame" x="138" y="53" width="185" height="30"/>
+                                <rect key="frame" x="138" y="53" width="256" height="30"/>
                                 <state key="normal" title="user-name"/>
+                                <connections>
+                                    <segue destination="5iE-Ef-UWT" kind="show" id="VTR-ts-eCX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="フォロー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Lv-LJH">
                                 <rect key="frame" x="20" y="181" width="70" height="21"/>
@@ -232,14 +235,14 @@
                             <constraint firstItem="OY7-O9-hNV" firstAttribute="top" secondItem="9VF-Xg-5kS" secondAttribute="bottom" constant="28" id="9an-bw-TdZ"/>
                             <constraint firstItem="OY7-O9-hNV" firstAttribute="leading" secondItem="hmf-OP-SAB" secondAttribute="leading" id="B1z-lU-Q0H"/>
                             <constraint firstItem="OY7-O9-hNV" firstAttribute="bottom" secondItem="y2m-IY-nFj" secondAttribute="bottom" id="EQd-OV-SLM"/>
-                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="k9R-Zf-jLB" secondAttribute="trailing" constant="91" id="Gho-iu-UfU"/>
+                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="k9R-Zf-jLB" secondAttribute="trailing" constant="20" id="Gho-iu-UfU"/>
                             <constraint firstItem="k9R-Zf-jLB" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" constant="9" id="L4B-iS-xeu"/>
                             <constraint firstItem="9VF-Xg-5kS" firstAttribute="centerX" secondItem="OY7-O9-hNV" secondAttribute="centerX" id="LZf-Oy-2OS"/>
                             <constraint firstItem="QaH-s6-NX1" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" id="WIp-NW-aJl"/>
                             <constraint firstItem="QaH-s6-NX1" firstAttribute="leading" secondItem="1jq-Lv-LJH" secondAttribute="leading" id="YCL-kM-cTI"/>
                             <constraint firstItem="MJa-xl-6MH" firstAttribute="leading" secondItem="Zkr-Ux-maS" secondAttribute="trailing" constant="12" id="YdT-DK-Kez"/>
                             <constraint firstItem="Zkr-Ux-maS" firstAttribute="baseline" secondItem="MJa-xl-6MH" secondAttribute="baseline" id="agy-Pc-1eg"/>
-                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="centerX" secondItem="MJa-xl-6MH" secondAttribute="centerX" constant="-9" id="eH4-B0-uoB"/>
+                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="centerX" secondItem="MJa-xl-6MH" secondAttribute="centerX" constant="26.5" id="eH4-B0-uoB"/>
                             <constraint firstItem="9VF-Xg-5kS" firstAttribute="top" secondItem="1jq-Lv-LJH" secondAttribute="bottom" constant="34" id="gyK-QI-ITL"/>
                             <constraint firstItem="1jq-Lv-LJH" firstAttribute="top" secondItem="QaH-s6-NX1" secondAttribute="bottom" constant="37" id="org-l1-pVu"/>
                             <constraint firstItem="1jq-Lv-LJH" firstAttribute="leading" secondItem="9VF-Xg-5kS" secondAttribute="leading" id="qis-OM-bOR"/>
@@ -248,10 +251,29 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="映画棚" id="xpS-EZ-hOY"/>
+                    <connections>
+                        <outlet property="username" destination="k9R-Zf-jLB" id="gS5-Ly-ZZZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfT-sq-mo4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="495.53571428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6vn-IY-JvL">
+            <objects>
+                <viewController id="5iE-Ef-UWT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SeR-86-bnU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UX7-P8-6FL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="djX-6I-A9W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3y-ev-GRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="496"/>
         </scene>
         <!--Search View-->
         <scene sceneID="dlX-3M-D5Z">

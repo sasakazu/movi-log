@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -14,9 +15,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+            let user = Auth.auth().currentUser
+            if let user = user {
+        
+            let uid = user.uid
+            let email = user.email
+              
+            print(uid)
+            print(email!)
+            
+        }
     }
 
 
+    
+    
+    
+    
 }
 
