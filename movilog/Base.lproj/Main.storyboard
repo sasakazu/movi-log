@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HOME" id="ZuN-RT-j9M"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="home" id="ZuN-RT-j9M"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +250,7 @@
                             <constraint firstAttribute="trailing" secondItem="OY7-O9-hNV" secondAttribute="trailing" id="xlj-aW-VqN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="映画棚" id="xpS-EZ-hOY"/>
+                    <tabBarItem key="tabBarItem" title="映画棚" image="movie" id="xpS-EZ-hOY"/>
                     <connections>
                         <outlet property="username" destination="k9R-Zf-jLB" id="gS5-Ly-ZZZ"/>
                     </connections>
@@ -371,7 +371,7 @@
                         <viewLayoutGuide key="safeArea" id="y7o-Pj-v4R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="新映画情報" id="8jb-vE-DsP"/>
+                    <tabBarItem key="tabBarItem" title="新映画情報" image="カレンダーのフリーアイコン4" id="8jb-vE-DsP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGv-jr-XLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -421,6 +421,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="24" height="24"/>
+        <image name="movie" width="24" height="24"/>
+        <image name="カレンダーのフリーアイコン4" width="24" height="24"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
