@@ -40,9 +40,6 @@ class signup: UIViewController {
             
             
             ], merge: true)
-            
-//                    db.collection("user").document().setData([
-//                        "id" : self.emailTF!
                     
                 
         }
