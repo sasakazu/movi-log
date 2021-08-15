@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class signup: UIViewController {
 
@@ -28,10 +29,40 @@ class signup: UIViewController {
         
         Auth.auth().createUser(withEmail: emailTF.text!, password: password.text!) { authResult, error in
           
+            let db = Firestore.firestore()
+            let user = Auth.auth().currentUser
+            
+            let uid = user?.uid
+            
+            db.collection("users").document(uid!).setData([
+                
+                "username": self.emailTF.text!
             
             
+            ], merge: true)
+            
+//                    db.collection("user").document().setData([
+//                        "id" : self.emailTF!
+                    
+                
         }
     }
-    
 
+
+    
+    @IBAction func logout(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+            
+                print("Error signing out: %@", signOutError)
+    
+            }
+      
+    }
+    
+    
+    
 }
