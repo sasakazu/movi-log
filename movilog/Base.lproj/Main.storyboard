@@ -181,7 +181,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3ZS-wi-s4W"/>
-                        <segue destination="DWP-6l-d1M" kind="relationship" relationship="viewControllers" id="qvv-Hx-U4P"/>
+                        <segue destination="n2N-IR-Yz8" kind="relationship" relationship="viewControllers" id="qvv-Hx-U4P"/>
                         <segue destination="ibM-Zt-Mxq" kind="relationship" relationship="viewControllers" id="9mh-Tg-2Oc"/>
                     </connections>
                 </tabBarController>
@@ -340,18 +340,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBL-4D-21F">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Hho-7E-aa0"/>
-                                    <constraint firstAttribute="width" constant="414" id="jKo-Iw-lPu"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="さがす" id="LjN-GB-sFJ">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="ZiS-Z6-6jA"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-dV-5VK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="359"/>
                                 <subviews>
@@ -422,23 +410,37 @@
                         <viewLayoutGuide key="safeArea" id="BL9-2i-RL9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dgB-dV-5VK" firstAttribute="top" secondItem="VBL-4D-21F" secondAttribute="bottom" id="6La-23-ANx"/>
-                            <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="VBL-4D-21F" secondAttribute="leading" id="8ep-0g-NRL"/>
-                            <constraint firstItem="VBL-4D-21F" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="8xy-rW-MgZ"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="EUn-Nf-sG5"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="HX1-D8-cPh"/>
                             <constraint firstItem="BL9-2i-RL9" firstAttribute="bottom" secondItem="dgB-dV-5VK" secondAttribute="bottom" constant="366" id="KCb-Wb-Ntq"/>
-                            <constraint firstItem="VBL-4D-21F" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="N8C-DO-vh3"/>
-                            <constraint firstItem="VBL-4D-21F" firstAttribute="top" secondItem="BL9-2i-RL9" secondAttribute="top" id="end-Aw-V7l"/>
-                            <constraint firstItem="dgB-dV-5VK" firstAttribute="top" secondItem="VBL-4D-21F" secondAttribute="bottom" id="hqq-Uu-IRU"/>
-                            <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="VBL-4D-21F" secondAttribute="trailing" id="tOQ-NY-Qky"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="さがす" image="虫眼鏡アイコン9" id="EYe-JZ-i07"/>
+                    <navigationItem key="navigationItem" title="さがす" id="cMD-EF-bMB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="uDV-To-ShF"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="MmH-19-iyS" kind="show" id="HS9-yG-esZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGa-i8-4PI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="496"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="495.53571428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z9T-q2-J5p">
+            <objects>
+                <viewController id="MmH-19-iyS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x9c-52-G6w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DhZ-Qr-dUd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n6S-Oh-3qv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8z-TV-lvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137.68115942029" y="495.53571428571428"/>
         </scene>
         <!--Login-->
         <scene sceneID="npx-6F-nTk">
@@ -481,6 +483,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kV-Wo-bb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3030" y="1317"/>
+        </scene>
+        <!--さがす-->
+        <scene sceneID="fc8-As-6Zi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n2N-IR-Yz8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="さがす" image="虫眼鏡アイコン9" id="EYe-JZ-i07"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h0m-UA-37h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DWP-6l-d1M" kind="relationship" relationship="rootViewController" id="IIb-1N-DbJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTX-s5-h3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="495.53571428571428"/>
         </scene>
     </scenes>
     <resources>
