@@ -365,6 +365,9 @@
                                         <state key="normal" title="GO!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="MmH-19-iyS" kind="show" id="qSJ-0p-FNe"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キーワードでさがす" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-Kl-1kb">
                                         <rect key="frame" x="97" y="52" width="247" height="49"/>
@@ -418,25 +421,46 @@
                     <navigationItem key="navigationItem" title="さがす" id="cMD-EF-bMB">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="uDV-To-ShF"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="MmH-19-iyS" kind="show" id="HS9-yG-esZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGa-i8-4PI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1244.9275362318842" y="495.53571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Result-->
         <scene sceneID="Z9T-q2-J5p">
             <objects>
-                <viewController id="MmH-19-iyS" sceneMemberID="viewController">
+                <viewController id="MmH-19-iyS" customClass="searchResult" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x9c-52-G6w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xVm-gM-FIV">
+                                <rect key="frame" x="0.0" y="88" width="431" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4eJ-QC-Sjo">
+                                        <rect key="frame" x="0.0" y="24.5" width="431" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4eJ-QC-Sjo" id="gJL-pr-v9X">
+                                            <rect key="frame" x="0.0" y="0.0" width="431" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MmH-19-iyS" id="fAd-vg-gLf"/>
+                                    <outlet property="delegate" destination="MmH-19-iyS" id="I9G-fl-2NK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DhZ-Qr-dUd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="n6S-Oh-3qv"/>
+                    <connections>
+                        <outlet property="tableviewTest" destination="xVm-gM-FIV" id="PgO-WN-RQx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8z-TV-lvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
