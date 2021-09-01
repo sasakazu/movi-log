@@ -43,4 +43,10 @@ class resultCell: UITableViewCell {
     }
     
     
+    @IBAction func collectionAdd(_ sender: Any) {
+        
+        
+    }
+    
+    
 }
