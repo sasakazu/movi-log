@@ -22,8 +22,8 @@ struct SerchBookKList: Codable {
         var smallImageUrl :String
         var largeImageUrl :String
         var salesDate :String
-        var artistName:String
-    
+        var artistName :String
+        var reviewAverage :String
     
         }
     

@@ -344,7 +344,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="359"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作品・監督・タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-ra-wJO">
-                                        <rect key="frame" x="97.5" y="17" width="219" height="37"/>
+                                        <rect key="frame" x="97.5" y="43" width="219" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="219" id="O3a-sI-6NZ"/>
                                             <constraint firstAttribute="height" constant="37" id="tiz-CP-CIm"/>
@@ -356,7 +356,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-w4-5kb">
-                                        <rect key="frame" x="140" y="188" width="135" height="66"/>
+                                        <rect key="frame" x="140" y="214" width="135" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="PGo-Wh-sQC"/>
                                             <constraint firstAttribute="width" constant="135" id="upl-ch-DpK"/>
@@ -370,7 +370,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キーワードでさがす" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-Kl-1kb">
-                                        <rect key="frame" x="97" y="52" width="247" height="49"/>
+                                        <rect key="frame" x="97" y="78" width="247" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="Ga1-M4-VRe"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="Omz-cs-fvz"/>
@@ -382,7 +382,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メメント" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-C8-oS9">
-                                        <rect key="frame" x="50" y="130" width="315" height="34"/>
+                                        <rect key="frame" x="50" y="156" width="315" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="2Y3-jM-fXj"/>
                                         </constraints>
@@ -394,9 +394,9 @@
                                 <constraints>
                                     <constraint firstItem="aTq-w4-5kb" firstAttribute="top" secondItem="yTS-C8-oS9" secondAttribute="bottom" constant="24" id="5Rg-db-YWN"/>
                                     <constraint firstAttribute="trailing" secondItem="wlu-Kl-1kb" secondAttribute="trailing" constant="70" id="9EK-lj-HCd"/>
-                                    <constraint firstItem="Yxf-ra-wJO" firstAttribute="top" secondItem="dgB-dV-5VK" secondAttribute="top" constant="17" id="Dp0-fj-xDg"/>
-                                    <constraint firstAttribute="bottom" secondItem="aTq-w4-5kb" secondAttribute="bottom" constant="105" id="IUd-sw-eX6"/>
-                                    <constraint firstItem="wlu-Kl-1kb" firstAttribute="top" secondItem="dgB-dV-5VK" secondAttribute="top" constant="52" id="KiK-NF-eKz"/>
+                                    <constraint firstItem="Yxf-ra-wJO" firstAttribute="top" secondItem="dgB-dV-5VK" secondAttribute="top" constant="43" id="Dp0-fj-xDg"/>
+                                    <constraint firstAttribute="bottom" secondItem="aTq-w4-5kb" secondAttribute="bottom" constant="79" id="IUd-sw-eX6"/>
+                                    <constraint firstItem="wlu-Kl-1kb" firstAttribute="top" secondItem="dgB-dV-5VK" secondAttribute="top" constant="78" id="KiK-NF-eKz"/>
                                     <constraint firstItem="Yxf-ra-wJO" firstAttribute="leading" secondItem="dgB-dV-5VK" secondAttribute="leading" constant="97.5" id="aVD-a9-nkN"/>
                                     <constraint firstAttribute="width" constant="414" id="dE0-1Q-zwE"/>
                                     <constraint firstItem="yTS-C8-oS9" firstAttribute="leading" secondItem="dgB-dV-5VK" secondAttribute="leading" constant="50" id="dg2-eh-9Lf"/>
@@ -449,9 +449,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="HW2-ON-s5k" kind="show" id="uoI-Mj-ebD"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -472,6 +469,7 @@
                     <navigationItem key="navigationItem" id="n6S-Oh-3qv"/>
                     <connections>
                         <outlet property="tableviewTest" destination="xVm-gM-FIV" id="PgO-WN-RQx"/>
+                        <segue destination="HW2-ON-s5k" kind="show" identifier="toNextViewController" id="WXJ-4x-eQy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8z-TV-lvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -499,7 +497,7 @@
                                     <constraint firstAttribute="height" constant="38" id="aPx-jM-3al"/>
                                     <constraint firstAttribute="width" constant="208" id="gCn-Q8-9YI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -523,7 +521,7 @@
                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-Sb-9zq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-Sb-9zq">
                                 <rect key="frame" x="186" y="228" width="208" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="HbF-yP-gpC"/>
@@ -562,6 +560,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="本の詳細" id="STc-2F-YuZ"/>
+                    <connections>
+                        <outlet property="averageLabel" destination="Bie-Sb-9zq" id="5eC-YV-4Le"/>
+                        <outlet property="directedLabel" destination="hkG-8q-HUb" id="gRh-eJ-f2c"/>
+                        <outlet property="movieImage" destination="eEp-Qf-BdA" id="Zq6-oW-Cv3"/>
+                        <outlet property="movieTitle" destination="V2Q-6c-egT" id="DYB-vi-eZd"/>
+                        <outlet property="saleDateLabel" destination="P8Y-9H-zGd" id="XBb-3W-jTX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlN-mA-mfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

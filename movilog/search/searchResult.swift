@@ -88,11 +88,33 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//            print("\(indexPath.row)番目の行が選択されました。")
         
-        print(booklists[0].Items?[indexPath.row].Item ?? 0)
+            tableView.deselectRow(at: indexPath, animated: true)
         
+            performSegue(withIdentifier: "toNextViewController", sender: indexPath.row)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "toNextViewController" {
+            if let nextVC = segue.destination as? resultDetail,
+               
+               let index = sender as? Int {
+           
+                nextVC.detailTitle = booklists[0].Items?[index].Item?.title ?? ""
+                nextVC.artistName = booklists[0].Items?[index].Item?.artistName ?? ""
+                nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
+                nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
+                nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
+                
+            
         }
+    }
+}
 
-
+    
+    
+    
 }
