@@ -140,6 +140,7 @@
 				730FC1A826DF515800954961 /* searchResult.swift */,
 				730FC1B726DF7CA100954961 /* resultCell.swift */,
 				730FC1BB26DF870500954961 /* resultDetail.swift */,
+				738400F326C67BA20070F8CF /* searchView.swift */,
 				730FC1B826DF7CA100954961 /* resultCell.xib */,
 			);
 			path = search;
@@ -225,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				738400F126C67B760070F8CF /* movilog.swift */,
-				738400F326C67BA20070F8CF /* searchView.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";

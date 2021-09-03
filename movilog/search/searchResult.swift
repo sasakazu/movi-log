@@ -7,16 +7,18 @@
 
 import UIKit
 
-class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     
     var booklists = [SerchBookKList]()
-    
+    var inputKeyword:String = ""
+    var words:String = ""
     
     private let cellId = "cellId"
     
     
     @IBOutlet weak var tableviewTest: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -24,15 +26,25 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     
         tableviewTest.delegate = self
         tableviewTest.dataSource = self
+        searchTF.delegate = self
         
         tableviewTest.register(UINib(nibName: "resultCell", bundle: nil), forCellReuseIdentifier: cellId)
         
+        searchTF.text = inputKeyword
+        
+//        utf8に変換
+        let item = self.inputKeyword
+        self.words = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
         getRApi()
+        
+//        print(inputKeyword)
 
     }
 
+//    rakuten api 叩く
     private func getRApi(){
-           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%83%BC%E3%83%8E%E3%83%BC%E3%83%A9%E3%83%B3&booksGenreId=003&applicationId=1024730205059605378") else {return}
+           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&applicationId=1024730205059605378") else {return}
 
            let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
                if let err = err {
@@ -58,12 +70,13 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
            task.resume()
        }
    
-    
+   
+//    セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return 150
        }
     
-  
+//  セルの個数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if (booklists.count == 0) {
@@ -74,7 +87,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
 
-
+//セルに表示させる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! resultCell
@@ -86,6 +99,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     
+//    セルを選択した時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 //            print("\(indexPath.row)番目の行が選択されました。")
@@ -96,6 +110,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+//    詳細画面にデータを送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "toNextViewController" {
@@ -114,6 +129,21 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 }
 
+//    キーボードを閉じたら検索開始
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+            // キーボードを隠す
+            textField.resignFirstResponder()
+            
+            let itemString = textField.text
+            
+            self.words = itemString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+
+            getRApi()
+            
+            return true
+        }
+    
     
     
     
