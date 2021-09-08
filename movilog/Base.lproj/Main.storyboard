@@ -242,7 +242,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zms-tY-95o">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zms-tY-95o" customClass="CollectionViewCell" customModule="movilog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mt5-La-X9q">
@@ -251,6 +251,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ibM-Zt-Mxq" id="2fm-T5-avG"/>
+                                    <outlet property="delegate" destination="ibM-Zt-Mxq" id="k6Q-gK-9em"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="いいね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJa-xl-6MH">
                                 <rect key="frame" x="242.5" y="243" width="52" height="21"/>
@@ -309,6 +313,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="映画棚" image="movie" id="xpS-EZ-hOY"/>
                     <connections>
+                        <outlet property="movilogColleciton" destination="OY7-O9-hNV" id="NuP-hC-X09"/>
                         <outlet property="username" destination="k9R-Zf-jLB" id="gS5-Ly-ZZZ"/>
                     </connections>
                 </viewController>

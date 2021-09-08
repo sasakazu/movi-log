@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class resultCell: UITableViewCell {
 
@@ -44,6 +45,24 @@ class resultCell: UITableViewCell {
     
     
     @IBAction func collectionAdd(_ sender: Any) {
+        
+        let db = Firestore.firestore()
+        
+        let user = Auth.auth().currentUser
+        
+        db.collection("users").document(user!.uid).collection("posts").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? ""
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+        
+        }
+        
+    }
         
         
     }
