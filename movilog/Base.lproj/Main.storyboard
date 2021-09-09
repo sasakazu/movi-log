@@ -29,25 +29,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4te-oU-p9y">
-                                <rect key="frame" x="20" y="111" width="374" height="32"/>
-                                <segments>
-                                    <segment title="トップ"/>
-                                    <segment title="タイムライン"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4te-oU-p9y" secondAttribute="trailing" constant="20" id="42G-km-fA3"/>
                             <constraint firstItem="2yL-3E-yzF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5kl-Ro-ZFo"/>
                             <constraint firstItem="2yL-3E-yzF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7jt-BF-YCM"/>
-                            <constraint firstItem="4te-oU-p9y" firstAttribute="top" secondItem="2yL-3E-yzF" secondAttribute="bottom" constant="23" id="HB6-LK-t2k"/>
                             <constraint firstItem="2yL-3E-yzF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KiE-Zi-pT2"/>
                             <constraint firstItem="2yL-3E-yzF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSL-Sx-lMp"/>
                             <constraint firstItem="2yL-3E-yzF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jPU-Zm-uKr"/>
-                            <constraint firstItem="4te-oU-p9y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xWW-TQ-5Xr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="home" id="ZuN-RT-j9M"/>
@@ -315,7 +305,7 @@
                     <connections>
                         <outlet property="movilogColleciton" destination="OY7-O9-hNV" id="NuP-hC-X09"/>
                         <outlet property="username" destination="k9R-Zf-jLB" id="gS5-Ly-ZZZ"/>
-                        <segue destination="mGs-R2-VAy" kind="show" id="HPi-fx-h76"/>
+                        <segue destination="mGs-R2-VAy" kind="show" identifier="collectionDetail" id="HPi-fx-h76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfT-sq-mo4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,6 +384,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q84-iY-DxG"/>
+                    <connections>
+                        <outlet property="artist" destination="5yT-dz-RSn" id="inG-4e-iPl"/>
+                        <outlet property="averageLabel" destination="6fp-0I-paa" id="ioH-na-Umh"/>
+                        <outlet property="companyLabe" destination="AtS-4g-k58" id="4ul-hk-Btq"/>
+                        <outlet property="movieTitle" destination="76G-te-kHF" id="ZF5-qb-gMx"/>
+                        <outlet property="saleDate" destination="2oH-I8-4P1" id="9C7-Bw-CR7"/>
+                        <outlet property="selectedImageView" destination="pkI-4r-PSn" id="Ica-gJ-Lx7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nd-9B-KUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

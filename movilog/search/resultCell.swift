@@ -53,7 +53,10 @@ class resultCell: UITableViewCell {
         db.collection("users").document(user!.uid).collection("posts").addDocument(data:[
             "title": recip?.title ?? "",
             "largeImageUrl": recip?.largeImageUrl ?? "",
-            "artistName": recip?.artistName ?? ""
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? ""
+            
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")

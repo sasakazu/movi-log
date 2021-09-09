@@ -39,8 +39,10 @@ class resultDetail: UIViewController {
             
         }catch let err {
             print("Error : \(err.localizedDescription)")
-            }
         }
+        
+    
+    }
     
 
 
