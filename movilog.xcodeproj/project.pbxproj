@@ -28,6 +28,7 @@
 		73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */; };
 		73B7213926E8B4B100D874F7 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */; };
 		73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */; };
+		73B7218826EB63EC00D874F7 /* searchFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7218726EB63EC00D874F7 /* searchFriends.swift */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -83,6 +84,7 @@
 		73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieCollectionDetail.swift; sourceTree = "<group>"; };
+		73B7218726EB63EC00D874F7 /* searchFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFriends.swift; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				730FC1A826DF515800954961 /* searchResult.swift */,
 				730FC1B726DF7CA100954961 /* resultCell.swift */,
 				730FC1BB26DF870500954961 /* resultDetail.swift */,
+				73B7218726EB63EC00D874F7 /* searchFriends.swift */,
 				738400F326C67BA20070F8CF /* searchView.swift */,
 				730FC1B826DF7CA100954961 /* resultCell.xib */,
 			);
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				738400F426C67BA30070F8CF /* searchView.swift in Sources */,
+				73B7218826EB63EC00D874F7 /* searchFriends.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
 				73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */,
