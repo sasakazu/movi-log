@@ -32,6 +32,8 @@
 		73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2A726ECA0B3005CA82F /* searchFriendsTableViewCell.swift */; };
 		73B9E2AA26ECA0B3005CA82F /* searchFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B9E2A826ECA0B3005CA82F /* searchFriendsTableViewCell.xib */; };
 		73B9E2AD26ECBFC3005CA82F /* friendDetaiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2AC26ECBFC3005CA82F /* friendDetaiView.swift */; };
+		73B9E2B326EDE8E1005CA82F /* acountEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */; };
+		73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -91,6 +93,8 @@
 		73B9E2A726ECA0B3005CA82F /* searchFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		73B9E2A826ECA0B3005CA82F /* searchFriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchFriendsTableViewCell.xib; sourceTree = "<group>"; };
 		73B9E2AC26ECBFC3005CA82F /* friendDetaiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendDetaiView.swift; sourceTree = "<group>"; };
+		73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acountEditTableViewController.swift; sourceTree = "<group>"; };
+		73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNicknameViewController.swift; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,7 @@
 		7371F55826BBF4290099F69C /* movilog */ = {
 			isa = PBXGroup;
 			children = (
+				73B9E2B426EDEDE3005CA82F /* editProfile */,
 				73B9E2AB26ECA0CE005CA82F /* searchFriend */,
 				730FC1AA26DF521400954961 /* model */,
 				730FC1A726DF510E00954961 /* search */,
@@ -245,6 +250,7 @@
 				73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */,
 				73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */,
 				73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */,
+				73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -257,6 +263,14 @@
 				73B9E2A726ECA0B3005CA82F /* searchFriendsTableViewCell.swift */,
 			);
 			path = searchFriend;
+			sourceTree = "<group>";
+		};
+		73B9E2B426EDEDE3005CA82F /* editProfile */ = {
+			isa = PBXGroup;
+			children = (
+				73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */,
+			);
+			path = editProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,9 +519,11 @@
 				73B7218826EB63EC00D874F7 /* searchFriends.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
+				73B9E2B326EDE8E1005CA82F /* acountEditTableViewController.swift in Sources */,
 				73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */,
 				730FC1A926DF515800954961 /* searchResult.swift in Sources */,
 				730FC1B926DF7CA100954961 /* resultCell.swift in Sources */,
+				73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */,
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,

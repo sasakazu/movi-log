@@ -18,12 +18,16 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var saleDataItems: [String] = []
     private var reviewItems: [String] = []
     
+//    映画情報
     var collectionItem: [String:Any] = [:]
     var imageData = ""
     var titleData = ""
     var artistData = ""
     var saleDateData = ""
     var reviewData = ""
+    
+//    ユーザー情報
+    var nickname = ""
     
     @IBOutlet weak var username: UIButton!
     @IBOutlet weak var movilogColleciton: UICollectionView!
@@ -33,14 +37,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
 
         let user = Auth.auth().currentUser
-        if let user = user {
-    
-            let email = user.email! as String
-
-            //ボタンにユーザーネームの表示
-            username.setTitle("\(email) >", for: UIControl.State.normal)
             
-        }
     
         let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         
@@ -48,6 +45,29 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         let db = Firestore.firestore()
         
+//        ユーザー情報を取得
+        
+        
+        let docRef = db.collection("users").document(user!.uid)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+                
+                self.nickname = document["nickname"] as! String
+                
+                //ボタンにユーザーネームの表示
+                self.username.setTitle("\(self.nickname) >", for: UIControl.State.normal)
+//                print(self.nickname)
+                
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+//        postを取得
         db.collection("users").document(user!.uid).collection("posts").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

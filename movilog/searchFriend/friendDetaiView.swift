@@ -10,11 +10,11 @@ import Firebase
 
 class friendDetaiView: UIViewController {
  
-
     var friendUser = ""
     
-    
     @IBOutlet weak var friendsLabel: UILabel!
+    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var friendsCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -42,9 +42,16 @@ class friendDetaiView: UIViewController {
                 print("Document successfully written!")
 
         }
-
-    }
+        }
         
     }
+    
+    
+    @IBAction func followingBtn(_ sender: Any) {
+    }
+    
+    @IBAction func follweredBtn(_ sender: Any) {
+    }
+    
     
 }

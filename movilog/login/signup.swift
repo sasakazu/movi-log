@@ -38,7 +38,7 @@ class signup: UIViewController {
 
             db.collection("users").document(uid!).setData([
 
-                "username": self.emailTF.text!,
+                "email": self.emailTF.text!,
                 "userID": uid ?? ""
             
 
