@@ -21,7 +21,9 @@ class signup: UIViewController {
         super.viewDidLoad()
 
         
-        
+        let user = Auth.auth().currentUser?.uid
+        print("now user\(String(describing: user))")
+    
     }
     
 
@@ -31,14 +33,15 @@ class signup: UIViewController {
           
             let db = Firestore.firestore()
             let user = Auth.auth().currentUser
-            
+
             let uid = user?.uid
-            
+
             db.collection("users").document(uid!).setData([
-                
-                "username": self.emailTF.text!
+
+                "username": self.emailTF.text!,
+                "userID": uid ?? ""
             
-            
+
             ], merge: true)
                     
                 

@@ -9,42 +9,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HOME-->
+        <!--ホーム-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yL-3E-yzF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="FMI-wx-Xq6"/>
-                                    <constraint firstAttribute="height" constant="44" id="mvi-7l-W9g"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="ホーム" id="ViH-SV-tN4">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="Enm-37-1jF"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="2yL-3E-yzF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5kl-Ro-ZFo"/>
-                            <constraint firstItem="2yL-3E-yzF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7jt-BF-YCM"/>
-                            <constraint firstItem="2yL-3E-yzF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KiE-Zi-pT2"/>
-                            <constraint firstItem="2yL-3E-yzF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSL-Sx-lMp"/>
-                            <constraint firstItem="2yL-3E-yzF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jPU-Zm-uKr"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HOME" image="home" id="ZuN-RT-j9M"/>
+                    <navigationItem key="navigationItem" title="ホーム" id="e43-la-uyI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="UPN-aa-sc0">
+                            <connections>
+                                <segue destination="iX9-YJ-eac" kind="show" id="iXJ-bT-sTt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334.78260869565219" y="-273.21428571428572"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="-273.21428571428572"/>
         </scene>
         <!--友達を探す-->
         <scene sceneID="M9o-Ix-66J">
@@ -59,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iTn-Od-hb1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iTn-Od-hb1" customClass="searchFriendsTableViewCell" customModule="movilog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iTn-Od-hb1" id="b0B-gK-Riu">
@@ -68,6 +53,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iX9-YJ-eac" id="XXn-wI-4f0"/>
+                                    <outlet property="delegate" destination="iX9-YJ-eac" id="1Db-Cg-HO4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tta-fV-fGJ"/>
@@ -76,11 +65,49 @@
                     <navigationItem key="navigationItem" title="友達を探す" id="2QY-7D-OYR"/>
                     <connections>
                         <outlet property="searchFriendTableView" destination="T87-nD-w6o" id="pK9-Nj-Q4H"/>
+                        <segue destination="d10-YV-YSF" kind="show" identifier="sendID" id="vYa-LP-L0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mij-a2-iyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244.9275362318842" y="-273.21428571428572"/>
+            <point key="canvasLocation" x="2155.072463768116" y="-273.21428571428572"/>
+        </scene>
+        <!--Friend Detai View-->
+        <scene sceneID="guh-gk-ioa">
+            <objects>
+                <viewController id="d10-YV-YSF" customClass="friendDetaiView" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Oe-Bb-Ag1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtP-31-tU0">
+                                <rect key="frame" x="173" y="426" width="69" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="follow"/>
+                                <connections>
+                                    <action selector="followTapped:" destination="d10-YV-YSF" eventType="touchUpInside" id="qWy-ZM-cFx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-Ea-mfN">
+                                <rect key="frame" x="20" y="190" width="374" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ftp-9S-uig"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YZG-e1-vcK"/>
+                    <connections>
+                        <outlet property="friendsLabel" destination="FIZ-Ea-mfN" id="GGj-0W-hxE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJg-wX-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3047.826086956522" y="-273.21428571428572"/>
         </scene>
         <!--Login-->
         <scene sceneID="j9f-LQ-zsZ">
@@ -129,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H2-we-h4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3030" y="1317"/>
+            <point key="canvasLocation" x="-2291" y="496"/>
         </scene>
         <!--Signup-->
         <scene sceneID="26k-1O-Dmj">
@@ -193,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8X-2t-LEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2248" y="1317"/>
+            <point key="canvasLocation" x="-1510" y="496"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Mud-Ns-TJS">
@@ -206,9 +233,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3ZS-wi-s4W"/>
+                        <segue destination="aEo-MU-EHI" kind="relationship" relationship="viewControllers" id="3ZS-wi-s4W"/>
                         <segue destination="n2N-IR-Yz8" kind="relationship" relationship="viewControllers" id="qvv-Hx-U4P"/>
-                        <segue destination="ibM-Zt-Mxq" kind="relationship" relationship="viewControllers" id="9mh-Tg-2Oc"/>
+                        <segue destination="cTA-DX-yeW" kind="relationship" relationship="viewControllers" id="9mh-Tg-2Oc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzM-O3-qx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,43 +250,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-s6-NX1">
-                                <rect key="frame" x="20" y="106" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Hiv-fk-zZT"/>
-                                    <constraint firstAttribute="height" constant="100" id="dv2-yd-3qy"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-s6-NX1">
+                                <rect key="frame" x="20" y="124" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-Zf-jLB">
-                                <rect key="frame" x="138" y="115" width="218" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="218" id="QPM-oX-009"/>
-                                    <constraint firstAttribute="height" constant="30" id="mSp-gc-Xux"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-Zf-jLB">
+                                <rect key="frame" x="159" y="124" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="user-name"/>
                                 <connections>
                                     <segue destination="5iE-Ef-UWT" kind="show" id="VTR-ts-eCX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="フォロワー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-Ux-maS">
-                                <rect key="frame" x="136.5" y="243" width="87" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="8Rr-UB-yUI"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="フォロワー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-Ux-maS">
+                                <rect key="frame" x="113" y="243" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-Xg-5kS">
-                                <rect key="frame" x="20" y="300" width="374" height="32"/>
-                                <segments>
-                                    <segment title="観た"/>
-                                    <segment title="観たい"/>
-                                    <segment title="マイベスト"/>
-                                </segments>
-                            </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-O9-hNV">
-                                <rect key="frame" x="0.0" y="354" width="414" height="459"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-O9-hNV">
+                                <rect key="frame" x="0.0" y="378" width="414" height="435"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QF9-5m-rM2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -282,62 +294,40 @@
                                     <outlet property="delegate" destination="ibM-Zt-Mxq" id="k6Q-gK-9em"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="いいね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJa-xl-6MH">
-                                <rect key="frame" x="242.5" y="243" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いいね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJa-xl-6MH">
+                                <rect key="frame" x="242" y="243" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGO-vh-ovW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="gd7-JU-rj5"/>
-                                    <constraint firstAttribute="height" constant="44" id="qTN-Om-RL4"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="コレクション" id="kdB-jr-qBq">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="wEN-Sq-6DY"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="フォロー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Lv-LJH">
-                                <rect key="frame" x="50" y="243" width="70" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="IgM-c7-hCL"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="フォロー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Lv-LJH">
+                                <rect key="frame" x="20" y="243" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-Xg-5kS">
+                                <rect key="frame" x="20" y="306" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="観た"/>
+                                    <segment title="観たい"/>
+                                    <segment title="マイベスト"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y2m-IY-nFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Zkr-Ux-maS" firstAttribute="leading" secondItem="1jq-Lv-LJH" secondAttribute="trailing" constant="23.5" id="2Xj-E1-KBn"/>
-                            <constraint firstItem="OY7-O9-hNV" firstAttribute="top" secondItem="9VF-Xg-5kS" secondAttribute="bottom" constant="23" id="9an-bw-TdZ"/>
-                            <constraint firstItem="OY7-O9-hNV" firstAttribute="leading" secondItem="hmf-OP-SAB" secondAttribute="leading" id="B1z-lU-Q0H"/>
-                            <constraint firstItem="OY7-O9-hNV" firstAttribute="bottom" secondItem="y2m-IY-nFj" secondAttribute="bottom" id="EQd-OV-SLM"/>
-                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="top" secondItem="eGO-vh-ovW" secondAttribute="bottom" constant="27" id="J4h-ns-Jyz"/>
-                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="k9R-Zf-jLB" secondAttribute="trailing" constant="58" id="KNG-VM-PxT"/>
-                            <constraint firstItem="9VF-Xg-5kS" firstAttribute="centerX" secondItem="OY7-O9-hNV" secondAttribute="centerX" id="LZf-Oy-2OS"/>
-                            <constraint firstItem="1jq-Lv-LJH" firstAttribute="top" secondItem="k9R-Zf-jLB" secondAttribute="bottom" constant="98" id="M3A-Km-8ZF"/>
-                            <constraint firstItem="QaH-s6-NX1" firstAttribute="top" secondItem="eGO-vh-ovW" secondAttribute="bottom" constant="18" id="NP9-rj-uJ1"/>
-                            <constraint firstItem="QaH-s6-NX1" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" constant="20" id="NQI-tC-1Is"/>
-                            <constraint firstItem="eGO-vh-ovW" firstAttribute="trailing" secondItem="y2m-IY-nFj" secondAttribute="trailing" id="RX0-EZ-uer"/>
-                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="9VF-Xg-5kS" secondAttribute="trailing" constant="20" id="Tyx-wL-gdI"/>
-                            <constraint firstItem="MJa-xl-6MH" firstAttribute="leading" secondItem="Zkr-Ux-maS" secondAttribute="trailing" constant="12" id="YdT-DK-Kez"/>
-                            <constraint firstItem="Zkr-Ux-maS" firstAttribute="baseline" secondItem="MJa-xl-6MH" secondAttribute="baseline" id="agy-Pc-1eg"/>
-                            <constraint firstItem="eGO-vh-ovW" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" id="fsO-ap-eSk"/>
-                            <constraint firstItem="9VF-Xg-5kS" firstAttribute="top" secondItem="1jq-Lv-LJH" secondAttribute="bottom" constant="36" id="gyK-QI-ITL"/>
-                            <constraint firstItem="9VF-Xg-5kS" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" constant="20" id="kc1-oh-d0w"/>
-                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="leading" secondItem="QaH-s6-NX1" secondAttribute="trailing" constant="18" id="no7-Ec-zpk"/>
-                            <constraint firstItem="eGO-vh-ovW" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" id="oaJ-a3-1mT"/>
-                            <constraint firstItem="1jq-Lv-LJH" firstAttribute="leading" secondItem="9VF-Xg-5kS" secondAttribute="leading" constant="30" id="qis-OM-bOR"/>
-                            <constraint firstItem="1jq-Lv-LJH" firstAttribute="baseline" secondItem="Zkr-Ux-maS" secondAttribute="baseline" id="umC-48-dQc"/>
-                            <constraint firstAttribute="trailing" secondItem="OY7-O9-hNV" secondAttribute="trailing" id="xlj-aW-VqN"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="映画棚" image="movie" id="xpS-EZ-hOY"/>
+                    <navigationItem key="navigationItem" title="映画棚" id="hDv-0g-XrU">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="wEN-Sq-6DY">
+                            <connections>
+                                <segue destination="iX9-YJ-eac" kind="show" id="sAe-Ur-mhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="movilogColleciton" destination="OY7-O9-hNV" id="NuP-hC-X09"/>
                         <outlet property="username" destination="k9R-Zf-jLB" id="gS5-Ly-ZZZ"/>
@@ -346,14 +336,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfT-sq-mo4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-568" y="1290"/>
+            <point key="canvasLocation" x="340.57971014492756" y="1289.7321428571429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6vn-IY-JvL">
             <objects>
                 <viewController id="5iE-Ef-UWT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SeR-86-bnU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UX7-P8-6FL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -362,18 +352,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3y-ev-GRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="1290"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="1289.7321428571429"/>
         </scene>
         <!--Movie Collection Detail-->
         <scene sceneID="odp-T6-VsL">
             <objects>
                 <viewController id="mGs-R2-VAy" customClass="movieCollectionDetail" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dQM-5o-xZg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkI-4r-PSn">
-                                <rect key="frame" x="20" y="20" width="162" height="266"/>
+                                <rect key="frame" x="20" y="96" width="162" height="266"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76G-te-kHF">
@@ -391,26 +381,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="販売ところ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtS-4g-k58">
-                                <rect key="frame" x="199" y="96" width="195" height="21"/>
+                                <rect key="frame" x="199" y="172" width="195" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="販売日時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-I8-4P1">
-                                <rect key="frame" x="199" y="125" width="195" height="21"/>
+                                <rect key="frame" x="199" y="201" width="195" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fp-0I-paa">
-                                <rect key="frame" x="20" y="313" width="162" height="30"/>
+                                <rect key="frame" x="20" y="389" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="評価"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n03-WT-nGc">
-                                <rect key="frame" x="20" y="406" width="374" height="30"/>
+                                <rect key="frame" x="20" y="482" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="楽天ブックスへ詳細を見る"/>
@@ -474,7 +464,7 @@
                                             <constraint firstAttribute="height" constant="34" id="2Y3-jM-fXj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="linkColor"/>
@@ -499,6 +489,9 @@
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="EUn-Nf-sG5"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="HX1-D8-cPh"/>
                             <constraint firstItem="BL9-2i-RL9" firstAttribute="bottom" secondItem="dgB-dV-5VK" secondAttribute="bottom" constant="366" id="KCb-Wb-Ntq"/>
+                            <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="c1I-ID-tds"/>
+                            <constraint firstItem="dgB-dV-5VK" firstAttribute="top" secondItem="BL9-2i-RL9" secondAttribute="top" id="lCm-UX-dbH"/>
+                            <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="u8q-1X-tsc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="さがす" id="cMD-EF-bMB">
@@ -719,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kV-Wo-bb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3030" y="1317"/>
+            <point key="canvasLocation" x="-2291" y="496"/>
         </scene>
         <!--さがす-->
         <scene sceneID="fc8-As-6Zi">
@@ -740,7 +733,48 @@
             </objects>
             <point key="canvasLocation" x="334.78260869565219" y="495.53571428571428"/>
         </scene>
+        <!--HOME-->
+        <scene sceneID="mw9-GG-Q3x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEo-MU-EHI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HOME" image="home" id="ZuN-RT-j9M"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BfF-SX-rJS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eYx-eV-ElN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjx-IK-Aqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="-273.21428571428572"/>
+        </scene>
+        <!--映画棚-->
+        <scene sceneID="rD0-XT-Jqn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cTA-DX-yeW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="映画棚" image="movie" id="xpS-EZ-hOY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BP9-LB-6fP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ibM-Zt-Mxq" kind="relationship" relationship="rootViewController" id="BhK-2R-ua9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JxG-bn-lAB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-568.1159420289855" y="1289.7321428571429"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sAe-Ur-mhH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>
         <image name="movie" width="24" height="24"/>
