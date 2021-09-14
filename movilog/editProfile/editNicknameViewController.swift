@@ -10,16 +10,32 @@ import Firebase
 
 class editNicknameViewController: UIViewController {
 
+    var nicknamePF:String = ""
     
     @IBOutlet weak var nicknameTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         
+        let user = Auth.auth().currentUser
         
-        // Do any additional setup after loading the view.
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("users").document(user!.uid)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+
+                self.nicknamePF = document["nickname"] as? String ?? "no nickname"
+                
+                self.nicknameTF.text = self.nicknamePF
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+
     }
     
     
@@ -39,7 +55,9 @@ class editNicknameViewController: UIViewController {
             }
         }
         
-    
+        self.navigationController?.popViewController(animated: true)
+
+        
     }
     
 

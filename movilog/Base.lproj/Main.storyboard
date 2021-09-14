@@ -554,9 +554,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="bd6-CV-m9J" kind="show" id="Gul-av-8JX"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3Pn-Mc-EA1">
                                         <rect key="frame" x="0.0" y="68" width="414" height="43.5"/>
@@ -574,9 +571,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="B9c-wN-c93" kind="show" id="mnR-b2-54Q"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LFX-xM-TQC">
                                         <rect key="frame" x="0.0" y="111.5" width="414" height="43.5"/>
@@ -592,18 +586,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ムビログID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="162-4P-5RG">
-                                                    <rect key="frame" x="275" y="11" width="119" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ニックネーム &gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="162-4P-5RG">
+                                                    <rect key="frame" x="239" y="12" width="155" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zat-as-Eqg" kind="show" id="peP-rd-ocZ"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fyx-Bt-Dn8">
                                         <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
@@ -619,11 +610,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メールアドレス &gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djX-xl-9ek">
+                                                    <rect key="frame" x="244" y="13" width="150" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="oXV-8n-p0M" kind="show" id="Dxk-58-cHM"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -635,7 +630,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="CjY-dK-thM"/>
                     <connections>
-                        <outlet property="movilogIDLabel" destination="Ers-QA-EuZ" id="adi-6o-Ipt"/>
+                        <outlet property="emailLabel" destination="djX-xl-9ek" id="Uz1-tY-tne"/>
+                        <outlet property="movilogIDLabel" destination="162-4P-5RG" id="2k4-AW-fQT"/>
+                        <outlet property="tableview" destination="6Bg-wd-DqF" id="NY6-9i-Zmg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKa-88-kvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1009,7 +1006,7 @@
         <!--ニックネーム-->
         <scene sceneID="QlV-iX-fp1">
             <objects>
-                <viewController id="zat-as-Eqg" customClass="editNicknameViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nickname" id="zat-as-Eqg" customClass="editNicknameViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Lg-eN-4TS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1045,18 +1042,38 @@
         <!--登録メールアドレス-->
         <scene sceneID="h1K-aV-O13">
             <objects>
-                <viewController id="oXV-8n-p0M" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editEmail" id="oXV-8n-p0M" customClass="editEmailViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4aX-qR-fJf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvZ-M5-VVw">
+                                <rect key="frame" x="20" y="185" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZO-gI-CFD">
+                                <rect key="frame" x="140" y="288" width="134" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="保存する"/>
+                                <connections>
+                                    <action selector="saveBtn:" destination="zat-as-Eqg" eventType="touchUpInside" id="HEu-CV-4XD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kbZ-vJ-Qdm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="登録メールアドレス" id="v5v-4W-0V9"/>
+                    <connections>
+                        <outlet property="emailTF" destination="nvZ-M5-VVw" id="TAZ-F3-Mfs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5f-dV-3CF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="2741"/>
+            <point key="canvasLocation" x="2754" y="2044"/>
         </scene>
         <!--アイコン-->
         <scene sceneID="zsz-1T-KFY">
@@ -1072,7 +1089,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtH-de-mYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="2741"/>
+            <point key="canvasLocation" x="3499" y="2044"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

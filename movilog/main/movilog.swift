@@ -55,7 +55,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
 //                print("Document data: \(dataDescription)")
                 
-                self.nickname = document["nickname"] as! String
+                self.nickname = document["nickname"] as? String ?? "no name"
                 
                 //ボタンにユーザーネームの表示
                 self.username.setTitle("\(self.nickname) >", for: UIControl.State.normal)
