@@ -50,7 +50,7 @@ class resultCell: UITableViewCell {
         
         let user = Auth.auth().currentUser
         
-        db.collection("users").document(user!.uid).collection("posts").addDocument(data:[
+        db.collection("posts").document(user!.uid).collection("post").addDocument(data:[
             "title": recip?.title ?? "",
             "largeImageUrl": recip?.largeImageUrl ?? "",
             "artistName": recip?.artistName ?? "",

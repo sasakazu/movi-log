@@ -38,7 +38,6 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         getRApi()
         
-//        print(inputKeyword)
 
     }
 
