@@ -150,7 +150,7 @@
                         <outlet property="friendsCollectionView" destination="22d-ub-gNz" id="8js-G2-Bta"/>
                         <outlet property="friendsLabel" destination="FIZ-Ea-mfN" id="GGj-0W-hxE"/>
                         <outlet property="userIcon" destination="ew8-z0-vyz" id="ddq-eh-pLB"/>
-                        <segue destination="nbL-tE-gxq" kind="show" id="oYc-aC-GYx"/>
+                        <segue destination="nbL-tE-gxq" kind="show" identifier="goFriendMovieDetail" id="oYc-aC-GYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJg-wX-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,6 +202,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="映画の詳細を見る"/>
+                                <connections>
+                                    <action selector="gotoRakuten:" destination="nbL-tE-gxq" eventType="touchUpInside" id="NjW-nB-mdn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mFg-qf-n2c"/>
@@ -209,7 +212,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="映画詳細" id="4np-IN-llW"/>
                     <connections>
+                        <outlet property="artistTitle" destination="zBI-Oy-fPs" id="dkN-nV-bH5"/>
                         <outlet property="movieImage" destination="d8L-aY-O18" id="ch5-10-sw0"/>
+                        <outlet property="movieTitle" destination="K8x-qt-TXg" id="D80-yV-Rhl"/>
+                        <outlet property="reviewLabel" destination="aaQ-3k-2md" id="N1h-Tg-aeO"/>
+                        <outlet property="saleDateLabel" destination="34h-do-hAp" id="Ryv-f8-FC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgx-1Z-tTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -538,16 +545,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76G-te-kHF">
-                                <rect key="frame" x="199" y="20" width="195" height="27"/>
+                                <rect key="frame" x="199" y="96" width="195" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yT-dz-RSn">
-                                <rect key="frame" x="199" y="67" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -576,6 +576,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="楽天ブックスへ詳細を見る"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yT-dz-RSn">
+                                <rect key="frame" x="199" y="145" width="195" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4T-1t-Myp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1160,7 +1167,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXJ-bT-sTt"/>
+        <segue reference="sAe-Ur-mhH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>

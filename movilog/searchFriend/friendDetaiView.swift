@@ -17,10 +17,17 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
 //    コレクション
     private var movietitleItems: [String] = []
     private var imageItems: [String] = []
+    private var artistItems: [String] = []
+    private var saleItems: [String] = []
+    private var reviewItems: [String] = []
     
 //    映画の中身
     var collectionItem: [String:Any] = [:]
     var imageData = ""
+    var titleData = ""
+    var artistData = ""
+    var saleDateData = ""
+    var reviewData = ""
     
     @IBOutlet weak var friendsLabel: UILabel!
     @IBOutlet weak var userIcon: UIImageView!
@@ -72,13 +79,17 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
                     self.movietitleItems = querySnapshot!.documents.compactMap { $0.data()["title"] as? String }
                     
                     self.imageItems = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String }
+                   
+                    self.artistItems = querySnapshot!.documents.compactMap { $0.data()["artistName"] as? String }
+                    
+                    self.saleItems = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String }
+                    
+                    self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     
                     self.collectionItem = document.data()
                     
                 }
                     
-
-               
                 // コレクションビューを更新
                     self.friendsCollectionView.reloadData()
 
@@ -126,9 +137,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! friendCollectionViewCell
-        
         
         self.imageData = imageItems[indexPath.row]
             
@@ -137,4 +146,36 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         return cell
         
     }
+    
+    // Cell が選択された場合
+      func collectionView(_ collectionView: UICollectionView,
+                            didSelectItemAt indexPath: IndexPath) {
+   
+        self.imageData = imageItems[indexPath.row]
+        self.titleData = movietitleItems[indexPath.row]
+        self.artistData = artistItems[indexPath.row]
+        self.saleDateData = saleItems[indexPath.row]
+        self.reviewData = reviewItems[indexPath.row]
+        
+        performSegue(withIdentifier: "goFriendMovieDetail",sender: nil)
+          
+          
+   
+      }
+    
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "goFriendMovieDetail") {
+            let subVC:friendMovieDetailViewController = (segue.destination as? friendMovieDetailViewController)!
+            // SubViewController のselectedImgに選択された画像を設定する
+          subVC.ImageHako = imageData
+          subVC.movieHako = titleData
+          subVC.movieArtist = artistData
+          subVC.movieSaleDate = saleDateData
+          subVC.movieReview = reviewData
+          
+        }
+    }
+    
+    
 }
