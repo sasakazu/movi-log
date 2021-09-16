@@ -7,10 +7,20 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
-class friendDetaiView: UIViewController {
- 
-    var friendUser = ""
+class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    var friendUserID = ""
+    var nickname = ""
+    
+//    コレクション
+    private var movietitleItems: [String] = []
+    private var imageItems: [String] = []
+    
+//    映画の中身
+    var collectionItem: [String:Any] = [:]
+    var imageData = ""
     
     @IBOutlet weak var friendsLabel: UILabel!
     @IBOutlet weak var userIcon: UIImageView!
@@ -20,9 +30,65 @@ class friendDetaiView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        friendsLabel.text = friendUser
+        
+        
+        let nib = UINib(nibName: "friendCollectionViewCell", bundle: nil)
+            
+        self.friendsCollectionView.register(nib, forCellWithReuseIdentifier: "Cell")
+        
+        let db = Firestore.firestore()
 
-        // Do any additional setup after loading the view.
+        let user = Auth.auth().currentUser
+
+//        ユーザー情報を取得
+        
+        let docRef = db.collection("users").document(friendUserID)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                
+                self.nickname = document["nickname"] as? String ?? "no name"
+                
+                self.friendsLabel.text = self.nickname
+                
+
+                
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
+//        コレクションを取得
+        db.collection("users").document(friendUserID).collection("posts").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+
+//                    titleを取得
+                    self.movietitleItems = querySnapshot!.documents.compactMap { $0.data()["title"] as? String }
+                    
+                    self.imageItems = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String }
+                    
+                    self.collectionItem = document.data()
+                    
+                }
+                    
+
+               
+                // コレクションビューを更新
+                    self.friendsCollectionView.reloadData()
+
+                    
+                }
+            
+            }
+     
+
+        
     }
     
 
@@ -32,7 +98,7 @@ class friendDetaiView: UIViewController {
 
         let user = Auth.auth().currentUser
 
-        db.collection("following").document(user!.uid).collection("userFollowing").document(friendUser).setData([
+        db.collection("following").document(user!.uid).collection("userFollowing").document(friendUserID).setData([
             "follow": true
 
         ]) { err in
@@ -54,4 +120,21 @@ class friendDetaiView: UIViewController {
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! friendCollectionViewCell
+        
+        
+        self.imageData = imageItems[indexPath.row]
+            
+        cell.friendcollectionImage.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder.png"))
+
+        return cell
+        
+    }
 }

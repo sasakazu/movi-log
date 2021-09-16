@@ -15,6 +15,7 @@ class signup: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmTF: UITextField!
+    @IBOutlet weak var nickNameTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -39,9 +40,9 @@ class signup: UIViewController {
             db.collection("users").document(uid!).setData([
 
                 "email": self.emailTF.text!,
-                "userID": uid ?? ""
+                "userID": uid ?? "",
+                "nickname": self.nickNameTF.text!
             
-
             ], merge: true)
                     
                 

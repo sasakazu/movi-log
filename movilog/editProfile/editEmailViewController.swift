@@ -17,7 +17,7 @@ class editEmailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ddd
+
         let user = Auth.auth().currentUser
         
         let db = Firestore.firestore()

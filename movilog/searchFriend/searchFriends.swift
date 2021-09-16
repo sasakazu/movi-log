@@ -45,7 +45,7 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                    print("\(document.documentID) => \(String(describing: document.data()))")
 
 //                    usernameを取得
-                    self.friends = querySnapshot!.documents.compactMap { $0.data()["username"] as? String}
+                    self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
                     
 //                    usernameを取得
                     self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
@@ -58,7 +58,10 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
                 self.searchFriendTableView.reloadData()
                     
                     
-            }}
+            }
+            
+            
+        }
             
 
     }
@@ -85,7 +88,10 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
+       
+        
         followID = friendsId[indexPath.row]
+        print(followID)
         performSegue(withIdentifier: "sendID", sender: nil)
         
         }
@@ -98,7 +104,7 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
            
                 
               
-            nextVC.friendUser = followID
+            nextVC.friendUserID = followID
             
                 
             

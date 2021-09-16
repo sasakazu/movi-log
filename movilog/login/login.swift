@@ -28,6 +28,8 @@ class login: UIViewController {
             guard let self = self else { return }
                 if let user = result?.user {
                     // サインイン後の画面へ
+                    
+                    print("login success!!")
                 }
         
     }
