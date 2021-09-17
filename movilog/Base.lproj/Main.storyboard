@@ -1027,11 +1027,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="log in"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="gc2-S9-sOG" eventType="touchUpInside" id="mQg-dn-YWi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Xf-S1-gfU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="fb4-t8-Tix" id="b77-2d-gQB"/>
+                        <outlet property="passwordTF" destination="fih-mH-AZk" id="Wy6-Iv-n9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kV-Wo-bb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

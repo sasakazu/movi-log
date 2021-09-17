@@ -11,8 +11,11 @@ import SDWebImage
 
 class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+//    friend情報
     var friendUserID = ""
     var nickname = ""
+//    var
+    
     
 //    コレクション
     private var movietitleItems: [String] = []
@@ -110,7 +113,9 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         let user = Auth.auth().currentUser
 
         db.collection("following").document(user!.uid).collection("userFollowing").document(friendUserID).setData([
-            "follow": true
+            "follow": true,
+            "nickname": self.nickname,
+            "userID":friendUserID
 
         ]) { err in
             if let err = err {

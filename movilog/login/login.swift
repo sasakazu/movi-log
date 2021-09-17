@@ -23,16 +23,11 @@ class login: UIViewController {
 
     @IBAction func loginBtn(_ sender: Any) {
         
-        Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] result, error in
-               
-            guard let self = self else { return }
-                if let user = result?.user {
-                    // サインイン後の画面へ
-                    
-                    print("login success!!")
-                }
-        
-    }
+        Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+          // ...
+        }
+    
     
     }
     
