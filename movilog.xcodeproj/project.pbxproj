@@ -28,6 +28,9 @@
 		73A3CBD726F1EE400010EF42 /* friendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */; };
 		73A3CBD826F1EE400010EF42 /* friendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */; };
 		73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */; };
+		73A3CBDD26F466400010EF42 /* timeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBDC26F466400010EF42 /* timeLineViewController.swift */; };
+		73A3CBE026F466620010EF42 /* TLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */; };
+		73A3CBE126F466620010EF42 /* TLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */; };
 		73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */; };
 		73B7213926E8B4B100D874F7 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */; };
 		73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */; };
@@ -93,6 +96,9 @@
 		73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendCollectionViewCell.swift; sourceTree = "<group>"; };
 		73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = friendCollectionViewCell.xib; sourceTree = "<group>"; };
 		73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendMovieDetailViewController.swift; sourceTree = "<group>"; };
+		73A3CBDC26F466400010EF42 /* timeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeLineViewController.swift; sourceTree = "<group>"; };
+		73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTableViewCell.swift; sourceTree = "<group>"; };
+		73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLTableViewCell.xib; sourceTree = "<group>"; };
 		73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieCollectionDetail.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 		7371F55826BBF4290099F69C /* movilog */ = {
 			isa = PBXGroup;
 			children = (
+				73A3CBDB26F4662B0010EF42 /* Top */,
 				73B9E2B426EDEDE3005CA82F /* editProfile */,
 				73B9E2AB26ECA0CE005CA82F /* searchFriend */,
 				730FC1AA26DF521400954961 /* model */,
@@ -259,6 +266,16 @@
 				73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */,
 			);
 			path = mycollection;
+			sourceTree = "<group>";
+		};
+		73A3CBDB26F4662B0010EF42 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				73A3CBDC26F466400010EF42 /* timeLineViewController.swift */,
+				73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */,
+				73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 		73B9E2AB26ECA0CE005CA82F /* searchFriend */ = {
@@ -395,6 +412,7 @@
 			files = (
 				7371F58A26BD29D10099F69C /* GoogleService-Info.plist in Resources */,
 				7371F56626BBF42B0099F69C /* LaunchScreen.storyboard in Resources */,
+				73A3CBE126F466620010EF42 /* TLTableViewCell.xib in Resources */,
 				73B7213926E8B4B100D874F7 /* CollectionViewCell.xib in Resources */,
 				7371F56326BBF42B0099F69C /* Assets.xcassets in Resources */,
 				73A3CBD826F1EE400010EF42 /* friendCollectionViewCell.xib in Resources */,
@@ -533,6 +551,7 @@
 				73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
+				73A3CBDD26F466400010EF42 /* timeLineViewController.swift in Sources */,
 				73A3CBD726F1EE400010EF42 /* friendCollectionViewCell.swift in Sources */,
 				73B9E2B326EDE8E1005CA82F /* acountEditTableViewController.swift in Sources */,
 				73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */,
@@ -543,6 +562,7 @@
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,
+				73A3CBE026F466620010EF42 /* TLTableViewCell.swift in Sources */,
 				73B9E2AD26ECBFC3005CA82F /* friendDetaiView.swift in Sources */,
 				738400F226C67B760070F8CF /* movilog.swift in Sources */,
 				730FC1BC26DF870500954961 /* resultDetail.swift in Sources */,

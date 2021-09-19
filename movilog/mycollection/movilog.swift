@@ -68,7 +68,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         }
         
 //        postを取得
-        db.collection("posts").document(user!.uid).collection("post").getDocuments() { (querySnapshot, err) in
+        db.collection("users").document(user!.uid).collection("post").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

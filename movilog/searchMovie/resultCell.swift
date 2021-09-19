@@ -50,22 +50,36 @@ class resultCell: UITableViewCell {
         
         let user = Auth.auth().currentUser
         
-        db.collection("posts").document(user!.uid).collection("post").addDocument(data:[
+        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
             "title": recip?.title ?? "",
             "largeImageUrl": recip?.largeImageUrl ?? "",
             "artistName": recip?.artistName ?? "",
             "salesDate": recip?.salesDate ?? "",
             "reviewAverage": recip?.reviewAverage ?? ""
             
-        ]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
+        ])
         
-        }
-        
+        db.collection("allPosts").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "userID": user?.uid ?? ""
+                
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+            
+            }
+            
+            
     }
+        
+        
+        
         
         
     }

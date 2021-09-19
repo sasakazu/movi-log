@@ -9,9 +9,6 @@ import UIKit
 import Firebase
 
 
-//    var fuid = ""
-
-
 class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
     
@@ -47,6 +44,8 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                    usernameを取得
                     self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
                     
+                    
+                    print(self.friends.count)
 //                    usernameを取得
                     self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
                 

@@ -72,7 +72,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         
         
 //        コレクションを取得
-        db.collection("posts").document(friendUserID).collection("post").getDocuments() { (querySnapshot, err) in
+        db.collection("users").document(friendUserID).collection("post").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
