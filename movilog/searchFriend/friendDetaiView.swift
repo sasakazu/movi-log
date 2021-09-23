@@ -115,8 +115,8 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
             
             "follow": true,
-            "nickname": self.movietitleItems,
-            "userID": self.artistItems
+            "movieTitle": self.movietitleItems,
+            "artistName": self.artistItems
         
         ])
             

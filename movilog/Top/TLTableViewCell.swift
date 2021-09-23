@@ -10,8 +10,14 @@ import Firebase
 
 class TLTableViewCell: UITableViewCell {
 
-    
+//    映画情報
     @IBOutlet weak var TLMovieTitle: UILabel!
+    @IBOutlet weak var artistLable: UILabel!
+    @IBOutlet weak var movieImage: UIImageView!
+    
+//    フォローユーザー情報
+    @IBOutlet weak var followIcon: UIImageView!
+    @IBOutlet weak var followAction: UILabel!
     
     
     override func awakeFromNib() {

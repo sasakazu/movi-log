@@ -13,13 +13,14 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private let cellId = "cellId"
     
     private var FollwingPosts: [String] = []
+    private var timeLineLabel: [String] = []
     private var followid: [String] = []
     
-    private var timeLineLabel: [String] = []
-    
 //    followしたポストを代入する配列
-    var all :[String] = []
-    
+//    映画情報
+    private var allTitle :[String] = []
+    private var artistArray: [String] = []
+
     var test = ""
     
     @IBOutlet weak var TLtableview: UITableView!
@@ -54,12 +55,11 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                            } else {
                                for document in querySnapshot!.documents {
                                 
-                                self.followid = document.data()["nickname"] as! [String]
+                                self.allTitle += document.data()["movieTitle"] as! [String]
+                                self.artistArray += document.data()["artistName"] as! [String]
 
-//                                配列に配列を代入する
-                                self.all += followid
                                 
-                                print(all)
+                                print(allTitle)
                                 
                                 
                                }
@@ -76,13 +76,18 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
 
         }
     
-                   
+        
+    
+    //    セルの高さ
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+               return 190
+           }
         
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return all.count
+        return allTitle.count
         
     }
     
@@ -91,7 +96,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TLTableViewCell
         
-        cell.TLMovieTitle?.text = all[indexPath.row]
+        cell.TLMovieTitle?.text = allTitle[indexPath.row]
+        cell.artistLable.text = artistArray[indexPath.row]
         
         print(followid.count)
     
