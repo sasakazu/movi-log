@@ -45,10 +45,11 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
                     self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
                     
                     
-                    print(self.friends.count)
+                    print(self.friends)
 //                    usernameを取得
                     self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
                 
+//                    print(self.friendsId)
                     
                 }
                     

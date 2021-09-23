@@ -112,19 +112,25 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
 
         let user = Auth.auth().currentUser
 
-        db.collection("following").document(user!.uid).collection("userFollowing").document(friendUserID).setData([
+        db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
+            
             "follow": true,
-            "nickname": self.nickname,
-            "userID":friendUserID
+            "nickname": self.movietitleItems,
+            "userID": self.artistItems
+        
+        ])
+            
+      
 
-        ]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-
-        }
-        }
+//        ]) { err in
+//            if let err = err {
+//                print("Error adding document: \(err)")
+//            } else {
+//                print("Document added with ID: \(ref!.documentID)")
+//            }
+//
+//
+//        }
         
     }
     

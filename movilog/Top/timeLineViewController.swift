@@ -13,9 +13,12 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private let cellId = "cellId"
     
     private var FollwingPosts: [String] = []
-    private var followid = ""
+    private var followid: [String] = []
     
     private var timeLineLabel: [String] = []
+    
+//    followしたポストを代入する配列
+    var all :[String] = []
     
     var test = ""
     
@@ -38,104 +41,48 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let db = Firestore.firestore()
     
+
         
-        
-//        followingのIDを取得する
-        db.collection("following").document(user!.uid).collection("userFollowing").getDocuments() { (querySnapshot, err) in
+        db.collection("users").document(user!.uid).collection("userFollowing").getDocuments() { [self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-
-    
-//                    print(document.data()["userID"])
-                    
-//                    usernameを取得
-//                    self.getFollwingID = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
-                    
-                    self.followid = document.data()["userID"] as! String
-                    
-//                    print(self.followid)
-
-//                    let followdb = Firestore.firestore()
-                    
-                   
-            //                    print(document.data()["userID"])
+                
+                
+                if let err = err {
+                               print("\(err)")
+                           } else {
+                               for document in querySnapshot!.documents {
                                 
-            //                    usernameを取得
-//                                self.getFollwingID = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
+                                self.followid = document.data()["nickname"] as! [String]
+
+//                                配列に配列を代入する
+                                self.all += followid
                                 
-//                                print(self.getFollwingID)
+                                print(all)
+                                
+                                
+                               }
+                                
+                            self.TLtableview.reloadData()
+        
+
+                           }
+                
+                
+                    }
                     
-                    
-                    
-                    //        TLにフォローしたポストを表示させる
-                            
-                    db.collection("allPosts").whereField("userID", isEqualTo: self.followid)
-                                .getDocuments() { (querySnapshot, err) in
-                                    if let err = err {
-                                        print("Error getting documents: \(err)")
-                                    } else {
-                                        for document in querySnapshot!.documents {
-
-//                                            print("\(document.documentID) => \(document.data()["userID"])")
-
-                                            self.FollwingPosts = querySnapshot!.documents.compactMap { $0.data() as? String}
-
-                                            self.timeLineLabel = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
-                                            
-//                                            self.timeLineLabel = querySnapshot?.documents.
-//                                            print(self.timeLineLabel)
-
-//                                            print(self.timeLineLabel.count)
-
-//                                            print(document.data()["title"])
-                                        }
-                                    }
-//
-//                    //            print(doc)
-//                                }
-                    
-                                    self.TLtableview.reloadData()
-//                    followid = getFollwingID
                 }
-                // コレクションビューを更新
-                   
-                    
-            }
-            
-            
-    
-            
+
         }
-        
-        
-////        TLにフォローしたポストを表示させる
-//
-//        db.collection("allPosts").whereField("userID", isEqualTo: getFollwingID)
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//
-//                        print("\(document.documentID) => \(document.data())")
-//
-//                        print(document.data()["title"])
-//                    }
-//                }
-//
-////            print(doc)
-            }
-        
     
-    }
+                   
+        
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return FollwingPosts.count
         
-        return timeLineLabel.count
+        return all.count
         
     }
     
@@ -144,9 +91,9 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TLTableViewCell
         
-        cell.TLMovieTitle?.text = timeLineLabel[indexPath.row]
+        cell.TLMovieTitle?.text = all[indexPath.row]
         
-     print(timeLineLabel)
+        print(followid.count)
     
         
         return cell
@@ -155,9 +102,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-         test = timeLineLabel[indexPath.row]
-        
-        print(test)
+    
        
         }
     
