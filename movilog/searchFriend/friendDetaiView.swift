@@ -116,7 +116,8 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
             
             "follow": true,
             "movieTitle": self.movietitleItems,
-            "artistName": self.artistItems
+            "artistName": self.artistItems,
+            "followImage": self.imageItems
         
         ])
             

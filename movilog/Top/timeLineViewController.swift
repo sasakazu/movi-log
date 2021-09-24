@@ -20,6 +20,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
 //    映画情報
     private var allTitle :[String] = []
     private var artistArray: [String] = []
+    private var followImageArray: [String] = []
 
     var test = ""
     
@@ -58,6 +59,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                                 self.allTitle += document.data()["movieTitle"] as! [String]
                                 self.artistArray += document.data()["artistName"] as! [String]
 
+                                self.followImageArray += document.data()["followImage"] as! [String]
+                                
                                 
                                 print(allTitle)
                                 
@@ -99,7 +102,18 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.TLMovieTitle?.text = allTitle[indexPath.row]
         cell.artistLable.text = artistArray[indexPath.row]
         
-        print(followid.count)
+        let url = URL(string: followImageArray[indexPath.row])
+        do {
+            let data = try Data(contentsOf: url!)
+            let image = UIImage(data: data)
+            cell.movieImage.image = image
+            
+        }catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        
+        
+//        print(followid.count)
     
         
         return cell
