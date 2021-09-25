@@ -69,12 +69,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                             print("Error getting documents: \(err)")
                         } else {
                             for document in querySnapshot!.documents {
-                    
-                                
-//                        self.allTitle = document.data()["title"] as! [String]
-//                        self.allTitle = document.data()["title"] as! String
-                       
-                                
+                
                                 
                         self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
                                 
@@ -83,73 +78,24 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                                 
                         
                         
-                        print(self.allTitle)
+//                        print(self.allTitle)
 //                    print("\(document.documentID) => \(document.data())")
                 }
             }
                         self.TLtableview.reloadData()
                         
-        }
+                    }
                     
-            }
+                }
                
                 
             }
             
         }
 
-        
-        
-        
-//        db.collection("users").document(user!.uid).collection("userFollowing").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//
-//
-//                if let err = err {
-//                               print("\(err)")
-//                           } else {
-//                               for document in querySnapshot!.documents {
-//
-//                                self.allTitle += document.data()["movieTitle"] as! [String]
-//                                self.artistArray += document.data()["artistName"] as! [String]
-//
-//                                self.followImageArray += document.data()["followImage"] as! [String]
-//
-//                                self.followUserID = document.data()["followUserID"] as! String
-//
-//                                self.followUsername += querySnapshot!.documents.compactMap { $0.data()["followNickname"] as? String }
-//
-//
-////                                self.followUsername = document.data()["followNickname"]
-//
-//                                print(self.followUsername)
-                                
-                                
-//                                self.followUsername = document.data()["followNickname"] as! String
-                                
-//                                print(followUserID)
-//                                print(allTitle)
-                                
-                             
-                                
-                                
-//                               }
-                                
-//                            self.TLtableview.reloadData()
-        
+       
+}
 
-//                           }
-                
-                
-                    }
-//
-//                }
-//
-//        }
-    
-        
     
     //    セルの高さ
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

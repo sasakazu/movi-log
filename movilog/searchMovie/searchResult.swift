@@ -41,25 +41,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.words = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
         getRApi()
-        
-//        let db = Firestore.firestore()
-//        let user = Auth.auth().currentUser
-//
-//
-//        db.collection("users").document(user!.uid).getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-////                print("Document data: \(dataDescription)")
-//                
-//                self.userName = document.data()?["nickname"] as! String
-//
-//
-////                print(self.userName)
-//
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
+    
         
 
     }
