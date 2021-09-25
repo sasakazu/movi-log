@@ -49,7 +49,7 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                    usernameを取得
                     self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
                 
-//                    print(self.friendsId)
+                    print(self.friends)
                     
                 }
                     

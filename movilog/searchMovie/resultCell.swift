@@ -11,6 +11,10 @@ import Firebase
 class resultCell: UITableViewCell {
 
     
+//    user情報
+    var userName = ""
+    var userIcon = ""
+    
     @IBOutlet weak var resultTitle: UILabel!
     @IBOutlet weak var directedTitle: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
@@ -19,6 +23,28 @@ class resultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser
+        
+        
+        db.collection("users").document(user!.uid).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+                
+                self.userName = document.data()?["nickname"] as! String
+                
+                
+                
+                
+                print(self.userName)
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -65,7 +91,8 @@ class resultCell: UITableViewCell {
             "artistName": recip?.artistName ?? "",
             "salesDate": recip?.salesDate ?? "",
             "reviewAverage": recip?.reviewAverage ?? "",
-            "userID": user?.uid ?? ""
+            "userID": user?.uid ?? "",
+            "nickName" :self.userName
                 
             ]) { err in
                 if let err = err {

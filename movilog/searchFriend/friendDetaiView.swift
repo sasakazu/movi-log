@@ -14,8 +14,8 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
 //    friend情報
     var friendUserID = ""
     var nickname = ""
-//    var
-    
+    var friendIcon = ""
+    var friendArray:[String] = []
     
 //    コレクション
     private var movietitleItems: [String] = []
@@ -59,15 +59,24 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 
                 self.nickname = document["nickname"] as? String ?? "no name"
+                self.friendIcon = document["email"] as? String ?? "no name"
+            
+                
+                
+//                self.friendIcon = document["userIcon"] as? String ?? "no image"
                 
                 self.friendsLabel.text = self.nickname
                 
+//                print(document.data())
 
-                
+
                 
             } else {
                 print("Document does not exist")
             }
+            
+    
+
         }
         
         
@@ -112,14 +121,31 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
 
         let user = Auth.auth().currentUser
 
-        db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
-            
-            "follow": true,
-            "movieTitle": self.movietitleItems,
-            "artistName": self.artistItems,
-            "followImage": self.imageItems
         
+        db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
+    
+                "follow": true,
+                "followUserID": self.friendUserID
+            ])
+          
+        db.collection("following").document(user!.uid).collection("followingUser").addDocument(data: [
+                
+            
+            "followID": self.friendUserID
         ])
+        
+        
+        
+//        db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
+//
+//            "follow": true,
+//            "movieTitle": self.movietitleItems,
+//            "artistName": self.artistItems,
+//            "followImage": self.imageItems,
+//            "followUserID": self.friendUserID,
+//            "followNickname" : self.nickname
+//
+//        ])
             
       
 

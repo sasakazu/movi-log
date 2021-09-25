@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
@@ -16,6 +17,9 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     private let cellId = "cellId"
     
+////    user情報
+//    var userName = ""
+//    var userIcon = ""
     
     @IBOutlet weak var tableviewTest: UITableView!
     @IBOutlet weak var searchTF: UITextField!
@@ -37,6 +41,25 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.words = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
         getRApi()
+        
+//        let db = Firestore.firestore()
+//        let user = Auth.auth().currentUser
+//
+//
+//        db.collection("users").document(user!.uid).getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+////                print("Document data: \(dataDescription)")
+//                
+//                self.userName = document.data()?["nickname"] as! String
+//
+//
+////                print(self.userName)
+//
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
         
 
     }

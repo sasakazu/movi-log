@@ -51,7 +51,7 @@
             <connections>
                 <outlet property="TLMovieTitle" destination="Tam-iK-L4k" id="b3L-XG-gdt"/>
                 <outlet property="artistLable" destination="waC-vS-FFi" id="vhY-JD-TyG"/>
-                <outlet property="followAction" destination="jan-s1-JGq" id="hma-4z-ZiZ"/>
+                <outlet property="followAction" destination="jan-s1-JGq" id="W2n-VT-f1W"/>
                 <outlet property="followIcon" destination="hbC-on-l37" id="5cB-Gs-Pi8"/>
                 <outlet property="movieImage" destination="elD-ze-AgA" id="OXc-Yk-Vaf"/>
             </connections>

@@ -16,9 +16,14 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private var timeLineLabel: [String] = []
     private var followid: [String] = []
     
+//    followUser情報
+    private var followUserID:String = ""
+    private var followUserIcon:String = ""
+    private var followUsername:[String] = []
+    
 //    followしたポストを代入する配列
 //    映画情報
-    private var allTitle :[String] = []
+    private var allTitle:[String] = []
     private var artistArray: [String] = []
     private var followImageArray: [String] = []
 
@@ -44,40 +49,105 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         let db = Firestore.firestore()
     
 
+//        フォローしたユーザーのIDを取得する
         
-        db.collection("users").document(user!.uid).collection("userFollowing").getDocuments() { [self] (querySnapshot, err) in
+        db.collection("following").document(user!.uid).collection("followingUser").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                
-                
-                if let err = err {
-                               print("\(err)")
-                           } else {
-                               for document in querySnapshot!.documents {
+                for document in querySnapshot!.documents {
+                    
+                    
+                    self.followid = querySnapshot!.documents.compactMap { $0.data()["followID"] as? String }
+                 
+                    
+                    print(self.followid)
+        //        取得したIDからタイムラインを表示させる
+        
+                    db.collection("allPosts").whereField("userID", in: self.followid).getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            for document in querySnapshot!.documents {
+                    
                                 
-                                self.allTitle += document.data()["movieTitle"] as! [String]
-                                self.artistArray += document.data()["artistName"] as! [String]
+//                        self.allTitle = document.data()["title"] as! [String]
+//                        self.allTitle = document.data()["title"] as! String
+                       
+                                
+                                
+                        self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
+                                
+                                
+                        self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
+                                
+                        
+                        
+                        print(self.allTitle)
+//                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+                        self.TLtableview.reloadData()
+                        
+        }
+                    
+            }
+               
+                
+            }
+            
+        }
 
-                                self.followImageArray += document.data()["followImage"] as! [String]
+        
+        
+        
+//        db.collection("users").document(user!.uid).collection("userFollowing").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//
+//
+//                if let err = err {
+//                               print("\(err)")
+//                           } else {
+//                               for document in querySnapshot!.documents {
+//
+//                                self.allTitle += document.data()["movieTitle"] as! [String]
+//                                self.artistArray += document.data()["artistName"] as! [String]
+//
+//                                self.followImageArray += document.data()["followImage"] as! [String]
+//
+//                                self.followUserID = document.data()["followUserID"] as! String
+//
+//                                self.followUsername += querySnapshot!.documents.compactMap { $0.data()["followNickname"] as? String }
+//
+//
+////                                self.followUsername = document.data()["followNickname"]
+//
+//                                print(self.followUsername)
                                 
                                 
-                                print(allTitle)
+//                                self.followUsername = document.data()["followNickname"] as! String
+                                
+//                                print(followUserID)
+//                                print(allTitle)
+                                
+                             
                                 
                                 
-                               }
+//                               }
                                 
-                            self.TLtableview.reloadData()
+//                            self.TLtableview.reloadData()
         
 
-                           }
+//                           }
                 
                 
                     }
-                    
-                }
-
-        }
+//
+//                }
+//
+//        }
     
         
     
@@ -99,18 +169,25 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TLTableViewCell
         
+//        post情報
         cell.TLMovieTitle?.text = allTitle[indexPath.row]
-        cell.artistLable.text = artistArray[indexPath.row]
+//        cell.artistLable.text = artistArray[indexPath.row]
         
-        let url = URL(string: followImageArray[indexPath.row])
-        do {
-            let data = try Data(contentsOf: url!)
-            let image = UIImage(data: data)
-            cell.movieImage.image = image
-            
-        }catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
+        
+//        cell.followAction?.text = followUsername[indexPath.row]
+        
+//        let url = URL(string: followImageArray[indexPath.row])
+//        do {
+//            let data = try Data(contentsOf: url!)
+//            let image = UIImage(data: data)
+//            cell.movieImage.image = image
+//
+//        }catch let err {
+//            print("Error : \(err.localizedDescription)")
+//        }
+        
+//        user情報
+        cell.followAction.text = followUsername[indexPath.row]
         
         
 //        print(followid.count)
