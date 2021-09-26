@@ -63,7 +63,13 @@ class acountEditTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        
+        if indexPath.row == 1 {
+            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "editIcon") as! editIconViewController
+            self.show(myWebView, sender: nil)
             
+            }
        
         if indexPath.row == 2 {
             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "nickname") as! editNicknameViewController

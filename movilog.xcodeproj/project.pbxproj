@@ -31,6 +31,7 @@
 		73A3CBDD26F466400010EF42 /* timeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBDC26F466400010EF42 /* timeLineViewController.swift */; };
 		73A3CBE026F466620010EF42 /* TLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */; };
 		73A3CBE126F466620010EF42 /* TLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */; };
+		73A3CBE42700613C0010EF42 /* editIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBE32700613C0010EF42 /* editIconViewController.swift */; };
 		73B7213826E8B4B100D874F7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */; };
 		73B7213926E8B4B100D874F7 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */; };
 		73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */; };
@@ -99,6 +100,7 @@
 		73A3CBDC26F466400010EF42 /* timeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeLineViewController.swift; sourceTree = "<group>"; };
 		73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTableViewCell.swift; sourceTree = "<group>"; };
 		73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLTableViewCell.xib; sourceTree = "<group>"; };
+		73A3CBE32700613C0010EF42 /* editIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editIconViewController.swift; sourceTree = "<group>"; };
 		73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieCollectionDetail.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */,
 				73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */,
 				73B9E2B726F0A36E005CA82F /* editEmailViewController.swift */,
+				73A3CBE32700613C0010EF42 /* editIconViewController.swift */,
 			);
 			path = editProfile;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				730FC1B926DF7CA100954961 /* resultCell.swift in Sources */,
 				73B9E2B826F0A36E005CA82F /* editEmailViewController.swift in Sources */,
 				73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */,
+				73A3CBE42700613C0010EF42 /* editIconViewController.swift in Sources */,
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,

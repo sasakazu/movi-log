@@ -1183,18 +1183,36 @@
         <!--アイコン-->
         <scene sceneID="zsz-1T-KFY">
             <objects>
-                <viewController id="B9c-wN-c93" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editIcon" id="B9c-wN-c93" customClass="editIconViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Af0-Kh-Yk9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l07-j8-vrZ">
+                                <rect key="frame" x="87" y="64" width="240" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrN-l6-CIj">
+                                <rect key="frame" x="136" y="421" width="142" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="保存する"/>
+                                <connections>
+                                    <action selector="saveBtn:" destination="B9c-wN-c93" eventType="touchUpInside" id="8Pt-si-9PC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="V1M-kU-OVG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="アイコン" id="0I8-2H-OLW"/>
+                    <connections>
+                        <outlet property="iconImageView" destination="l07-j8-vrZ" id="bYu-mn-vWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtH-de-mYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3499" y="2044"/>
+            <point key="canvasLocation" x="3498.5507246376815" y="2043.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
