@@ -379,8 +379,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="aEo-MU-EHI" kind="relationship" relationship="viewControllers" id="3ZS-wi-s4W"/>
-                        <segue destination="n2N-IR-Yz8" kind="relationship" relationship="viewControllers" id="qvv-Hx-U4P"/>
                         <segue destination="cTA-DX-yeW" kind="relationship" relationship="viewControllers" id="9mh-Tg-2Oc"/>
+                        <segue destination="n2N-IR-Yz8" kind="relationship" relationship="viewControllers" id="qvv-Hx-U4P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzM-O3-qx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1199,6 +1199,24 @@
                                 <state key="normal" title="保存する"/>
                                 <connections>
                                     <action selector="saveBtn:" destination="B9c-wN-c93" eventType="touchUpInside" id="8Pt-si-9PC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyW-QS-HYh">
+                                <rect key="frame" x="204" y="316" width="123" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ライブラリー"/>
+                                <connections>
+                                    <action selector="albumBtn:" destination="B9c-wN-c93" eventType="touchUpInside" id="pyo-26-mTQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJZ-79-zmv">
+                                <rect key="frame" x="87" y="317" width="68" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="カメラ"/>
+                                <connections>
+                                    <action selector="cameraBtn:" destination="B9c-wN-c93" eventType="touchUpInside" id="BET-Hj-qUW"/>
                                 </connections>
                             </button>
                         </subviews>
