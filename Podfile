@@ -12,6 +12,8 @@ target 'movilog' do
   pod 'FirebaseFirestore'
   pod 'Firebase/Storage'
   pod 'SDWebImage'
+  pod 'FirebaseUI'
+  pod 'FirebaseUI/Storage'
   
   target 'movilogTests' do
     inherit! :search_paths

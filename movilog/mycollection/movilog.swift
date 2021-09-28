@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FirebaseStorageUI
 
 class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
@@ -31,6 +32,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     @IBOutlet weak var username: UIButton!
     @IBOutlet weak var movilogColleciton: UICollectionView!
+   
+    
+    @IBOutlet weak var userImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -46,8 +50,6 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         let db = Firestore.firestore()
         
 //        ユーザー情報を取得
-        
-        
         let docRef = db.collection("users").document(user!.uid)
 
         docRef.getDocument { (document, error) in
@@ -104,10 +106,20 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             
             }
     
-    
+        
+        if let user = Auth.auth().currentUser {
+//        ユーザーアイコンの取得
+            let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
+
+        userImage.sd_setImage(with:storageref)
+        
+//        print("my icon is url\(storageref)")
+        
+        
+        }
     }
     
-    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
