@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class editIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -16,7 +17,18 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        if let user = Auth.auth().currentUser {
+//        ユーザーアイコンの取得
+            let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
+
+        iconImageView.sd_setImage(with:storageref)
+        
+//        print("my icon is url\(storageref)")
+        
+        
+        }
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -25,6 +37,8 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func saveBtn(_ sender: Any) {
         
         let user = Auth.auth().currentUser
+        
+
         
         let image:UIImage! = iconImageView.image
         
@@ -132,6 +146,9 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
            
         
     }
+    
+    
+    
     
     
     

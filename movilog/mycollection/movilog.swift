@@ -39,6 +39,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk()
 
         let user = Auth.auth().currentUser
             
@@ -153,8 +156,6 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.reviewData = reviewItems[indexPath.row]
         
           performSegue(withIdentifier: "collectionDetail",sender: nil)
-          
-          
    
       }
    
