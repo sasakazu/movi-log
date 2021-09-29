@@ -25,6 +25,7 @@
 		738400F026C67A8C0070F8CF /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400EF26C67A8C0070F8CF /* signup.swift */; };
 		738400F226C67B760070F8CF /* movilog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400F126C67B760070F8CF /* movilog.swift */; };
 		738400F426C67BA30070F8CF /* searchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400F326C67BA20070F8CF /* searchView.swift */; };
+		73996AD42704709700429050 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73996AD32704709700429050 /* profileViewController.swift */; };
 		73A3CBD726F1EE400010EF42 /* friendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */; };
 		73A3CBD826F1EE400010EF42 /* friendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */; };
 		73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */; };
@@ -94,6 +95,7 @@
 		738400EF26C67A8C0070F8CF /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
 		738400F126C67B760070F8CF /* movilog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilog.swift; sourceTree = "<group>"; };
 		738400F326C67BA20070F8CF /* searchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchView.swift; sourceTree = "<group>"; };
+		73996AD32704709700429050 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendCollectionViewCell.swift; sourceTree = "<group>"; };
 		73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = friendCollectionViewCell.xib; sourceTree = "<group>"; };
 		73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendMovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				73B7213A26E8BA1800D874F7 /* movieCollectionDetail.swift */,
 				73B7213626E8B4B100D874F7 /* CollectionViewCell.swift */,
 				73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */,
+				73996AD32704709700429050 /* profileViewController.swift */,
 			);
 			path = mycollection;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				730FC1B926DF7CA100954961 /* resultCell.swift in Sources */,
 				73B9E2B826F0A36E005CA82F /* editEmailViewController.swift in Sources */,
 				73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */,
+				73996AD42704709700429050 /* profileViewController.swift in Sources */,
 				73A3CBE42700613C0010EF42 /* editIconViewController.swift in Sources */,
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
