@@ -16,7 +16,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     var nickname = ""
     var friendIcon = ""
     var friendArray:[String] = []
-    
+    var friendcout:[String] = []
 //    コレクション
     private var movietitleItems: [String] = []
     private var imageItems: [String] = []
@@ -35,6 +35,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var friendsLabel: UILabel!
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var friendsCollectionView: UICollectionView!
+    @IBOutlet weak var movieFriendCount: UIButton!
     
     
     override func viewDidLoad() {
@@ -108,8 +109,27 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
                     
                 }
             
+            
+        
+        
+//        映画仲間の数を取得
+        
+            db.collection("users").document(self.friendUserID).collection("userFollowing").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+
+                    
+                    self.friendcout = querySnapshot!.documents.compactMap { $0.data()["followUserID"] as? String }
+                    
+//                    print(self.friendCount.count)
+                    self.movieFriendCount.setTitle("映画仲間：\(self.friendcout.count)人", for: .normal)
+
+                    }
+                }
             }
-     
+        }
 
         
     }
@@ -165,8 +185,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     @IBAction func followingBtn(_ sender: Any) {
     }
     
-    @IBAction func follweredBtn(_ sender: Any) {
-    }
+
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="friendsCollectionView" destination="22d-ub-gNz" id="8js-G2-Bta"/>
                         <outlet property="friendsLabel" destination="FIZ-Ea-mfN" id="GGj-0W-hxE"/>
+                        <outlet property="movieFriendCount" destination="Ebu-BT-DuN" id="T8Z-Zs-fxg"/>
                         <outlet property="userIcon" destination="ew8-z0-vyz" id="ddq-eh-pLB"/>
                         <segue destination="nbL-tE-gxq" kind="show" identifier="goFriendMovieDetail" id="oYc-aC-GYx"/>
                     </connections>

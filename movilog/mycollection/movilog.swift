@@ -124,7 +124,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                         }
                     }
                 }
-                
+              
+            
+            
             }
     
         
