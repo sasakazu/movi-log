@@ -29,12 +29,12 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
 //    ユーザー情報
     var nickname = ""
+    var friendCount:[String] = []
     
     @IBOutlet weak var username: UIButton!
     @IBOutlet weak var movilogColleciton: UICollectionView!
-   
-    
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var movieFriend: UIButton!
     
     
     override func viewDidLoad() {
@@ -79,8 +79,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             } else {
                 for document in querySnapshot!.documents {
 
+//                    print(document.data().count)
                     
-//                    print("\(document.documentID) => \(String(describing: document.data()))")
+//                    print("\(document.documentID) => \(String(describing: documents.data().count))")
 
 //                    titleを取得
                     self.titleItems = querySnapshot!.documents.compactMap { $0.data()["title"] as? String }
@@ -94,8 +95,6 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     
                     
-//                    print(self.saleDataItems)
-                    
                     self.collectionItem = document.data()
                     
                 }
@@ -107,8 +106,30 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     
                 }
             
+            
+//            映画仲間の数を取得
+            
+            db.collection("users").document(user!.uid).collection("userFollowing").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+    
+                        
+                        self.friendCount = querySnapshot!.documents.compactMap { $0.data()["followUserID"] as? String }
+                        
+                        print(self.friendCount.count)
+                        self.movieFriend.setTitle("映画仲間：\(self.friendCount.count)人", for: .normal)
+ 
+                        }
+                    }
+                }
+                
             }
     
+        
+        
+        
         
         if let user = Auth.auth().currentUser {
 //        ユーザーアイコンの取得
@@ -174,6 +195,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
       }
     
 
+    
+    
+    
 
 }
     
