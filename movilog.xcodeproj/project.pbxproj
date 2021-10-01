@@ -27,6 +27,8 @@
 		738400F426C67BA30070F8CF /* searchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738400F326C67BA20070F8CF /* searchView.swift */; };
 		73996AD42704709700429050 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73996AD32704709700429050 /* profileViewController.swift */; };
 		73996AD62705BFFB00429050 /* movieFriendTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73996AD52705BFFB00429050 /* movieFriendTableView.swift */; };
+		73996AD927071B3600429050 /* movieFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73996AD727071B3600429050 /* movieFTableViewCell.swift */; };
+		73996ADA27071B3600429050 /* movieFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73996AD827071B3600429050 /* movieFTableViewCell.xib */; };
 		73A3CBD726F1EE400010EF42 /* friendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */; };
 		73A3CBD826F1EE400010EF42 /* friendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */; };
 		73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */; };
@@ -98,6 +100,8 @@
 		738400F326C67BA20070F8CF /* searchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchView.swift; sourceTree = "<group>"; };
 		73996AD32704709700429050 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		73996AD52705BFFB00429050 /* movieFriendTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieFriendTableView.swift; sourceTree = "<group>"; };
+		73996AD727071B3600429050 /* movieFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieFTableViewCell.swift; sourceTree = "<group>"; };
+		73996AD827071B3600429050 /* movieFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = movieFTableViewCell.xib; sourceTree = "<group>"; };
 		73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendCollectionViewCell.swift; sourceTree = "<group>"; };
 		73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = friendCollectionViewCell.xib; sourceTree = "<group>"; };
 		73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendMovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				73B7213726E8B4B100D874F7 /* CollectionViewCell.xib */,
 				73996AD32704709700429050 /* profileViewController.swift */,
 				73996AD52705BFFB00429050 /* movieFriendTableView.swift */,
+				73996AD727071B3600429050 /* movieFTableViewCell.swift */,
+				73996AD827071B3600429050 /* movieFTableViewCell.xib */,
 			);
 			path = mycollection;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				7371F56326BBF42B0099F69C /* Assets.xcassets in Resources */,
 				73A3CBD826F1EE400010EF42 /* friendCollectionViewCell.xib in Resources */,
 				7371F56126BBF4290099F69C /* Main.storyboard in Resources */,
+				73996ADA27071B3600429050 /* movieFTableViewCell.xib in Resources */,
 				73B9E2AA26ECA0B3005CA82F /* searchFriendsTableViewCell.xib in Resources */,
 				730FC1BA26DF7CA100954961 /* resultCell.xib in Resources */,
 			);
@@ -597,6 +604,7 @@
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
 				73A3CBDD26F466400010EF42 /* timeLineViewController.swift in Sources */,
+				73996AD927071B3600429050 /* movieFTableViewCell.swift in Sources */,
 				73A3CBD726F1EE400010EF42 /* friendCollectionViewCell.swift in Sources */,
 				73B9E2B326EDE8E1005CA82F /* acountEditTableViewController.swift in Sources */,
 				73996AD62705BFFB00429050 /* movieFriendTableView.swift in Sources */,
