@@ -12,7 +12,10 @@ import SDWebImage
 class editIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
+    var userIconsave:String = ""
+    
     @IBOutlet weak var iconImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
         let date = NSDate()
               let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
         let storageRef = Storage.storage().reference().child("images").child(user!.uid).child("\(user!.uid).jpg")
+
+        
               let metaData = StorageMetadata()
               metaData.contentType = "image/jpg"
               if let uploadData = self.iconImageView.image?.jpegData(compressionQuality: 0.9) {
@@ -58,10 +63,31 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
                               print("error: \(error?.localizedDescription)")
                           }
                           print("url: \(url?.absoluteString)")
+                          
+                          self.userIconsave = url?.absoluteString ?? "no url"
+                          
+//                          print(self.userIconsave)
+                          //        userに登録
+//                                     
+//                                     userIconsave = storageRef
+                                     
+                                     let db = Firestore.firestore()
+                                     
+                                     db.collection("users").document(user!.uid).updateData([
+                                        "userIcon": self.userIconsave
+                                     ]) { err in
+                                         if let err = err {
+                                             print("Error writing document: \(err)")
+                                         } else {
+                                             print("Document successfully written!")
+                                         }
+                                     }
+                             
                       })
                   }
               }
         
+   
     }
     
     // 書き込み完了結果の受け取り

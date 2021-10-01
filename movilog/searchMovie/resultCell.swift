@@ -34,7 +34,7 @@ class resultCell: UITableViewCell {
 //                print("Document data: \(dataDescription)")
                 
                 self.userName = document.data()?["nickname"] as! String
-                
+                self.userIcon = document.data()?["userIcon"] as! String
                 
                 
                 
@@ -92,7 +92,8 @@ class resultCell: UITableViewCell {
             "salesDate": recip?.salesDate ?? "",
             "reviewAverage": recip?.reviewAverage ?? "",
             "userID": user?.uid ?? "",
-            "nickName" :self.userName
+            "nickName" :self.userName,
+            "userIcon": self.userIcon
                 
             ]) { err in
                 if let err = err {

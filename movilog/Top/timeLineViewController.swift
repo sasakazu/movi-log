@@ -18,12 +18,13 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     
 //    followUser情報
     private var followUserID:String = ""
-    private var followUserIcon:String = ""
+    private var followUserIcon:[String] = []
     private var followUsername:[String] = []
     
 //    followしたポストを代入する配列
 //    映画情報
     private var allTitle:[String] = []
+    private var movieImage:[String] = []
     private var artistArray: [String] = []
     private var followImageArray: [String] = []
 
@@ -70,12 +71,13 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                         } else {
                             for document in querySnapshot!.documents {
                 
-                                
+//                                映画情報
                         self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
-                                
-                                
+                        self.artistArray = querySnapshot!.documents.compactMap { $0.data()["artistName"] as? String}
+                        self.movieImage = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String}
+//                                ユーザー情報
                         self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
-                                
+                        self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
                         
                         
 //                        print(self.allTitle)
@@ -117,27 +119,32 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
 //        post情報
         cell.TLMovieTitle?.text = allTitle[indexPath.row]
-//        cell.artistLable.text = artistArray[indexPath.row]
+        cell.artistLable.text = artistArray[indexPath.row]
+
         
-        
-//        cell.followAction?.text = followUsername[indexPath.row]
-        
-//        let url = URL(string: followImageArray[indexPath.row])
-//        do {
-//            let data = try Data(contentsOf: url!)
-//            let image = UIImage(data: data)
-//            cell.movieImage.image = image
-//
-//        }catch let err {
-//            print("Error : \(err.localizedDescription)")
-//        }
+        let myurl = URL(string: movieImage[indexPath.row])
+        do {
+            let data = try Data(contentsOf: myurl!)
+            let image = UIImage(data: data)
+            cell.movieImage.image = image
+
+        }catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
         
 //        user情報
         cell.followAction.text = followUsername[indexPath.row]
+//        ユーザーアイコン
+        let url = URL(string: followUserIcon[indexPath.row])
+        do {
+            let data = try Data(contentsOf: url!)
+            let image = UIImage(data: data)
+            cell.followIcon.image = image
+
+        }catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
         
-        
-//        print(followid.count)
-    
         
         return cell
     }
