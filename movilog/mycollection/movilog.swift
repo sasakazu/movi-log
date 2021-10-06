@@ -10,7 +10,7 @@ import Firebase
 import SDWebImage
 import FirebaseStorageUI
 
-class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     
     private var titleItems: [String] = []
@@ -123,11 +123,10 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
  
                         }
                     }
-                }
+            }}
               
             
-            
-            }
+       
     
         
         
@@ -137,17 +136,21 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 //        ユーザーアイコンの取得
             let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
 
-        userImage.sd_setImage(with:storageref)
+            self.userImage.sd_setImage(with:storageref)
         
 //        print("my icon is url\(storageref)")
         
         
-            userImage.layer.cornerRadius = userImage.frame.size.width * 0.5
-            userImage.clipsToBounds = true
+            self.userImage.layer.cornerRadius = self.userImage.frame.size.width * 0.5
+            self.userImage.clipsToBounds = true
             
         }
+        
+        
+        
     }
     
+
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -201,7 +204,31 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
 
     
+//    cellの大きさを変更
     
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//         print(view.frame.height)
+//
+//         let width: CGFloat = view.frame.width / 7 - 1
+//
+//         print(view.frame.height)
+//         if(indexPath.section == 0){
+//             return CGSize(width: width, height: 20)
+//         }else{
+//             if(view.frame.height>480){
+//                 let height: CGFloat = (view.frame.height - 100 ) / 7 - 7
+//                 print("view.frame.height>480")
+//                 print(height)
+//                 return CGSize(width: width, height: height)
+//             }else{
+//                 let height: CGFloat = (view.frame.height - 120 ) / 8 - 2
+//                 print("view.frame.height<=480")
+//                 print(height)
+//                 return CGSize(width: width, height: height)
+//             }
+//         }
+//     }
     
 
 }

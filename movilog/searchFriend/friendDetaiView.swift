@@ -131,6 +131,14 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
             }
         }
 
+//        アイコン表示
+        let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(friendUserID).child("\(self.friendUserID).jpg")
+
+        self.userIcon.sd_setImage(with:storageref)
+
+        self.userIcon.layer.cornerRadius = self.userIcon.frame.size.width * 0.5
+        self.userIcon.clipsToBounds = true
+
         
     }
     
