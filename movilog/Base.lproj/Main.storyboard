@@ -390,14 +390,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeImage" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-s6-NX1">
-                                <rect key="frame" x="20" y="124" width="100" height="100"/>
+                                <rect key="frame" x="20" y="111" width="72" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="bXA-Qb-Ngx"/>
-                                    <constraint firstAttribute="width" constant="100" id="kr9-fV-1cm"/>
+                                    <constraint firstAttribute="height" constant="72" id="bXA-Qb-Ngx"/>
+                                    <constraint firstAttribute="width" constant="72" id="kr9-fV-1cm"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-Zf-jLB">
-                                <rect key="frame" x="159" y="124" width="225" height="30"/>
+                                <rect key="frame" x="100" y="111" width="225" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="irY-TI-96k"/>
                                     <constraint firstAttribute="width" constant="225" id="uCZ-qA-5bH"/>
@@ -408,11 +408,11 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-O9-hNV">
-                                <rect key="frame" x="0.0" y="378" width="414" height="435"/>
+                                <rect key="frame" x="0.0" y="299" width="414" height="514"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="Wl4-HG-6Iv"/>
-                                    <constraint firstAttribute="height" constant="435" id="vtx-jO-lub"/>
+                                    <constraint firstAttribute="height" constant="514" id="vtx-jO-lub"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QF9-5m-rM2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -435,18 +435,6 @@
                                     <outlet property="delegate" destination="ibM-Zt-Mxq" id="k6Q-gK-9em"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-Xg-5kS">
-                                <rect key="frame" x="20" y="306" width="374" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="vAY-yC-bs6"/>
-                                    <constraint firstAttribute="height" constant="31" id="wuK-FJ-qna"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="観た"/>
-                                    <segment title="観たい"/>
-                                    <segment title="マイベスト"/>
-                                </segments>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuP-jF-hpN">
                                 <rect key="frame" x="286" y="194" width="108" height="30"/>
                                 <constraints>
@@ -459,7 +447,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2i-Gt-uT5">
-                                <rect key="frame" x="20" y="246" width="185" height="32"/>
+                                <rect key="frame" x="20" y="194" width="185" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="kfd-hJ-5wi"/>
                                     <constraint firstAttribute="height" constant="32" id="lnW-tc-zcd"/>
@@ -472,23 +460,35 @@
                                     <segue destination="hWG-LA-aUp" kind="show" id="rHt-LZ-s88"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-Xg-5kS">
+                                <rect key="frame" x="20" y="260" width="374" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="vAY-yC-bs6"/>
+                                    <constraint firstAttribute="height" constant="31" id="wuK-FJ-qna"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="観た"/>
+                                    <segment title="観たい"/>
+                                    <segment title="マイベスト"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y2m-IY-nFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" constant="36" id="5kP-n8-qKD"/>
+                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" constant="23" id="5kP-n8-qKD"/>
                             <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="9VF-Xg-5kS" secondAttribute="trailing" constant="20" id="7aX-Np-Kft"/>
-                            <constraint firstItem="QaH-s6-NX1" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" constant="36" id="94j-XU-Sf7"/>
+                            <constraint firstItem="QaH-s6-NX1" firstAttribute="top" secondItem="y2m-IY-nFj" secondAttribute="top" constant="23" id="94j-XU-Sf7"/>
                             <constraint firstItem="OY7-O9-hNV" firstAttribute="bottom" secondItem="y2m-IY-nFj" secondAttribute="bottom" id="DWN-Me-262"/>
-                            <constraint firstItem="9VF-Xg-5kS" firstAttribute="top" secondItem="l2i-Gt-uT5" secondAttribute="bottom" constant="28" id="EtQ-Et-lBc"/>
+                            <constraint firstItem="9VF-Xg-5kS" firstAttribute="top" secondItem="l2i-Gt-uT5" secondAttribute="bottom" constant="34" id="EtQ-Et-lBc"/>
                             <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="l2i-Gt-uT5" secondAttribute="trailing" constant="209" id="EwE-u1-ce7"/>
-                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="leading" secondItem="QaH-s6-NX1" secondAttribute="trailing" constant="39" id="Fgd-kO-nla"/>
-                            <constraint firstItem="l2i-Gt-uT5" firstAttribute="top" secondItem="QaH-s6-NX1" secondAttribute="bottom" constant="22" id="HbI-mK-0k0"/>
-                            <constraint firstItem="VuP-jF-hpN" firstAttribute="top" secondItem="k9R-Zf-jLB" secondAttribute="bottom" constant="40" id="KHA-4z-Ebe"/>
-                            <constraint firstItem="OY7-O9-hNV" firstAttribute="top" secondItem="9VF-Xg-5kS" secondAttribute="bottom" constant="41" id="Tqx-7C-sJw"/>
+                            <constraint firstItem="k9R-Zf-jLB" firstAttribute="leading" secondItem="QaH-s6-NX1" secondAttribute="trailing" constant="8" id="Fgd-kO-nla"/>
+                            <constraint firstItem="l2i-Gt-uT5" firstAttribute="top" secondItem="QaH-s6-NX1" secondAttribute="bottom" constant="11" id="HbI-mK-0k0"/>
+                            <constraint firstItem="VuP-jF-hpN" firstAttribute="top" secondItem="k9R-Zf-jLB" secondAttribute="bottom" constant="53" id="KHA-4z-Ebe"/>
+                            <constraint firstItem="OY7-O9-hNV" firstAttribute="top" secondItem="9VF-Xg-5kS" secondAttribute="bottom" constant="8" id="Tqx-7C-sJw"/>
                             <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="VuP-jF-hpN" secondAttribute="trailing" constant="20" id="fM5-MR-j2i"/>
                             <constraint firstItem="9VF-Xg-5kS" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" constant="20" id="gfc-Fh-EIg"/>
-                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="k9R-Zf-jLB" secondAttribute="trailing" constant="30" id="tDC-kS-CN3"/>
+                            <constraint firstItem="y2m-IY-nFj" firstAttribute="trailing" secondItem="k9R-Zf-jLB" secondAttribute="trailing" constant="89" id="tDC-kS-CN3"/>
                             <constraint firstItem="QaH-s6-NX1" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" constant="20" id="uNg-cc-Jhn"/>
                             <constraint firstItem="l2i-Gt-uT5" firstAttribute="leading" secondItem="y2m-IY-nFj" secondAttribute="leading" constant="20" id="yjq-fZ-grI"/>
                             <constraint firstItem="OY7-O9-hNV" firstAttribute="trailing" secondItem="y2m-IY-nFj" secondAttribute="trailing" id="zIG-K4-Ev6"/>
@@ -801,7 +801,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-dV-5VK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作品・監督・タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-ra-wJO">
                                         <rect key="frame" x="97.5" y="43" width="219" height="37"/>
@@ -848,7 +848,7 @@
                                     <constraint firstAttribute="trailing" secondItem="yTS-C8-oS9" secondAttribute="trailing" constant="49" id="qeC-58-1T2"/>
                                     <constraint firstAttribute="trailing" secondItem="Yxf-ra-wJO" secondAttribute="trailing" constant="97.5" id="siF-mg-Sbn"/>
                                     <constraint firstItem="yTS-C8-oS9" firstAttribute="top" secondItem="wlu-Kl-1kb" secondAttribute="bottom" constant="29" id="zX0-Q3-beW"/>
-                                    <constraint firstAttribute="height" constant="808" id="ziF-dY-A8b"/>
+                                    <constraint firstAttribute="height" constant="725" id="ziF-dY-A8b"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -857,7 +857,7 @@
                         <constraints>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="EUn-Nf-sG5"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="HX1-D8-cPh"/>
-                            <constraint firstItem="BL9-2i-RL9" firstAttribute="bottom" secondItem="dgB-dV-5VK" secondAttribute="bottom" constant="-83" id="KCb-Wb-Ntq"/>
+                            <constraint firstItem="BL9-2i-RL9" firstAttribute="bottom" secondItem="dgB-dV-5VK" secondAttribute="bottom" id="KCb-Wb-Ntq"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="leading" secondItem="BL9-2i-RL9" secondAttribute="leading" id="c1I-ID-tds"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="top" secondItem="BL9-2i-RL9" secondAttribute="top" id="lCm-UX-dbH"/>
                             <constraint firstItem="dgB-dV-5VK" firstAttribute="trailing" secondItem="BL9-2i-RL9" secondAttribute="trailing" id="u8q-1X-tsc"/>
@@ -1273,7 +1273,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nad-hY-2DL"/>
+        <segue reference="sAe-Ur-mhH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>

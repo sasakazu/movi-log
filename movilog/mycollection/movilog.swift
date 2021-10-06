@@ -142,6 +142,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 //        print("my icon is url\(storageref)")
         
         
+            userImage.layer.cornerRadius = userImage.frame.size.width * 0.5
+            userImage.clipsToBounds = true
+            
         }
     }
     

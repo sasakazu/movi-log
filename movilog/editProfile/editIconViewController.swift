@@ -24,11 +24,18 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
 //        ユーザーアイコンの取得
             let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
 
+            
+//            iconImageView.sd_setImage(with:storageref))?.resized(size: CGSize(width: 100, height: 100))
+            
         iconImageView.sd_setImage(with:storageref)
         
+//            iconImageView.image = sd_setImage(with: storageref)
+            
 //        print("my icon is url\(storageref)")
         
-        
+//            imageseihoukei.image = UIImage(named: "im")?.resized(size: CGSize(width: 100, height: 100))
+            
+            
         }
         
         
@@ -100,6 +107,15 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
 //             label.text = "Save Failed !"
          }
          else{
+             
+//             let resizedImage = selectedImg.convert(toSize:CGSize(width:100.0, height:100.0), scale: UIScreen.main.scale)
+//
+//               // TODO: whatever you want to do with your resized image
+//               employeePhoto.image = resizedImage
+//
+             
+             
+             
 //             label.text = "Save Succeeded"
          }
      }
@@ -137,6 +153,13 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
             iconImageView.contentMode = .scaleAspectFit
             iconImageView.image = pickedImage
             
+            
+            let resizedImage = pickedImage.resized(size: CGSize(width: 100, height: 100))
+
+              // TODO: whatever you want to do with your resized image
+              iconImageView.image = resizedImage
+            
+            
         }
  
         //閉じる処理
@@ -173,10 +196,18 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
-    
-    
-    
-    
-    
-    
 }
+
+
+extension UIImage {
+    func resized(size: CGSize) -> UIImage {
+        // リサイズ後のサイズを指定して`UIGraphicsImageRenderer`を作成する
+        let renderer = UIGraphicsImageRenderer(size: size)
+
+        return renderer.image { (context) in
+            // 描画を行う
+            draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+}
+

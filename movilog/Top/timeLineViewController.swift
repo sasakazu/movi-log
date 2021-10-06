@@ -83,9 +83,10 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
 //                        print(self.allTitle)
 //                    print("\(document.documentID) => \(document.data())")
                 }
-            }
-                        self.TLtableview.reloadData()
+            }    
                         
+                        self.TLtableview.reloadData()
+                    
                     }
                     
                 }

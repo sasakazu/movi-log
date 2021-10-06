@@ -22,6 +22,11 @@ class TLTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+
+        followIcon.layer.cornerRadius = followIcon.frame.size.width * 0.5
+        followIcon.clipsToBounds = true
+        
         // Initialization code
     }
 
@@ -30,5 +35,10 @@ class TLTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     
+
 }
+    
+
+
