@@ -8,14 +8,10 @@
 import UIKit
 import Firebase
 
-
-
 class searchFriendsTableViewCell: UITableViewCell {
-
     
 //    var followID = ""
 
-    
     @IBOutlet weak var friendIconView: UIImageView!
     @IBOutlet weak var friendsLabel: UILabel!
     

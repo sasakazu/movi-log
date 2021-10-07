@@ -13,12 +13,14 @@ class profileViewController: UIViewController {
 
     
     @IBOutlet weak var profileIcon: UIImageView!
-    
     @IBOutlet weak var profileName: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileIcon.layer.cornerRadius = profileIcon.frame.size.width * 0.5
+        profileIcon.clipsToBounds = true
 
         let user = Auth.auth().currentUser
         let db = Firestore.firestore()

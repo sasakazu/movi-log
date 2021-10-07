@@ -46,6 +46,7 @@
 		73B9E2B326EDE8E1005CA82F /* acountEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */; };
 		73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */; };
 		73B9E2B826F0A36E005CA82F /* editEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B726F0A36E005CA82F /* editEmailViewController.swift */; };
+		73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E937E2270EF89C000612DF /* tLMovieDetailViewController.swift */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -119,6 +120,7 @@
 		73B9E2B226EDE8E1005CA82F /* acountEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acountEditTableViewController.swift; sourceTree = "<group>"; };
 		73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNicknameViewController.swift; sourceTree = "<group>"; };
 		73B9E2B726F0A36E005CA82F /* editEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editEmailViewController.swift; sourceTree = "<group>"; };
+		73E937E2270EF89C000612DF /* tLMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tLMovieDetailViewController.swift; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +223,7 @@
 		7371F55826BBF4290099F69C /* movilog */ = {
 			isa = PBXGroup;
 			children = (
-				73A3CBDB26F4662B0010EF42 /* Top */,
+				73A3CBDB26F4662B0010EF42 /* Timeline */,
 				73B9E2B426EDEDE3005CA82F /* editProfile */,
 				73B9E2AB26ECA0CE005CA82F /* searchFriend */,
 				730FC1AA26DF521400954961 /* model */,
@@ -282,14 +284,15 @@
 			path = mycollection;
 			sourceTree = "<group>";
 		};
-		73A3CBDB26F4662B0010EF42 /* Top */ = {
+		73A3CBDB26F4662B0010EF42 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
 				73A3CBDC26F466400010EF42 /* timeLineViewController.swift */,
 				73A3CBDE26F466610010EF42 /* TLTableViewCell.swift */,
 				73A3CBDF26F466620010EF42 /* TLTableViewCell.xib */,
+				73E937E2270EF89C000612DF /* tLMovieDetailViewController.swift */,
 			);
-			path = Top;
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		73B9E2AB26ECA0CE005CA82F /* searchFriend */ = {
@@ -600,6 +603,7 @@
 			files = (
 				738400F426C67BA30070F8CF /* searchView.swift in Sources */,
 				73B7218826EB63EC00D874F7 /* searchFriends.swift in Sources */,
+				73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */,
 				73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
