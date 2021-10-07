@@ -14,8 +14,11 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     private let cellId = "cellId"
+    
+//    friend情報
     private var friends: [String] = []
     private var friendsId: [String] = []
+    private var friendsIcon: [String] = []
     var followID = ""
     
     @IBOutlet weak var searchFriendTableView: UITableView!
@@ -44,9 +47,10 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                    usernameを取得
                     self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
                     
+                    self.friendsIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
                     
-                    print(self.friends)
-//                    usernameを取得
+//                    print(self.friends)
+//                    useridを取得
                     self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
                 
                     print(self.friends)
@@ -66,7 +70,10 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     }
     
-
+//    //    セルの高さ
+//        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//               return 100
+//           }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -82,14 +89,23 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         self.followID = friendsId[indexPath.row]
         
+        //        ユーザーアイコン
+        let url = URL(string: friendsIcon[indexPath.row])
+            do {
+                let data = try Data(contentsOf: url!)
+                let image = UIImage(data: data)
+                cell.friendIconView.image = image
+
+            }catch let err {
+                print("Error : \(err.localizedDescription)")
+            }
+        
         return cell
         
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-       
-        
         followID = friendsId[indexPath.row]
         print(followID)
         performSegue(withIdentifier: "sendID", sender: nil)
@@ -101,8 +117,6 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 
         if segue.identifier == "sendID" {
             if let nextVC = segue.destination as? friendDetaiView {
-           
-                
               
             nextVC.friendUserID = followID
             
@@ -112,27 +126,7 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
 }
     
-//    @IBAction func followTapped(_ sender: Any) {
-//
-//        let db = Firestore.firestore()
-//
-//           let user = Auth.auth().currentUser
-//
-//           db.collection("following").document(user!.uid).collection("userFollowing").document(
-//               followID).setData([
-//               "follow": true
-//
-//           ]) { err in
-//               if let err = err {
-//                   print("Error writing document: \(err)")
-//               } else {
-//                   print("Document successfully written!")
-//
-//           }
-//
-//       }
-//
-//    }
+
     
     
     
@@ -145,23 +139,3 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 
 
 
-//func follow() {
-//
-//    let db = Firestore.firestore()
-//
-//    let user = Auth.auth().currentUser
-//
-//    db.collection("following").document(user!.uid).collection("userFollowing").document(
-//        followID).setData([
-//        "follow": true
-//
-//    ]) { err in
-//        if let err = err {
-//            print("Error writing document: \(err)")
-//        } else {
-//            print("Document successfully written!")
-//
-//    }
-//
-//}
-//    }

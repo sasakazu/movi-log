@@ -78,15 +78,15 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
 //                                     
 //                                     userIconsave = storageRef
                                      
-                                     let db = Firestore.firestore()
+                        let db = Firestore.firestore()
                                      
-                                     db.collection("users").document(user!.uid).updateData([
+                        db.collection("users").document(user!.uid).updateData([
                                         "userIcon": self.userIconsave
-                                     ]) { err in
-                                         if let err = err {
-                                             print("Error writing document: \(err)")
-                                         } else {
-                                             print("Document successfully written!")
+                            ]) { err in
+                            if let err = err {
+                                print("Error writing document: \(err)")
+                                    } else {
+                        print("Document successfully written!")
                                          }
                                      }
                              

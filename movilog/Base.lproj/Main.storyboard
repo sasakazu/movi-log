@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--映画詳細-->
+        <scene sceneID="VwD-1J-ybK">
+            <objects>
+                <viewController id="Umo-jP-vPS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x4X-s7-eGf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ycz-Mh-h8A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="映画詳細" id="lZY-M6-XNx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0PL-rT-acB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1245" y="-942"/>
+        </scene>
         <!--タイムライン-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -50,6 +66,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TLtableview" destination="XDy-QL-TQ1" id="lYB-mN-9GF"/>
+                        <segue destination="Umo-jP-vPS" kind="show" id="04O-EQ-vW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mij-a2-iyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155.072463768116" y="-273.21428571428572"/>
+            <point key="canvasLocation" x="2006" y="-273"/>
         </scene>
         <!--友達詳細-->
         <scene sceneID="guh-gk-ioa">
@@ -208,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJg-wX-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950.7246376811595" y="-273.21428571428572"/>
+            <point key="canvasLocation" x="2754" y="-273"/>
         </scene>
         <!--映画詳細-->
         <scene sceneID="XNa-69-SUC">
@@ -274,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgx-1Z-tTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3711.594202898551" y="-273.21428571428572"/>
+            <point key="canvasLocation" x="3499" y="-273"/>
         </scene>
         <!--Login-->
         <scene sceneID="j9f-LQ-zsZ">
@@ -1309,7 +1326,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nad-hY-2DL"/>
+        <segue reference="iXJ-bT-sTt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>

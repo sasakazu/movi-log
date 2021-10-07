@@ -16,14 +16,17 @@ class searchFriendsTableViewCell: UITableViewCell {
 //    var followID = ""
 
     
+    @IBOutlet weak var friendIconView: UIImageView!
     @IBOutlet weak var friendsLabel: UILabel!
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        
+
+        friendIconView.layer.cornerRadius = friendIconView.frame.size.width * 0.5
+        friendIconView.clipsToBounds = true
         
         // Initialization code
     }
@@ -34,30 +37,6 @@ class searchFriendsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    @IBAction func followTapped(_ sender: Any) {
-        
-//        let db = Firestore.firestore()
-//
-//        let user = Auth.auth().currentUser
-//
-//        db.collection("following").document(user!.uid).collection("userFollowing").document(fuid).setData([
-//            "follow": true
-//
-//        ]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Document successfully written!")
-//
-//        }
-
-//    }
-     
-        
-    
-    
-    }
     
     
 }
