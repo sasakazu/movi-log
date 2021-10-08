@@ -60,7 +60,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 
                 self.nickname = document["nickname"] as? String ?? "no name"
-                self.friendIcon = document["email"] as? String ?? "no name"
+                self.friendIcon = document["userIcon"] as? String ?? "no icon"
             
                 
                 
@@ -153,7 +153,9 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
     
                 "follow": true,
-                "followUserID": self.friendUserID
+                "followUserID": self.friendUserID,
+                "nickname": self.nickname,
+                "userIcon": self.friendIcon
             ])
           
         db.collection("following").document(user!.uid).collection("followingUser").addDocument(data: [
@@ -162,35 +164,18 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
             "followID": self.friendUserID
         ])
         
-        
-        
-//        db.collection("users").document(user!.uid).collection("userFollowing").addDocument(data: [
-//
-//            "follow": true,
-//            "movieTitle": self.movietitleItems,
-//            "artistName": self.artistItems,
-//            "followImage": self.imageItems,
-//            "followUserID": self.friendUserID,
-//            "followNickname" : self.nickname
-//
-//        ])
-            
-      
 
-//        ]) { err in
-//            if let err = err {
-//                print("Error adding document: \(err)")
-//            } else {
-//                print("Document added with ID: \(ref!.documentID)")
-//            }
-//
-//
-//        }
         
     }
     
     
     @IBAction func followingBtn(_ sender: Any) {
+        
+//        useridを送る
+        
+        
+        
+        
     }
     
 
@@ -240,6 +225,18 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
           subVC.movieReview = reviewData
           
         }
+        
+//        followしているfriendviewへ
+        
+        if (segue.identifier == "goFollowingFriend") {
+            let followVC:searchFriendFollow = (segue.destination as? searchFriendFollow)!
+        
+     
+          followVC.followingID = friendUserID
+          
+        }
+        
+        
     }
     
     

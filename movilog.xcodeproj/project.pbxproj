@@ -47,6 +47,9 @@
 		73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */; };
 		73B9E2B826F0A36E005CA82F /* editEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9E2B726F0A36E005CA82F /* editEmailViewController.swift */; };
 		73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E937E2270EF89C000612DF /* tLMovieDetailViewController.swift */; };
+		73E937E527103B8B000612DF /* searchFriendFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E937E427103B8B000612DF /* searchFriendFollow.swift */; };
+		73E937E827104031000612DF /* searchFriendFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E937E627104031000612DF /* searchFriendFollowingCell.swift */; };
+		73E937E927104031000612DF /* searchFriendFollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E937E727104031000612DF /* searchFriendFollowingCell.xib */; };
 		AB2EED9CC58193548DA3049C /* Pods_movilog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32681BB46259DD495F88DC2 /* Pods_movilog.framework */; };
 		B1D70C5FC66393DAA3E3FD85 /* Pods_movilogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101DE86EDA6C7026B1B5D393 /* Pods_movilogTests.framework */; };
 		F0FFEBD589B67A6D2A5ADC51 /* Pods_movilog_movilogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA5837CF4060811500D16A7 /* Pods_movilog_movilogUITests.framework */; };
@@ -121,6 +124,9 @@
 		73B9E2B526EDFB7D005CA82F /* editNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNicknameViewController.swift; sourceTree = "<group>"; };
 		73B9E2B726F0A36E005CA82F /* editEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editEmailViewController.swift; sourceTree = "<group>"; };
 		73E937E2270EF89C000612DF /* tLMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tLMovieDetailViewController.swift; sourceTree = "<group>"; };
+		73E937E427103B8B000612DF /* searchFriendFollow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFriendFollow.swift; sourceTree = "<group>"; };
+		73E937E627104031000612DF /* searchFriendFollowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFriendFollowingCell.swift; sourceTree = "<group>"; };
+		73E937E727104031000612DF /* searchFriendFollowingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchFriendFollowingCell.xib; sourceTree = "<group>"; };
 		9792E7F56ACC7E0ADA5CE695 /* Pods-movilog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog.debug.xcconfig"; path = "Target Support Files/Pods-movilog/Pods-movilog.debug.xcconfig"; sourceTree = "<group>"; };
 		E145FE7258A961F4DDA7D99E /* Pods-movilog-movilogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movilog-movilogUITests.debug.xcconfig"; path = "Target Support Files/Pods-movilog-movilogUITests/Pods-movilog-movilogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E32681BB46259DD495F88DC2 /* Pods_movilog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movilog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +311,9 @@
 				73A3CBD526F1EE400010EF42 /* friendCollectionViewCell.swift */,
 				73A3CBD626F1EE400010EF42 /* friendCollectionViewCell.xib */,
 				73A3CBD926F33CE20010EF42 /* friendMovieDetailViewController.swift */,
+				73E937E427103B8B000612DF /* searchFriendFollow.swift */,
+				73E937E627104031000612DF /* searchFriendFollowingCell.swift */,
+				73E937E727104031000612DF /* searchFriendFollowingCell.xib */,
 			);
 			path = searchFriend;
 			sourceTree = "<group>";
@@ -431,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7371F58A26BD29D10099F69C /* GoogleService-Info.plist in Resources */,
+				73E937E927104031000612DF /* searchFriendFollowingCell.xib in Resources */,
 				7371F56626BBF42B0099F69C /* LaunchScreen.storyboard in Resources */,
 				73A3CBE126F466620010EF42 /* TLTableViewCell.xib in Resources */,
 				73B7213926E8B4B100D874F7 /* CollectionViewCell.xib in Resources */,
@@ -606,6 +616,7 @@
 				73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */,
 				73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
+				73E937E827104031000612DF /* searchFriendFollowingCell.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,
 				73A3CBDD26F466400010EF42 /* timeLineViewController.swift in Sources */,
 				73996AD927071B3600429050 /* movieFTableViewCell.swift in Sources */,
@@ -619,6 +630,7 @@
 				73B9E2B626EDFB7D005CA82F /* editNicknameViewController.swift in Sources */,
 				73996AD42704709700429050 /* profileViewController.swift in Sources */,
 				73A3CBE42700613C0010EF42 /* editIconViewController.swift in Sources */,
+				73E937E527103B8B000612DF /* searchFriendFollow.swift in Sources */,
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,
