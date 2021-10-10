@@ -17,10 +17,104 @@
                     <view key="view" contentMode="scaleToFill" id="x4X-s7-eGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRw-Oq-ye8">
+                                <rect key="frame" x="20" y="116" width="140" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="dWG-Yh-nPW"/>
+                                    <constraint firstAttribute="height" constant="190" id="hfS-Wg-EC9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6R-Ro-M0f">
+                                <rect key="frame" x="168" y="116" width="226" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="RvK-Z5-awz"/>
+                                    <constraint firstAttribute="width" constant="226" id="rii-kF-8Te"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEO-Se-d64">
+                                <rect key="frame" x="168" y="151" width="226" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ccN-dX-HAi"/>
+                                    <constraint firstAttribute="width" constant="226" id="p4n-w1-AK5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="販売日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-gF-gLe">
+                                <rect key="frame" x="168" y="180" width="226" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="87r-ec-ykN"/>
+                                    <constraint firstAttribute="height" constant="21" id="il6-UK-or9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgC-Nn-gsr">
+                                <rect key="frame" x="168" y="209" width="226" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VV7-Ro-4K5"/>
+                                    <constraint firstAttribute="width" constant="226" id="nYe-7U-Ee8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-ag-cc6">
+                                <rect key="frame" x="43" y="426" width="328" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="uUL-0M-TNG"/>
+                                    <constraint firstAttribute="height" constant="44" id="ykR-1F-PLz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="楽天ブックスで詳細を見る">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToSiteBtn:" destination="Umo-jP-vPS" eventType="touchUpInside" id="Kds-m7-Kfg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ycz-Mh-h8A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ycz-Mh-h8A" firstAttribute="trailing" secondItem="tnf-ag-cc6" secondAttribute="trailing" constant="43" id="3g5-PT-hP3"/>
+                            <constraint firstItem="aEO-Se-d64" firstAttribute="leading" secondItem="PRw-Oq-ye8" secondAttribute="trailing" constant="8" symbolic="YES" id="58n-gT-7el"/>
+                            <constraint firstItem="aEO-Se-d64" firstAttribute="top" secondItem="o6R-Ro-M0f" secondAttribute="bottom" constant="8" symbolic="YES" id="5Dq-Ie-qKI"/>
+                            <constraint firstItem="ycz-Mh-h8A" firstAttribute="trailing" secondItem="aEO-Se-d64" secondAttribute="trailing" constant="20" id="5Tp-Z6-8nL"/>
+                            <constraint firstItem="ycz-Mh-h8A" firstAttribute="trailing" secondItem="nWd-gF-gLe" secondAttribute="trailing" constant="20" id="7BR-aE-gBu"/>
+                            <constraint firstItem="cgC-Nn-gsr" firstAttribute="top" secondItem="nWd-gF-gLe" secondAttribute="bottom" constant="8" symbolic="YES" id="9D6-2W-q63"/>
+                            <constraint firstItem="o6R-Ro-M0f" firstAttribute="leading" secondItem="PRw-Oq-ye8" secondAttribute="trailing" constant="8" symbolic="YES" id="9qt-gJ-V5Q"/>
+                            <constraint firstItem="ycz-Mh-h8A" firstAttribute="trailing" secondItem="cgC-Nn-gsr" secondAttribute="trailing" constant="20" id="GVl-zE-4hq"/>
+                            <constraint firstItem="o6R-Ro-M0f" firstAttribute="top" secondItem="ycz-Mh-h8A" secondAttribute="top" constant="28" id="He3-yi-r8z"/>
+                            <constraint firstItem="tnf-ag-cc6" firstAttribute="top" secondItem="PRw-Oq-ye8" secondAttribute="bottom" constant="120" id="Hlz-aY-ICH"/>
+                            <constraint firstItem="nWd-gF-gLe" firstAttribute="top" secondItem="aEO-Se-d64" secondAttribute="bottom" constant="8" symbolic="YES" id="Kdn-8i-uMx"/>
+                            <constraint firstItem="cgC-Nn-gsr" firstAttribute="leading" secondItem="PRw-Oq-ye8" secondAttribute="trailing" constant="8" symbolic="YES" id="OXB-NU-ulw"/>
+                            <constraint firstItem="aEO-Se-d64" firstAttribute="top" secondItem="o6R-Ro-M0f" secondAttribute="bottom" constant="8" symbolic="YES" id="RNc-UB-SGS"/>
+                            <constraint firstItem="tnf-ag-cc6" firstAttribute="top" secondItem="cgC-Nn-gsr" secondAttribute="bottom" constant="196" id="ReI-8g-gN2"/>
+                            <constraint firstItem="tnf-ag-cc6" firstAttribute="leading" secondItem="ycz-Mh-h8A" secondAttribute="leading" constant="43" id="X31-L2-0l6"/>
+                            <constraint firstItem="nWd-gF-gLe" firstAttribute="leading" secondItem="PRw-Oq-ye8" secondAttribute="trailing" constant="8" symbolic="YES" id="aDx-SV-pct"/>
+                            <constraint firstItem="nWd-gF-gLe" firstAttribute="top" secondItem="aEO-Se-d64" secondAttribute="bottom" constant="8" symbolic="YES" id="iVP-uy-YKB"/>
+                            <constraint firstItem="cgC-Nn-gsr" firstAttribute="top" secondItem="nWd-gF-gLe" secondAttribute="bottom" constant="8" symbolic="YES" id="kA7-lV-y3o"/>
+                            <constraint firstItem="PRw-Oq-ye8" firstAttribute="top" secondItem="ycz-Mh-h8A" secondAttribute="top" constant="28" id="wUL-im-Fud"/>
+                            <constraint firstItem="ycz-Mh-h8A" firstAttribute="trailing" secondItem="o6R-Ro-M0f" secondAttribute="trailing" constant="20" id="wmW-fT-g01"/>
+                            <constraint firstItem="PRw-Oq-ye8" firstAttribute="leading" secondItem="ycz-Mh-h8A" secondAttribute="leading" constant="20" id="yTN-9U-naG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="映画詳細" id="lZY-M6-XNx"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="aEO-Se-d64" id="Rq9-94-RqH"/>
+                        <outlet property="averageLabel" destination="cgC-Nn-gsr" id="jKI-dl-btw"/>
+                        <outlet property="movieIcon" destination="PRw-Oq-ye8" id="nYf-an-Ixc"/>
+                        <outlet property="movieTitle" destination="o6R-Ro-M0f" id="WdF-gs-EtT"/>
+                        <outlet property="salesLabel" destination="nWd-gF-gLe" id="oCB-pG-mX6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0PL-rT-acB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +200,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TLtableview" destination="XDy-QL-TQ1" id="lYB-mN-9GF"/>
-                        <segue destination="Umo-jP-vPS" kind="show" id="04O-EQ-vW4"/>
+                        <segue destination="Umo-jP-vPS" kind="show" identifier="goDetailMovie" id="04O-EQ-vW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

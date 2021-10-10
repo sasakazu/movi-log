@@ -15,6 +15,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private var FollwingPosts: [String] = []
     private var timeLineLabel: [String] = []
     private var followid: [String] = []
+    private var reviewArray:[String] = []
     
 //    followUser情報
     private var followUserID:String = ""
@@ -27,7 +28,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private var movieImage:[String] = []
     private var artistArray: [String] = []
     private var followImageArray: [String] = []
-
+    private var salesDateArray: [String] = []
+    
     var test = ""
     
     @IBOutlet weak var TLtableview: UITableView!
@@ -75,6 +77,9 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                         self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
                         self.artistArray = querySnapshot!.documents.compactMap { $0.data()["artistName"] as? String}
                         self.movieImage = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String}
+                        self.salesDateArray = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String}
+                        self.reviewArray = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String}
+                                
 //                                ユーザー情報
                         self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
                         self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
@@ -151,12 +156,32 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
     
-       
+//    データを送るsegue
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            performSegue(withIdentifier: "goDetailMovie", sender: indexPath.row)
+            
         }
     
+    //    詳細画面にデータを送る
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+            if segue.identifier == "goDetailMovie" {
+                if let nextVC = segue.destination as? tLMovieDetailViewController,
+                   
+                   let index = sender as? Int {
+               
+                    nextVC.moviehoge = allTitle[index]
+                    nextVC.artisthoge = artistArray[index]
+                    nextVC.saleDatehoge = salesDateArray[index]
+                    nextVC.reviewhoge = reviewArray[index]
+                    nextVC.Imagehoge = movieImage[index]
+            }
+        }
+    }
     
     
         
