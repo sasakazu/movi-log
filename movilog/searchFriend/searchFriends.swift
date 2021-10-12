@@ -11,9 +11,11 @@ import Firebase
 
 class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-    
+
     
     private let cellId = "cellId"
+    
+    let placeUrl = URL(string: "https://firebasestorage.googleapis.com/v0/b/movi-log.appspot.com/o/images%2Fplaceholder2.png?alt=media&token=1d7e3f09-7682-4fe4-b64e-a9708e52108c")!
     
 //    friend情報
     private var friends: [String] = []

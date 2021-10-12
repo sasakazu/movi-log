@@ -27,7 +27,7 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
             
 //            iconImageView.sd_setImage(with:storageref))?.resized(size: CGSize(width: 100, height: 100))
             
-        iconImageView.sd_setImage(with:storageref)
+        iconImageView.sd_setImage(with:storageref, placeholderImage: UIImage(named: "placeholder2"))
         
 //            iconImageView.image = sd_setImage(with: storageref)
             

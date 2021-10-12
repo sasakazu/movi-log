@@ -136,9 +136,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         if let user = Auth.auth().currentUser {
 //        ユーザーアイコンの取得
             let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
-
-            self.userImage.sd_setImage(with:storageref)
         
+            self.userImage.sd_setImage(with: storageref, placeholderImage: UIImage(named: "placeholder2"))
+            
 //        print("my icon is url\(storageref)")
         
         
@@ -167,8 +167,10 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         self.imageData = imageItems[indexPath.row]
             
-        cell.collectionImage.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.collectionImage.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder"))
 
+
+        
         return cell
                 
     }
