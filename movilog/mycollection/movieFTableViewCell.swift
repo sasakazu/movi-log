@@ -17,6 +17,9 @@ class movieFTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        movieFImage.layer.cornerRadius = movieFImage.frame.size.width * 0.5
+        movieFImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

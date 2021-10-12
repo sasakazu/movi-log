@@ -28,7 +28,6 @@ class tLMovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         movieTitle.text = moviehoge
         artistLabel.text = artisthoge

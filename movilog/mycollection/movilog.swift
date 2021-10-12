@@ -132,6 +132,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         
         
+        
         if let user = Auth.auth().currentUser {
 //        ユーザーアイコンの取得
             let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(user.uid).child("\(user.uid).jpg")
