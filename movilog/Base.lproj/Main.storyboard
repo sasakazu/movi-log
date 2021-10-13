@@ -314,13 +314,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtP-31-tU0">
-                                <rect key="frame" x="14" y="181" width="108" height="32"/>
+                                <rect key="frame" x="9" y="172" width="95" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="OTd-dZ-Mnh"/>
+                                    <constraint firstAttribute="width" constant="95" id="OTd-dZ-Mnh"/>
                                     <constraint firstAttribute="height" constant="32" id="v8B-5n-Qrd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="フォロー"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="follow"/>
                                 <connections>
                                     <action selector="followTapped:" destination="d10-YV-YSF" eventType="touchUpInside" id="qWy-ZM-cFx"/>
                                 </connections>
@@ -333,19 +333,19 @@
                             <constraint firstItem="ew8-z0-vyz" firstAttribute="leading" secondItem="ftp-9S-uig" secondAttribute="leading" constant="20" id="BfL-y2-8cz"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="trailing" secondItem="ftp-9S-uig" secondAttribute="trailing" id="F9R-TZ-8wE"/>
                             <constraint firstItem="FIZ-Ea-mfN" firstAttribute="top" secondItem="ftp-9S-uig" secondAttribute="top" constant="19" id="GMD-Ee-jbO"/>
-                            <constraint firstItem="Ebu-BT-DuN" firstAttribute="top" secondItem="YtP-31-tU0" secondAttribute="bottom" constant="34" id="LOA-kw-ipq"/>
-                            <constraint firstItem="Ebu-BT-DuN" firstAttribute="top" secondItem="YtP-31-tU0" secondAttribute="bottom" constant="34" id="MeH-8f-Las"/>
+                            <constraint firstItem="Ebu-BT-DuN" firstAttribute="top" secondItem="YtP-31-tU0" secondAttribute="bottom" constant="43" id="LOA-kw-ipq"/>
+                            <constraint firstItem="Ebu-BT-DuN" firstAttribute="top" secondItem="YtP-31-tU0" secondAttribute="bottom" constant="43" id="MeH-8f-Las"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="bottom" secondItem="ftp-9S-uig" secondAttribute="bottom" id="Q7A-mw-YmF"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="top" secondItem="FIZ-Ea-mfN" secondAttribute="bottom" constant="178" id="Qcs-MR-FbA"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="leading" secondItem="ftp-9S-uig" secondAttribute="leading" id="VrI-zk-G8Z"/>
-                            <constraint firstItem="YtP-31-tU0" firstAttribute="top" secondItem="ew8-z0-vyz" secondAttribute="bottom" constant="17" id="YaG-c3-ag4"/>
+                            <constraint firstItem="YtP-31-tU0" firstAttribute="top" secondItem="ew8-z0-vyz" secondAttribute="bottom" constant="8" id="YaG-c3-ag4"/>
                             <constraint firstItem="ftp-9S-uig" firstAttribute="trailing" secondItem="FIZ-Ea-mfN" secondAttribute="trailing" constant="20" id="eOQ-ab-R19"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="top" secondItem="Ebu-BT-DuN" secondAttribute="bottom" constant="33" id="eyk-ND-bik"/>
-                            <constraint firstItem="YtP-31-tU0" firstAttribute="top" secondItem="ew8-z0-vyz" secondAttribute="bottom" constant="17" id="fuw-NQ-RXJ"/>
+                            <constraint firstItem="YtP-31-tU0" firstAttribute="top" secondItem="ew8-z0-vyz" secondAttribute="bottom" constant="8" id="fuw-NQ-RXJ"/>
                             <constraint firstItem="ew8-z0-vyz" firstAttribute="top" secondItem="ftp-9S-uig" secondAttribute="top" constant="19" id="ikK-aO-WQi"/>
-                            <constraint firstItem="ftp-9S-uig" firstAttribute="trailing" secondItem="YtP-31-tU0" secondAttribute="trailing" constant="292" id="nHV-U3-TEh"/>
+                            <constraint firstItem="ftp-9S-uig" firstAttribute="trailing" secondItem="YtP-31-tU0" secondAttribute="trailing" constant="310" id="nHV-U3-TEh"/>
                             <constraint firstItem="FIZ-Ea-mfN" firstAttribute="leading" secondItem="ew8-z0-vyz" secondAttribute="trailing" constant="42" id="oak-vR-5Qx"/>
-                            <constraint firstItem="YtP-31-tU0" firstAttribute="leading" secondItem="ftp-9S-uig" secondAttribute="leading" constant="14" id="tf7-Ny-6Vk"/>
+                            <constraint firstItem="YtP-31-tU0" firstAttribute="leading" secondItem="ftp-9S-uig" secondAttribute="leading" constant="9" id="tf7-Ny-6Vk"/>
                             <constraint firstItem="22d-ub-gNz" firstAttribute="top" secondItem="Ebu-BT-DuN" secondAttribute="bottom" constant="33" id="xVF-at-tqy"/>
                         </constraints>
                     </view>
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJg-wX-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2754" y="-273"/>
+            <point key="canvasLocation" x="2753.6231884057975" y="-273.21428571428572"/>
         </scene>
         <!--映画詳細-->
         <scene sceneID="XNa-69-SUC">
@@ -796,11 +796,87 @@
                     <navigationItem key="navigationItem" id="GPU-hD-lJE"/>
                     <connections>
                         <outlet property="movieFTableview" destination="D1K-Rx-eBf" id="Vw8-SJ-BrF"/>
+                        <segue destination="AJo-OP-thS" kind="show" identifier="sendFriendID" id="eEA-DR-oaa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1L-97-qZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.7971014492755" y="1289.7321428571429"/>
+        </scene>
+        <!--Movilog Friend Detail-->
+        <scene sceneID="Rvx-3r-pOm">
+            <objects>
+                <viewController id="AJo-OP-thS" customClass="movilogFriendDetail" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UO2-gT-tcg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHN-1E-kqT">
+                                <rect key="frame" x="120" y="120" width="274" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="gND-D8-VGO"/>
+                                    <constraint firstAttribute="width" constant="274" id="ufB-8J-Mzb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTe-Er-7iX">
+                                <rect key="frame" x="20" y="120" width="58" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="PZB-Bc-Xs7"/>
+                                    <constraint firstAttribute="width" constant="58" id="bjW-4I-XsR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0m-bl-8Cp">
+                                <rect key="frame" x="20" y="260" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fcf-V4-iZi"/>
+                                    <constraint firstAttribute="width" constant="102" id="oZJ-ro-F3q"/>
+                                </constraints>
+                                <state key="normal" title="映画仲間：0人"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bJ-KG-oAo">
+                                <rect key="frame" x="8" y="186" width="83" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="gP5-DN-0AW"/>
+                                    <constraint firstAttribute="width" constant="83" id="w3a-XN-DRg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="UNFOLLOW">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="followTapped:" destination="d10-YV-YSF" eventType="touchUpInside" id="A78-YC-raO"/>
+                                    <action selector="unFollowBtn:" destination="AJo-OP-thS" eventType="touchUpInside" id="T0C-mD-qHR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WzY-d3-1OI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RTe-Er-7iX" firstAttribute="top" secondItem="WzY-d3-1OI" secondAttribute="top" constant="32" id="B6V-Vw-jIp"/>
+                            <constraint firstItem="Z0m-bl-8Cp" firstAttribute="top" secondItem="6bJ-KG-oAo" secondAttribute="bottom" constant="47" id="Dkz-rW-eHC"/>
+                            <constraint firstItem="6bJ-KG-oAo" firstAttribute="top" secondItem="RTe-Er-7iX" secondAttribute="bottom" constant="9" id="NnD-fh-U4M"/>
+                            <constraint firstItem="Z0m-bl-8Cp" firstAttribute="top" secondItem="6bJ-KG-oAo" secondAttribute="bottom" constant="47" id="P3f-Fc-kGg"/>
+                            <constraint firstItem="6bJ-KG-oAo" firstAttribute="top" secondItem="RTe-Er-7iX" secondAttribute="bottom" constant="9" id="T9F-lW-b7m"/>
+                            <constraint firstItem="RTe-Er-7iX" firstAttribute="top" secondItem="uHN-1E-kqT" secondAttribute="top" id="Yc8-XG-Jop"/>
+                            <constraint firstItem="RTe-Er-7iX" firstAttribute="leading" secondItem="Z0m-bl-8Cp" secondAttribute="leading" id="ZjU-3x-jFk"/>
+                            <constraint firstItem="RTe-Er-7iX" firstAttribute="leading" secondItem="UO2-gT-tcg" secondAttribute="leadingMargin" id="jcN-qe-byj"/>
+                            <constraint firstItem="uHN-1E-kqT" firstAttribute="leading" secondItem="RTe-Er-7iX" secondAttribute="trailing" constant="42" id="m6T-9i-zcY"/>
+                            <constraint firstItem="6bJ-KG-oAo" firstAttribute="trailing" secondItem="Z0m-bl-8Cp" secondAttribute="trailing" constant="-31" id="mmN-br-yGW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="heK-f5-dh6"/>
+                    <connections>
+                        <outlet property="moviFImage" destination="RTe-Er-7iX" id="YhS-ey-SOK"/>
+                        <outlet property="moviFName" destination="uHN-1E-kqT" id="Q24-QM-UaB"/>
+                        <outlet property="moviTomo" destination="Z0m-bl-8Cp" id="zef-eM-JB9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSK-KH-7hM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753.6231884057975" y="1289.7321428571429"/>
         </scene>
         <!--Movie Collection Detail-->
         <scene sceneID="odp-T6-VsL">

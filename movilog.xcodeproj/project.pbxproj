@@ -12,6 +12,7 @@
 		730FC1B926DF7CA100954961 /* resultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FC1B726DF7CA100954961 /* resultCell.swift */; };
 		730FC1BA26DF7CA100954961 /* resultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730FC1B826DF7CA100954961 /* resultCell.xib */; };
 		730FC1BC26DF870500954961 /* resultDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FC1BB26DF870500954961 /* resultDetail.swift */; };
+		7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */; };
 		7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55926BBF4290099F69C /* AppDelegate.swift */; };
 		7371F55C26BBF4290099F69C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55B26BBF4290099F69C /* SceneDelegate.swift */; };
 		7371F55E26BBF4290099F69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55D26BBF4290099F69C /* ViewController.swift */; };
@@ -83,6 +84,7 @@
 		730FC1B726DF7CA100954961 /* resultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultCell.swift; sourceTree = "<group>"; };
 		730FC1B826DF7CA100954961 /* resultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultCell.xib; sourceTree = "<group>"; };
 		730FC1BB26DF870500954961 /* resultDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultDetail.swift; sourceTree = "<group>"; };
+		7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFriendDetail.swift; sourceTree = "<group>"; };
 		7371F55626BBF4290099F69C /* movilog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movilog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371F55926BBF4290099F69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7371F55B26BBF4290099F69C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				73996AD52705BFFB00429050 /* movieFriendTableView.swift */,
 				73996AD727071B3600429050 /* movieFTableViewCell.swift */,
 				73996AD827071B3600429050 /* movieFTableViewCell.xib */,
+				7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */,
 			);
 			path = mycollection;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,
 				73A3CBE026F466620010EF42 /* TLTableViewCell.swift in Sources */,
 				73B9E2AD26ECBFC3005CA82F /* friendDetaiView.swift in Sources */,
+				7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */,
 				738400F226C67B760070F8CF /* movilog.swift in Sources */,
 				730FC1BC26DF870500954961 /* resultDetail.swift in Sources */,
 				7371F55C26BBF4290099F69C /* SceneDelegate.swift in Sources */,

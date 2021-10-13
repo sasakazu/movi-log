@@ -18,6 +18,8 @@ class movieFriendTableView: UIViewController, UITableViewDataSource,UITableViewD
     var followingFriendsName: [String] = []
     var followingFriendsImage: [String] = []
     var myfollowingID: [String] = []
+    var myfollowingIDArray: [String] = []
+    
     
     var imageData = ""
     
@@ -54,6 +56,11 @@ class movieFriendTableView: UIViewController, UITableViewDataSource,UITableViewD
                     self.followingFriendsName = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
 //
                     self.followingFriendsImage = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+                                
+                                
+                    self.myfollowingIDArray = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
+                                            
+                    
             }
                         }
                         
@@ -95,6 +102,30 @@ class movieFriendTableView: UIViewController, UITableViewDataSource,UITableViewD
     }
 
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        followingFriendID = myfollowingIDArray[indexPath.row]
+//        print(followID)
+        performSegue(withIdentifier: "sendFriendID", sender: nil)
+        
+        }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "sendFriendID" {
+            if let nextVC = segue.destination as? movilogFriendDetail {
+              
+            nextVC.friendUserID = followingFriendID
+            
+                
+            
+        }
+    }
+    
+    
+    
+    }
     
     
 }
