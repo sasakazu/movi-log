@@ -38,6 +38,8 @@ class editIconViewController: UIViewController, UIImagePickerControllerDelegate,
             
         }
         
+        self.iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5
+        self.iconImageView.clipsToBounds = true
         
         
         // Do any additional setup after loading the view.

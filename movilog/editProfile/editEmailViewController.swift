@@ -38,6 +38,29 @@ class editEmailViewController: UIViewController {
 
     }
     
+    
+    @IBAction func saveEmail(_ sender: Any) {
+        
+        let user = Auth.auth().currentUser
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(user!.uid).updateData([
+            "email": emailTF.text ?? "no email"
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+
+        
+    }
+    
+    
 
 
 }
