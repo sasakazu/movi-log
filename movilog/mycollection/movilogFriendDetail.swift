@@ -81,6 +81,8 @@ class movilogFriendDetail: UIViewController, UICollectionViewDataSource, UIColle
                 self.imageFItems = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String }
                 
 
+                
+                
                 }
             
             self.movieFColloection.reloadData()
