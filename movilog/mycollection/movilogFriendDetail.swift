@@ -7,8 +7,11 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
-class movilogFriendDetail: UIViewController {
+class movilogFriendDetail: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+  
+    
 
     //    friend情報
     var friendUserID = ""
@@ -17,16 +20,27 @@ class movilogFriendDetail: UIViewController {
     var friendArray:[String] = []
     var friendcout:[String] = []
     
+//    collection
+    var imageFItems:[String] = []
+    var imageData = ""
     
     @IBOutlet weak var moviFImage: UIImageView!
     @IBOutlet weak var moviFName: UILabel!
     @IBOutlet weak var moviTomo: UIButton!
+    @IBOutlet weak var movieFColloection: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieFColloection.delegate = self
+        movieFColloection.dataSource = self
 
-        print(friendUserID)
+//        print(friendUserID)
+        
+        let nib = UINib(nibName: "movilogFDetailCell", bundle: nil)
+        
+        self.movieFColloection.register(nib, forCellWithReuseIdentifier: "Cell")
         
         let db = Firestore.firestore()
         
@@ -54,6 +68,28 @@ class movilogFriendDetail: UIViewController {
         }
         
         
+//        映画ポスト取得
+        
+        
+        db.collection("users").document(self.friendUserID).collection("post").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in querySnapshot!.documents {
+
+                
+                self.imageFItems = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String }
+                
+
+                }
+            
+            self.movieFColloection.reloadData()
+            
+        
+            }
+        
+        }
+        
         
 //        映画仲間の数を取得
         
@@ -65,6 +101,8 @@ class movilogFriendDetail: UIViewController {
 
                     
                     self.friendcout = querySnapshot!.documents.compactMap { $0.data()["followUserID"] as? String }
+                    
+                    print(self.friendcout)
                     
 //                    print(self.friendCount.count)
                     self.moviTomo.setTitle("映画仲間：\(self.friendcout.count)人", for: .normal)
@@ -118,5 +156,47 @@ class movilogFriendDetail: UIViewController {
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        imageFItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! movilogFDetailCell
+        
+        
+        self.imageData = imageFItems[indexPath.row]
+            
+        cell.movilogImageView.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder"))
+
+
+        
+        return cell
+        
+    }
+    
+    
+    
+//    @IBAction func friendBtn(_ sender: Any) {
+//
+//
+//    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "goNakama" {
+//            if let nextVC = segue.destination as? movieFriendTableView {
+//
+//            nextVC.followUserIDArray = friendcout
+//            nextVC.reciveYourID = friendUserID
+//
+//
+//
+//        }
+//    }
+//
+//
+//}
 
 }

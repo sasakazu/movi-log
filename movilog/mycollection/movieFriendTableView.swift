@@ -20,7 +20,10 @@ class movieFriendTableView: UIViewController, UITableViewDataSource,UITableViewD
     var myfollowingID: [String] = []
     var myfollowingIDArray: [String] = []
     
-    
+//    detailから送られてくるID
+    var followUserIDArray:[String] = []
+    var reciveYourID = ""
+ 
     var imageData = ""
     
     @IBOutlet weak var movieFTableview: UITableView!
@@ -70,12 +73,18 @@ class movieFriendTableView: UIViewController, UITableViewDataSource,UITableViewD
                     }
             }
 
-
             }
-        }
+            
+            
         
+}
+
+
+
         
-        
+                
+//        print("ii\(reciveYourID)")
+//        print("iii\(followUserIDArray)")
         
         // Do any additional setup after loading the view.
     }

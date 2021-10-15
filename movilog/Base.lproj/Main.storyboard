@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1xT-8a-dfk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhN-5x-cV7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -904,14 +904,6 @@
                                     <constraint firstAttribute="width" constant="58" id="bjW-4I-XsR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0m-bl-8Cp">
-                                <rect key="frame" x="20" y="260" width="102" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fcf-V4-iZi"/>
-                                    <constraint firstAttribute="width" constant="102" id="oZJ-ro-F3q"/>
-                                </constraints>
-                                <state key="normal" title="映画仲間：0人"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bJ-KG-oAo">
                                 <rect key="frame" x="8" y="186" width="83" height="27"/>
                                 <constraints>
@@ -927,27 +919,70 @@
                                     <action selector="unFollowBtn:" destination="AJo-OP-thS" eventType="touchUpInside" id="T0C-mD-qHR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2E-th-wfy">
+                                <rect key="frame" x="6" y="220" width="147" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ctv-Z5-DzG"/>
+                                    <constraint firstAttribute="width" constant="147" id="svL-p4-5X4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="映画仲間：0人"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEI-f0-Elg">
+                                <rect key="frame" x="0.0" y="285" width="414" height="528"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="LyQ-Sa-bVN"/>
+                                    <constraint firstAttribute="height" constant="528" id="nw4-CQ-U9s"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bF4-KF-ngS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="84m-bn-maD">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i0s-Bd-NXF">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="AJo-OP-thS" id="qbk-HE-Usk"/>
+                                    <outlet property="delegate" destination="AJo-OP-thS" id="oni-nc-Jxk"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WzY-d3-1OI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fEI-f0-Elg" firstAttribute="leading" secondItem="WzY-d3-1OI" secondAttribute="leading" id="827-Fh-wqJ"/>
                             <constraint firstItem="RTe-Er-7iX" firstAttribute="top" secondItem="WzY-d3-1OI" secondAttribute="top" constant="32" id="B6V-Vw-jIp"/>
-                            <constraint firstItem="Z0m-bl-8Cp" firstAttribute="top" secondItem="6bJ-KG-oAo" secondAttribute="bottom" constant="47" id="Dkz-rW-eHC"/>
+                            <constraint firstItem="fEI-f0-Elg" firstAttribute="bottom" secondItem="WzY-d3-1OI" secondAttribute="bottom" id="DF0-02-uyr"/>
                             <constraint firstItem="6bJ-KG-oAo" firstAttribute="top" secondItem="RTe-Er-7iX" secondAttribute="bottom" constant="9" id="NnD-fh-U4M"/>
-                            <constraint firstItem="Z0m-bl-8Cp" firstAttribute="top" secondItem="6bJ-KG-oAo" secondAttribute="bottom" constant="47" id="P3f-Fc-kGg"/>
+                            <constraint firstItem="P2E-th-wfy" firstAttribute="top" secondItem="6bJ-KG-oAo" secondAttribute="bottom" constant="7" id="NvX-Ju-NtW"/>
+                            <constraint firstItem="6bJ-KG-oAo" firstAttribute="leading" secondItem="WzY-d3-1OI" secondAttribute="leading" constant="8" id="T3E-ZD-I4E"/>
                             <constraint firstItem="6bJ-KG-oAo" firstAttribute="top" secondItem="RTe-Er-7iX" secondAttribute="bottom" constant="9" id="T9F-lW-b7m"/>
                             <constraint firstItem="RTe-Er-7iX" firstAttribute="top" secondItem="uHN-1E-kqT" secondAttribute="top" id="Yc8-XG-Jop"/>
-                            <constraint firstItem="RTe-Er-7iX" firstAttribute="leading" secondItem="Z0m-bl-8Cp" secondAttribute="leading" id="ZjU-3x-jFk"/>
+                            <constraint firstItem="P2E-th-wfy" firstAttribute="leading" secondItem="WzY-d3-1OI" secondAttribute="leading" constant="6" id="gZ2-J4-aBG"/>
                             <constraint firstItem="RTe-Er-7iX" firstAttribute="leading" secondItem="UO2-gT-tcg" secondAttribute="leadingMargin" id="jcN-qe-byj"/>
                             <constraint firstItem="uHN-1E-kqT" firstAttribute="leading" secondItem="RTe-Er-7iX" secondAttribute="trailing" constant="42" id="m6T-9i-zcY"/>
-                            <constraint firstItem="6bJ-KG-oAo" firstAttribute="trailing" secondItem="Z0m-bl-8Cp" secondAttribute="trailing" constant="-31" id="mmN-br-yGW"/>
+                            <constraint firstItem="WzY-d3-1OI" firstAttribute="trailing" secondItem="P2E-th-wfy" secondAttribute="trailing" constant="261" id="pNm-yr-Cje"/>
+                            <constraint firstItem="fEI-f0-Elg" firstAttribute="top" secondItem="P2E-th-wfy" secondAttribute="bottom" constant="34" id="vAx-pu-ujW"/>
+                            <constraint firstItem="fEI-f0-Elg" firstAttribute="trailing" secondItem="WzY-d3-1OI" secondAttribute="trailing" id="wAt-8c-UN0"/>
+                            <constraint firstItem="fEI-f0-Elg" firstAttribute="top" secondItem="P2E-th-wfy" secondAttribute="bottom" constant="34" id="z1k-5P-au3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="heK-f5-dh6"/>
                     <connections>
                         <outlet property="moviFImage" destination="RTe-Er-7iX" id="YhS-ey-SOK"/>
                         <outlet property="moviFName" destination="uHN-1E-kqT" id="Q24-QM-UaB"/>
-                        <outlet property="moviTomo" destination="Z0m-bl-8Cp" id="zef-eM-JB9"/>
+                        <outlet property="moviTomo" destination="P2E-th-wfy" id="Ani-Cm-g5M"/>
+                        <outlet property="movieFColloection" destination="fEI-f0-Elg" id="zQU-h1-Q7X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSK-KH-7hM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
