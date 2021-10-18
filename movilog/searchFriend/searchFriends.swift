@@ -9,13 +9,15 @@ import UIKit
 import Firebase
 
 
-class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
-
+class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate {
     
     private let cellId = "cellId"
     
     let placeUrl = URL(string: "https://firebasestorage.googleapis.com/v0/b/movi-log.appspot.com/o/images%2Fplaceholder2.png?alt=media&token=1d7e3f09-7682-4fe4-b64e-a9708e52108c")!
+    
+//    searchNickname
+    
+    private var searchNickname: [String] = []
     
 //    friend情報
     private var friends: [String] = []
@@ -24,6 +26,7 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
     var followID = ""
     
     @IBOutlet weak var searchFriendTableView: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,40 +38,8 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
         searchFriendTableView.delegate = self
         searchFriendTableView.dataSource = self
         
-        let db = Firestore.firestore()
+        searchTF.delegate = self
         
-        db.collection("users").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-
-                    
-//                    print("\(document.documentID) => \(String(describing: document.data()))")
-
-//                    usernameを取得
-                    self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
-                    
-                    self.friendsIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
-                    
-//                    print(self.friends)
-//                    useridを取得
-                    self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
-                
-                    print(self.friends)
-                    
-                }
-                    
-
-                // コレクションビューを更新
-                self.searchFriendTableView.reloadData()
-                    
-                    
-            }
-            
-            
-        }
-            
 
     }
     
@@ -122,7 +93,6 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
               
             nextVC.friendUserID = followID
             
-                
             
         }
     }
@@ -131,6 +101,42 @@ class searchFriends: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let db = Firestore.firestore()
+        
+        
+        db.collection("users").whereField("nickname", isEqualTo: searchTF.text).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+    
+////                    usernameを取得
+                    self.friends = querySnapshot!.documents.compactMap { $0.data()["nickname"] as? String}
+//
+                    self.friendsIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+//
+////                    print(self.friends)
+////                    useridを取得
+                    self.friendsId = querySnapshot!.documents.compactMap { $0.data()["userID"] as? String}
+
+//                    print(self.friends)
+       
+
+                // コレクションビューを更新
+                self.searchFriendTableView.reloadData()
+                    
+                    
+            }
+        }
+     
+        }
+        
+        return true
+    }
+
     
 }
 

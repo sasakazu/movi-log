@@ -216,10 +216,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T87-nD-w6o">
-                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="683" id="uBn-sU-jhV"/>
+                                    <constraint firstAttribute="height" constant="662" id="uBn-sU-jhV"/>
                                     <constraint firstAttribute="width" constant="414" id="yDm-5O-GEt"/>
                                 </constraints>
                                 <prototypes>
@@ -238,7 +238,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ニックネームで探す" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gq7-nA-WcB">
-                                <rect key="frame" x="20" y="88" width="374" height="34"/>
+                                <rect key="frame" x="20" y="96" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="61T-4N-m7n"/>
                                     <constraint firstAttribute="width" constant="374" id="mi7-yJ-6SH"/>
@@ -253,15 +253,16 @@
                             <constraint firstItem="Gq7-nA-WcB" firstAttribute="leading" secondItem="Tta-fV-fGJ" secondAttribute="leading" constant="20" id="E34-p7-hsV"/>
                             <constraint firstItem="T87-nD-w6o" firstAttribute="leading" secondItem="Tta-fV-fGJ" secondAttribute="leading" id="H56-cr-I2O"/>
                             <constraint firstItem="T87-nD-w6o" firstAttribute="bottom" secondItem="Tta-fV-fGJ" secondAttribute="bottom" id="IfF-cW-Q15"/>
-                            <constraint firstItem="T87-nD-w6o" firstAttribute="top" secondItem="Gq7-nA-WcB" secondAttribute="bottom" constant="8" symbolic="YES" id="TRH-Dx-QhR"/>
+                            <constraint firstItem="T87-nD-w6o" firstAttribute="top" secondItem="Gq7-nA-WcB" secondAttribute="bottom" constant="21" id="TRH-Dx-QhR"/>
                             <constraint firstItem="T87-nD-w6o" firstAttribute="trailing" secondItem="Tta-fV-fGJ" secondAttribute="trailing" id="Uzh-zk-mMv"/>
                             <constraint firstItem="Tta-fV-fGJ" firstAttribute="trailing" secondItem="Gq7-nA-WcB" secondAttribute="trailing" constant="20" id="epE-R8-W1p"/>
-                            <constraint firstItem="Gq7-nA-WcB" firstAttribute="top" secondItem="Tta-fV-fGJ" secondAttribute="top" id="sJM-so-3qb"/>
+                            <constraint firstItem="Gq7-nA-WcB" firstAttribute="top" secondItem="Tta-fV-fGJ" secondAttribute="top" constant="8" id="sJM-so-3qb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="友達を探す" id="2QY-7D-OYR"/>
                     <connections>
                         <outlet property="searchFriendTableView" destination="T87-nD-w6o" id="pK9-Nj-Q4H"/>
+                        <outlet property="searchTF" destination="Gq7-nA-WcB" id="Pzt-H7-ODA"/>
                         <segue destination="d10-YV-YSF" kind="show" identifier="sendID" id="vYa-LP-L0z"/>
                     </connections>
                 </viewController>
@@ -1831,7 +1832,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iXJ-bT-sTt"/>
+        <segue reference="sAe-Ur-mhH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>
