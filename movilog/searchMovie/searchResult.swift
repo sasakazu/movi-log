@@ -91,6 +91,26 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
 
+//    let items = UIMenu(options: .displayInline, children: [
+//        UIAction(title: "メニュー3", image: UIImage(systemName: "pencil"), handler: { _ in
+//            print("メニュー3が押されました")
+//        }),
+//        UIAction(title: "メニュー2", image: UIImage(systemName: "envelope"), handler: { _ in
+//            print("メニュー2が押されました")
+//
+////            self.test = "menu2"
+////            print(self.test)
+//        }),
+//        UIAction(title: "メニュー1", image: UIImage(systemName: "network.badge.shield.half.filled"), handler: { _ in
+//            print("メニュー1が押されました")
+//        }),
+//    ])
+
+//        let destruct = UIAction(title: "削除する", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in }
+
+//    button.menu = UIMenu(title: "", children: [items])
+//    button.showsMenuAsPrimaryAction = true
+    
 //セルに表示させる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -98,6 +118,10 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         cell.recip = booklists[0].Items?[indexPath.row].Item
 
+//        cell.button.menu = UIMenu(title: "", children: [items])
+//        cell.button.showsMenuAsPrimaryAction = true
+
+        
         return cell
 
     }

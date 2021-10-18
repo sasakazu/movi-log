@@ -139,7 +139,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         }
         
 //        user情報
-        cell.followAction.text = followUsername[indexPath.row]
+        cell.followAction.text = "\(followUsername[indexPath.row])さんが映画登録しました"
 //        ユーザーアイコン
         let url = URL(string: followUserIcon[indexPath.row])
         do {

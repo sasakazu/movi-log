@@ -18,6 +18,7 @@ class resultCell: UITableViewCell {
     @IBOutlet weak var resultTitle: UILabel!
     @IBOutlet weak var directedTitle: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var button: UIButton!
     
     
     override func awakeFromNib() {
@@ -71,20 +72,21 @@ class resultCell: UITableViewCell {
     
     
     @IBAction func collectionAdd(_ sender: Any) {
-        
+
         let db = Firestore.firestore()
-        
+
         let user = Auth.auth().currentUser
-        
+
         db.collection("users").document(user!.uid).collection("post").addDocument(data:[
             "title": recip?.title ?? "",
             "largeImageUrl": recip?.largeImageUrl ?? "",
             "artistName": recip?.artistName ?? "",
             "salesDate": recip?.salesDate ?? "",
-            "reviewAverage": recip?.reviewAverage ?? ""
-            
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "tag": "観たい"
+
         ])
-        
+
         db.collection("allPosts").addDocument(data:[
             "title": recip?.title ?? "",
             "largeImageUrl": recip?.largeImageUrl ?? "",
@@ -93,17 +95,16 @@ class resultCell: UITableViewCell {
             "reviewAverage": recip?.reviewAverage ?? "",
             "userID": user?.uid ?? "",
             "nickName" :self.userName,
-            "userIcon": self.userIcon
-                
+            "userIcon": self.userIcon,
+            "tag": "観たい"
+
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
-            
+
             }
-            
-            
     }
         
         
@@ -112,5 +113,81 @@ class resultCell: UITableViewCell {
         
     }
     
+    
+    @IBAction func watchDone(_ sender: Any) {
+     
+        let db = Firestore.firestore()
+
+        let user = Auth.auth().currentUser
+
+        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "tag": "見おわった"
+
+        ])
+
+        db.collection("allPosts").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "userID": user?.uid ?? "",
+            "nickName" :self.userName,
+            "userIcon": self.userIcon,
+            "tag": "観おわった"
+
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+
+            }
+    }
+        
+    }
+    
+    @IBAction func myBest(_ sender: Any) {
+        
+        let db = Firestore.firestore()
+
+        let user = Auth.auth().currentUser
+
+        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "tag": "マイベスト"
+
+        ])
+
+        db.collection("allPosts").addDocument(data:[
+            "title": recip?.title ?? "",
+            "largeImageUrl": recip?.largeImageUrl ?? "",
+            "artistName": recip?.artistName ?? "",
+            "salesDate": recip?.salesDate ?? "",
+            "reviewAverage": recip?.reviewAverage ?? "",
+            "userID": user?.uid ?? "",
+            "nickName" :self.userName,
+            "userIcon": self.userIcon,
+            "tag": "マイベスト"
+
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+
+            }
+    }
+        
+    }
     
 }

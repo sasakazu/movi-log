@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,40 +13,83 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="resultCell" customModule="movilog" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="resultCell" customModule="movilog" customModuleProvider="target">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYa-bc-Qky">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MYa-bc-Qky">
                         <rect key="frame" x="16" y="10" width="90" height="129"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="129" id="UMB-C0-DnT"/>
+                            <constraint firstAttribute="width" constant="90" id="bsW-3X-551"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-RU-j32">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-RU-j32">
                         <rect key="frame" x="117" y="10" width="187" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ZBl-iM-QQC"/>
+                            <constraint firstAttribute="width" constant="187" id="idB-dg-i5T"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKk-t6-jMA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKk-t6-jMA">
                         <rect key="frame" x="117" y="39" width="174" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="VSc-Oa-4Le"/>
+                            <constraint firstAttribute="width" constant="174" id="dq6-eC-Oan"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gi-4R-ZEQ">
-                        <rect key="frame" x="209" y="109" width="95" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="＋映画登録"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPU-Ug-ehY">
+                        <rect key="frame" x="214" y="114" width="90" height="25"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="tinted" title="観おわった">
+                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                        </buttonConfiguration>
                         <connections>
-                            <action selector="collectionAdd:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M5A-ms-zoW"/>
+                            <action selector="watchDone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hTN-NH-QQw"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChU-mN-H4F">
+                        <rect key="frame" x="214" y="80" width="90" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="4W4-d4-Tom"/>
+                            <constraint firstAttribute="height" constant="25" id="hla-iP-PJ6"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="tinted" title="観たい">
+                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="CPU-Ug-ehY" secondAttribute="bottom" id="2ah-7w-xpR"/>
+                    <constraint firstAttribute="trailing" secondItem="ZKk-t6-jMA" secondAttribute="trailing" constant="29" id="D8u-a0-aYf"/>
+                    <constraint firstItem="MYa-bc-Qky" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="MHe-DI-cfu"/>
+                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="leading" secondItem="ChU-mN-H4F" secondAttribute="leading" id="Ncs-2A-mrz"/>
+                    <constraint firstItem="zaa-RU-j32" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PSw-ck-lpj"/>
+                    <constraint firstAttribute="bottom" secondItem="MYa-bc-Qky" secondAttribute="bottom" constant="11" id="S29-5c-cgO"/>
+                    <constraint firstItem="ChU-mN-H4F" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="108" id="Uaq-y1-SzK"/>
+                    <constraint firstItem="ZKk-t6-jMA" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="W5O-mI-joj"/>
+                    <constraint firstItem="ZKk-t6-jMA" firstAttribute="top" secondItem="zaa-RU-j32" secondAttribute="bottom" constant="8" symbolic="YES" id="WC3-JG-Nr5"/>
+                    <constraint firstItem="ZKk-t6-jMA" firstAttribute="top" secondItem="zaa-RU-j32" secondAttribute="bottom" constant="8" symbolic="YES" id="ZRn-du-nMA"/>
+                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="trailing" secondItem="ChU-mN-H4F" secondAttribute="trailing" id="dHR-Ox-cHI"/>
+                    <constraint firstItem="ChU-mN-H4F" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fAG-uy-Rcs"/>
+                    <constraint firstAttribute="trailing" secondItem="zaa-RU-j32" secondAttribute="trailing" constant="16" id="fef-KY-C9z"/>
+                    <constraint firstItem="zaa-RU-j32" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="g3V-Iy-yOE"/>
+                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="top" secondItem="ChU-mN-H4F" secondAttribute="bottom" constant="9" id="nes-Vj-czC"/>
+                    <constraint firstItem="MYa-bc-Qky" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oRZ-ga-9gh"/>
+                    <constraint firstItem="ChU-mN-H4F" firstAttribute="top" secondItem="ZKk-t6-jMA" secondAttribute="bottom" constant="29" id="rCs-iW-4AX"/>
+                    <constraint firstItem="zaa-RU-j32" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="usL-8O-2cP"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="button" destination="ChU-mN-H4F" id="9WW-8x-h18"/>
                 <outlet property="directedTitle" destination="ZKk-t6-jMA" id="6rU-bR-PGj"/>
                 <outlet property="movieImage" destination="MYa-bc-Qky" id="a3d-rf-NEd"/>
                 <outlet property="resultTitle" destination="zaa-RU-j32" id="RU7-vx-Tmr"/>
