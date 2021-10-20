@@ -44,46 +44,35 @@
                         <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPU-Ug-ehY">
-                        <rect key="frame" x="214" y="114" width="90" height="25"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChU-mN-H4F">
+                        <rect key="frame" x="214" y="113" width="90" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="4W4-d4-Tom"/>
+                            <constraint firstAttribute="height" constant="28" id="hla-iP-PJ6"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="tinted" title="観おわった">
+                        <buttonConfiguration key="configuration" style="tinted" title="映画登録">
                             <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="watchDone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hTN-NH-QQw"/>
+                            <action selector="collectionAdd:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H8h-8c-C2I"/>
                         </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChU-mN-H4F">
-                        <rect key="frame" x="214" y="80" width="90" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="90" id="4W4-d4-Tom"/>
-                            <constraint firstAttribute="height" constant="25" id="hla-iP-PJ6"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="tinted" title="観たい">
-                            <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
-                        </buttonConfiguration>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="CPU-Ug-ehY" secondAttribute="bottom" id="2ah-7w-xpR"/>
                     <constraint firstAttribute="trailing" secondItem="ZKk-t6-jMA" secondAttribute="trailing" constant="29" id="D8u-a0-aYf"/>
                     <constraint firstItem="MYa-bc-Qky" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="MHe-DI-cfu"/>
-                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="leading" secondItem="ChU-mN-H4F" secondAttribute="leading" id="Ncs-2A-mrz"/>
                     <constraint firstItem="zaa-RU-j32" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PSw-ck-lpj"/>
                     <constraint firstAttribute="bottom" secondItem="MYa-bc-Qky" secondAttribute="bottom" constant="11" id="S29-5c-cgO"/>
                     <constraint firstItem="ChU-mN-H4F" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="108" id="Uaq-y1-SzK"/>
                     <constraint firstItem="ZKk-t6-jMA" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="W5O-mI-joj"/>
                     <constraint firstItem="ZKk-t6-jMA" firstAttribute="top" secondItem="zaa-RU-j32" secondAttribute="bottom" constant="8" symbolic="YES" id="WC3-JG-Nr5"/>
                     <constraint firstItem="ZKk-t6-jMA" firstAttribute="top" secondItem="zaa-RU-j32" secondAttribute="bottom" constant="8" symbolic="YES" id="ZRn-du-nMA"/>
-                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="trailing" secondItem="ChU-mN-H4F" secondAttribute="trailing" id="dHR-Ox-cHI"/>
                     <constraint firstItem="ChU-mN-H4F" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fAG-uy-Rcs"/>
                     <constraint firstAttribute="trailing" secondItem="zaa-RU-j32" secondAttribute="trailing" constant="16" id="fef-KY-C9z"/>
                     <constraint firstItem="zaa-RU-j32" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="g3V-Iy-yOE"/>
-                    <constraint firstItem="CPU-Ug-ehY" firstAttribute="top" secondItem="ChU-mN-H4F" secondAttribute="bottom" constant="9" id="nes-Vj-czC"/>
                     <constraint firstItem="MYa-bc-Qky" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oRZ-ga-9gh"/>
-                    <constraint firstItem="ChU-mN-H4F" firstAttribute="top" secondItem="ZKk-t6-jMA" secondAttribute="bottom" constant="29" id="rCs-iW-4AX"/>
+                    <constraint firstItem="ChU-mN-H4F" firstAttribute="top" secondItem="ZKk-t6-jMA" secondAttribute="bottom" constant="62" id="rCs-iW-4AX"/>
                     <constraint firstItem="zaa-RU-j32" firstAttribute="leading" secondItem="MYa-bc-Qky" secondAttribute="trailing" constant="11" id="usL-8O-2cP"/>
                 </constraints>
             </tableViewCellContentView>

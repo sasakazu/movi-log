@@ -12,6 +12,7 @@
 		730FC1B926DF7CA100954961 /* resultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FC1B726DF7CA100954961 /* resultCell.swift */; };
 		730FC1BA26DF7CA100954961 /* resultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730FC1B826DF7CA100954961 /* resultCell.xib */; };
 		730FC1BC26DF870500954961 /* resultDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FC1BB26DF870500954961 /* resultDetail.swift */; };
+		731080C427201C2F00E272AB /* halfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731080C327201C2F00E272AB /* halfModalViewController.swift */; };
 		7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */; };
 		7324FAA527197E80003791A0 /* movilogFDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FAA327197E80003791A0 /* movilogFDetailCell.swift */; };
 		7324FAA627197E80003791A0 /* movilogFDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7324FAA427197E80003791A0 /* movilogFDetailCell.xib */; };
@@ -87,6 +88,7 @@
 		730FC1B726DF7CA100954961 /* resultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultCell.swift; sourceTree = "<group>"; };
 		730FC1B826DF7CA100954961 /* resultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultCell.xib; sourceTree = "<group>"; };
 		730FC1BB26DF870500954961 /* resultDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultDetail.swift; sourceTree = "<group>"; };
+		731080C327201C2F00E272AB /* halfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = halfModalViewController.swift; sourceTree = "<group>"; };
 		7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFriendDetail.swift; sourceTree = "<group>"; };
 		7324FAA327197E80003791A0 /* movilogFDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFDetailCell.swift; sourceTree = "<group>"; };
 		7324FAA427197E80003791A0 /* movilogFDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = movilogFDetailCell.xib; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				738400F326C67BA20070F8CF /* searchView.swift */,
 				730FC1B826DF7CA100954961 /* resultCell.xib */,
 				7324FAE3271C1BB5003791A0 /* View2ViewController.swift */,
+				731080C327201C2F00E272AB /* halfModalViewController.swift */,
 			);
 			path = searchMovie;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				738400F426C67BA30070F8CF /* searchView.swift in Sources */,
 				73B7218826EB63EC00D874F7 /* searchFriends.swift in Sources */,
 				73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */,
+				731080C427201C2F00E272AB /* halfModalViewController.swift in Sources */,
 				73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */,
 				7324FAE4271C1BB6003791A0 /* View2ViewController.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,

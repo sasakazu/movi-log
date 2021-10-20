@@ -89,28 +89,9 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
                         return booklists[0].Items?.count ?? 0
             }
     }
-
-
-//    let items = UIMenu(options: .displayInline, children: [
-//        UIAction(title: "メニュー3", image: UIImage(systemName: "pencil"), handler: { _ in
-//            print("メニュー3が押されました")
-//        }),
-//        UIAction(title: "メニュー2", image: UIImage(systemName: "envelope"), handler: { _ in
-//            print("メニュー2が押されました")
-//
-////            self.test = "menu2"
-////            print(self.test)
-//        }),
-//        UIAction(title: "メニュー1", image: UIImage(systemName: "network.badge.shield.half.filled"), handler: { _ in
-//            print("メニュー1が押されました")
-//        }),
-//    ])
-
-//        let destruct = UIAction(title: "削除する", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in }
-
-//    button.menu = UIMenu(title: "", children: [items])
-//    button.showsMenuAsPrimaryAction = true
     
+
+
 //セルに表示させる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -118,11 +99,29 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         cell.recip = booklists[0].Items?[indexPath.row].Item
 
-//        cell.button.menu = UIMenu(title: "", children: [items])
-//        cell.button.showsMenuAsPrimaryAction = true
-
+        
+        cell.button.addTarget(self, action: #selector(tappedOnXibCellButton), for: .touchUpInside)
+      
         
         return cell
+
+    }
+    
+//    ハーフモーダルへ
+    @objc func tappedOnXibCellButton(sender: UIButton) {
+
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "halfModalView") as! halfModalViewController
+        self.present(secondViewController, animated: true, completion: nil)
+        
+        if #available(iOS 15.0, *) {
+            if let sheet = secondViewController.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 24.0
+            }
+        } else {
+            // Fallback on earlier versions
+        }
 
     }
 
@@ -141,6 +140,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
 //    詳細画面にデータを送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        
         if segue.identifier == "toNextViewController" {
             if let nextVC = segue.destination as? resultDetail,
                

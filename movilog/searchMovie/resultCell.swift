@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 
 class resultCell: UITableViewCell {
 
@@ -24,6 +25,8 @@ class resultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+ 
         
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser
@@ -71,84 +74,88 @@ class resultCell: UITableViewCell {
     }
     
     
+
+    
     @IBAction func collectionAdd(_ sender: Any) {
-
-        let db = Firestore.firestore()
-
-        let user = Auth.auth().currentUser
-
-        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
-            "title": recip?.title ?? "",
-            "largeImageUrl": recip?.largeImageUrl ?? "",
-            "artistName": recip?.artistName ?? "",
-            "salesDate": recip?.salesDate ?? "",
-            "reviewAverage": recip?.reviewAverage ?? "",
-            "tag": "観たい"
-
-        ])
-
-        db.collection("allPosts").addDocument(data:[
-            "title": recip?.title ?? "",
-            "largeImageUrl": recip?.largeImageUrl ?? "",
-            "artistName": recip?.artistName ?? "",
-            "salesDate": recip?.salesDate ?? "",
-            "reviewAverage": recip?.reviewAverage ?? "",
-            "userID": user?.uid ?? "",
-            "nickName" :self.userName,
-            "userIcon": self.userIcon,
-            "tag": "観たい"
-
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-
-            }
-    }
+    
+//        let db = Firestore.firestore()
+//
+//        let user = Auth.auth().currentUser
+//
+//        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
+//            "title": recip?.title ?? "",
+//            "largeImageUrl": recip?.largeImageUrl ?? "",
+//            "artistName": recip?.artistName ?? "",
+//            "salesDate": recip?.salesDate ?? "",
+//            "reviewAverage": recip?.reviewAverage ?? "",
+//            "tag": "観たい"
+//
+//        ])
+//
+//        db.collection("allPosts").addDocument(data:[
+//            "title": recip?.title ?? "",
+//            "largeImageUrl": recip?.largeImageUrl ?? "",
+//            "artistName": recip?.artistName ?? "",
+//            "salesDate": recip?.salesDate ?? "",
+//            "reviewAverage": recip?.reviewAverage ?? "",
+//            "userID": user?.uid ?? "",
+//            "nickName" :self.userName,
+//            "userIcon": self.userIcon,
+//            "tag": "観たい"
+//
+//            ]) { err in
+//                if let err = err {
+//                    print("Error writing document: \(err)")
+//                } else {
+//                    print("Document successfully written!")
+//
+//            }
+//    }
+//        
         
         
         
         
-        
+//    }
+    
     }
     
     
     @IBAction func watchDone(_ sender: Any) {
      
-        let db = Firestore.firestore()
-
-        let user = Auth.auth().currentUser
-
-        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
-            "title": recip?.title ?? "",
-            "largeImageUrl": recip?.largeImageUrl ?? "",
-            "artistName": recip?.artistName ?? "",
-            "salesDate": recip?.salesDate ?? "",
-            "reviewAverage": recip?.reviewAverage ?? "",
-            "tag": "見おわった"
-
-        ])
-
-        db.collection("allPosts").addDocument(data:[
-            "title": recip?.title ?? "",
-            "largeImageUrl": recip?.largeImageUrl ?? "",
-            "artistName": recip?.artistName ?? "",
-            "salesDate": recip?.salesDate ?? "",
-            "reviewAverage": recip?.reviewAverage ?? "",
-            "userID": user?.uid ?? "",
-            "nickName" :self.userName,
-            "userIcon": self.userIcon,
-            "tag": "観おわった"
-
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-
-            }
-    }
+//        let db = Firestore.firestore()
+//
+//        let user = Auth.auth().currentUser
+//
+//        db.collection("users").document(user!.uid).collection("post").addDocument(data:[
+//            "title": recip?.title ?? "",
+//            "largeImageUrl": recip?.largeImageUrl ?? "",
+//            "artistName": recip?.artistName ?? "",
+//            "salesDate": recip?.salesDate ?? "",
+//            "reviewAverage": recip?.reviewAverage ?? "",
+//            "tag": "見おわった"
+//
+//        ])
+//
+//        db.collection("allPosts").addDocument(data:[
+//            "title": recip?.title ?? "",
+//            "largeImageUrl": recip?.largeImageUrl ?? "",
+//            "artistName": recip?.artistName ?? "",
+//            "salesDate": recip?.salesDate ?? "",
+//            "reviewAverage": recip?.reviewAverage ?? "",
+//            "userID": user?.uid ?? "",
+//            "nickName" :self.userName,
+//            "userIcon": self.userIcon,
+//            "tag": "観おわった"
+//
+//            ]) { err in
+//                if let err = err {
+//                    print("Error writing document: \(err)")
+//                } else {
+//                    print("Document successfully written!")
+//
+//            }
+//    }
         
     }
     
@@ -189,5 +196,6 @@ class resultCell: UITableViewCell {
     }
         
     }
+
     
 }
