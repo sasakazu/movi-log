@@ -42,7 +42,7 @@ class resultCell: UITableViewCell {
                 
                 
                 
-                print(self.userName)
+//                print(self.userName)
                 
             } else {
                 print("Document does not exist")
@@ -74,10 +74,17 @@ class resultCell: UITableViewCell {
     }
     
     
-
+//    var test:String = ""
     
     @IBAction func collectionAdd(_ sender: Any) {
     
+      
+//        print("tatagataga\(button.tag)")
+        
+//
+//        test = recip?.title ?? "dd"
+//
+//        print(test)
 //        let db = Firestore.firestore()
 //
 //        let user = Auth.auth().currentUser
@@ -122,7 +129,8 @@ class resultCell: UITableViewCell {
     
     
     @IBAction func watchDone(_ sender: Any) {
-     
+        
+      
 //        let db = Firestore.firestore()
 //
 //        let user = Auth.auth().currentUser

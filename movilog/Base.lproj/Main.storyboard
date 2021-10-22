@@ -1335,7 +1335,7 @@
                     <connections>
                         <outlet property="searchTF" destination="aim-s6-bcM" id="WU6-ZK-EQu"/>
                         <outlet property="tableviewTest" destination="xVm-gM-FIV" id="PgO-WN-RQx"/>
-                        <segue destination="HW2-ON-s5k" kind="show" identifier="toNextViewController" id="WXJ-4x-eQy"/>
+                        <segue destination="m80-xS-UwE" kind="presentation" identifier="goHalf" id="NU5-el-MAi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8z-TV-lvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1351,14 +1351,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eEp-Qf-BdA">
-                                <rect key="frame" x="20" y="109" width="150" height="214"/>
+                                <rect key="frame" x="20" y="65" width="150" height="214"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="214" id="3Z4-Tv-Tyj"/>
                                     <constraint firstAttribute="width" constant="150" id="KEF-86-G7u"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="映画タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2Q-6c-egT">
-                                <rect key="frame" x="186" y="109" width="208" height="38"/>
+                                <rect key="frame" x="186" y="65" width="208" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="aPx-jM-3al"/>
                                     <constraint firstAttribute="width" constant="208" id="gCn-Q8-9YI"/>
@@ -1368,7 +1368,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="監督名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkG-8q-HUb">
-                                <rect key="frame" x="186" y="166" width="208" height="21"/>
+                                <rect key="frame" x="186" y="122" width="208" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="B39-h2-nbm"/>
                                     <constraint firstAttribute="width" constant="208" id="lDi-Dx-OnP"/>
@@ -1378,7 +1378,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="販売日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8Y-9H-zGd">
-                                <rect key="frame" x="186" y="197" width="208" height="21"/>
+                                <rect key="frame" x="186" y="153" width="208" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="Rzz-kj-wlU"/>
                                     <constraint firstAttribute="height" constant="21" id="rUM-op-zf7"/>
@@ -1388,7 +1388,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-Sb-9zq">
-                                <rect key="frame" x="186" y="228" width="208" height="18"/>
+                                <rect key="frame" x="186" y="184" width="208" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="HbF-yP-gpC"/>
                                     <constraint firstAttribute="height" constant="18" id="Pa6-8Q-GVx"/>
@@ -1398,7 +1398,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-L1-mx9">
-                                <rect key="frame" x="20" y="391" width="374" height="36"/>
+                                <rect key="frame" x="20" y="347" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="楽天ブックスで詳細を見る"/>
                             </button>
@@ -1443,7 +1443,7 @@
             <objects>
                 <viewController storyboardIdentifier="halfModalView" id="m80-xS-UwE" customClass="halfModalViewController" customModule="movilog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8N5-my-d2p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j2-WG-wRT">
@@ -1451,16 +1451,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="registerBtn:" destination="m80-xS-UwE" eventType="touchUpInside" id="8GH-Uz-V80"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xek-l7-eAJ">
+                                <rect key="frame" x="63" y="315" width="331" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fjf-2a-zof"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z61-Rm-gOS"/>
+                    <connections>
+                        <outlet property="label" destination="Xek-l7-eAJ" id="nay-b6-uMQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByH-fc-N01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2754" y="496"/>
+            <point key="canvasLocation" x="2753.6231884057975" y="495.53571428571428"/>
         </scene>
         <!--Login-->
         <scene sceneID="npx-6F-nTk">

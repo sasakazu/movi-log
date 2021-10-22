@@ -9,12 +9,25 @@ import UIKit
 
 class halfModalViewController: UIViewController {
 
+    var halfTitle:String = ""
+    
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        label.text = self.halfTitle
+        
+        print(halfTitle)
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func registerBtn(_ sender: Any) {
+        
+        
+        
+    }
+    
 
 }
