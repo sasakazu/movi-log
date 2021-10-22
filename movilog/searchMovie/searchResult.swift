@@ -106,7 +106,6 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
       
         cell.button.tag = indexPath.row
         
-        
         cell.recip = booklists[0].Items?[indexPath.row].Item
 
         return cell
@@ -126,6 +125,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
           
           test = booklists[0].Items?[row].Item?.title ?? "kk"
           
+//        ここでデータを送る
           secondViewController.halfTitle = test
         
         self.present(secondViewController, animated: true, completion:nil)
@@ -158,42 +158,27 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
 //        print(booklists[0].Items?[indexPath.row].Item?.title)
 //            performSegue(withIdentifier: "goModal", sender: indexPath.row)
 //        print(indexPath.row)
+        
+        performSegue(withIdentifier: "goDetail", sender: indexPath.row)
     }
     
 //    詳細画面にデータを送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        
-        if segue.identifier == "goHalf" {
-            if let nextVC = segue.destination as? halfModalViewController,
+        if segue.identifier == "goDetail" {
+            if let nextVC = segue.destination as? resultDetail,
 
-               let index = sender as? Int {
+                let index = sender as? Int {
 
-                nextVC.halfTitle = booklists[0].Items?[index].Item?.title ?? ""
-//                nextVC.artistName = booklists[0].Items?[index].Item?.artistName ?? ""
-//                nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
-//                nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
-//                nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
-//
-//
+                nextVC.detailTitle = self.booklists[0].Items?[index].Item?.title ?? ""
+                    nextVC.artistName = booklists[0].Items?[index].Item?.artistName ?? ""
+                    nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
+                    nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
+                    nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
+
+
+            }
         }
-    }
-        
-        
-//        if segue.identifier == "goHalf" {
-//            if let nextVC = segue.destination as? halfModalViewController,
-//
-//                let index = sender as? Int {
-//
-//                nextVC.halfTitle = self.booklists[0].Items?[index].Item?.title ?? ""
-////                    nextVC.artistName = booklists[0].Items?[index].Item?.artistName ?? ""
-////                    nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
-////                    nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
-////                    nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
-//
-//
-//            }
-//        }
 }
 
 //    キーボードを閉じたら検索開始
