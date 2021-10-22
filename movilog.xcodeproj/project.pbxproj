@@ -16,7 +16,6 @@
 		7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */; };
 		7324FAA527197E80003791A0 /* movilogFDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FAA327197E80003791A0 /* movilogFDetailCell.swift */; };
 		7324FAA627197E80003791A0 /* movilogFDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7324FAA427197E80003791A0 /* movilogFDetailCell.xib */; };
-		7324FAE4271C1BB6003791A0 /* View2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FAE3271C1BB5003791A0 /* View2ViewController.swift */; };
 		7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55926BBF4290099F69C /* AppDelegate.swift */; };
 		7371F55C26BBF4290099F69C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55B26BBF4290099F69C /* SceneDelegate.swift */; };
 		7371F55E26BBF4290099F69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F55D26BBF4290099F69C /* ViewController.swift */; };
@@ -92,7 +91,6 @@
 		7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFriendDetail.swift; sourceTree = "<group>"; };
 		7324FAA327197E80003791A0 /* movilogFDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFDetailCell.swift; sourceTree = "<group>"; };
 		7324FAA427197E80003791A0 /* movilogFDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = movilogFDetailCell.xib; sourceTree = "<group>"; };
-		7324FAE3271C1BB5003791A0 /* View2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View2ViewController.swift; sourceTree = "<group>"; };
 		7371F55626BBF4290099F69C /* movilog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movilog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7371F55926BBF4290099F69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7371F55B26BBF4290099F69C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,8 +200,6 @@
 				730FC1BB26DF870500954961 /* resultDetail.swift */,
 				738400F326C67BA20070F8CF /* searchView.swift */,
 				730FC1B826DF7CA100954961 /* resultCell.xib */,
-				7324FAE3271C1BB5003791A0 /* View2ViewController.swift */,
-				731080C327201C2F00E272AB /* halfModalViewController.swift */,
 			);
 			path = searchMovie;
 			sourceTree = "<group>";
@@ -214,6 +210,14 @@
 				730FC1AB26DF524400954961 /* model.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		731080C52722AF2B00E272AB /* halfmodal */ = {
+			isa = PBXGroup;
+			children = (
+				731080C327201C2F00E272AB /* halfModalViewController.swift */,
+			);
+			path = halfmodal;
 			sourceTree = "<group>";
 		};
 		7371F54D26BBF4290099F69C = {
@@ -241,6 +245,7 @@
 		7371F55826BBF4290099F69C /* movilog */ = {
 			isa = PBXGroup;
 			children = (
+				731080C52722AF2B00E272AB /* halfmodal */,
 				73A3CBDB26F4662B0010EF42 /* Timeline */,
 				73B9E2B426EDEDE3005CA82F /* editProfile */,
 				73B9E2AB26ECA0CE005CA82F /* searchFriend */,
@@ -632,7 +637,6 @@
 				73E937E3270EF89C000612DF /* tLMovieDetailViewController.swift in Sources */,
 				731080C427201C2F00E272AB /* halfModalViewController.swift in Sources */,
 				73A3CBDA26F33CE20010EF42 /* friendMovieDetailViewController.swift in Sources */,
-				7324FAE4271C1BB6003791A0 /* View2ViewController.swift in Sources */,
 				73B7213B26E8BA1800D874F7 /* movieCollectionDetail.swift in Sources */,
 				73E937E827104031000612DF /* searchFriendFollowingCell.swift in Sources */,
 				7371F55E26BBF4290099F69C /* ViewController.swift in Sources */,

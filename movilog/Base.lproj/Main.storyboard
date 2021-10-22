@@ -1446,30 +1446,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j2-WG-wRT">
-                                <rect key="frame" x="174" y="263" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXv-Pf-Sip">
+                                <rect key="frame" x="49" y="67" width="316" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="ArW-SN-Igy"/>
+                                    <constraint firstAttribute="width" constant="316" id="KLI-vq-9lV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="観たい">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="27"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="registerBtn:" destination="m80-xS-UwE" eventType="touchUpInside" id="8GH-Uz-V80"/>
+                                    <action selector="registerBtn:" destination="m80-xS-UwE" eventType="touchUpInside" id="AaO-60-Xhc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xek-l7-eAJ">
-                                <rect key="frame" x="63" y="315" width="331" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlb-I1-VO8">
+                                <rect key="frame" x="49" y="160" width="316" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="316" id="Wqi-Au-Ssi"/>
+                                    <constraint firstAttribute="height" constant="67" id="bSc-Jz-bbs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="観た">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="watchedBtn:" destination="m80-xS-UwE" eventType="touchUpInside" id="g8I-Um-RPs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfD-CX-RU4">
+                                <rect key="frame" x="49" y="253" width="316" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="316" id="Y32-eX-hIl"/>
+                                    <constraint firstAttribute="height" constant="67" id="mSv-es-Z8I"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="マイベスト">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="myBestBtn:" destination="m80-xS-UwE" eventType="touchUpInside" id="X9u-9G-JqG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fjf-2a-zof"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fjf-2a-zof" firstAttribute="trailing" secondItem="GfD-CX-RU4" secondAttribute="trailing" constant="49" id="018-dL-ekh"/>
+                            <constraint firstItem="hXv-Pf-Sip" firstAttribute="leading" secondItem="Fjf-2a-zof" secondAttribute="leading" constant="49" id="5bx-ug-pyb"/>
+                            <constraint firstItem="GfD-CX-RU4" firstAttribute="leading" secondItem="Fjf-2a-zof" secondAttribute="leading" constant="49" id="90a-iN-f1s"/>
+                            <constraint firstItem="Hlb-I1-VO8" firstAttribute="leading" secondItem="Fjf-2a-zof" secondAttribute="leading" constant="49" id="CL6-Ob-6Ye"/>
+                            <constraint firstItem="GfD-CX-RU4" firstAttribute="top" secondItem="Hlb-I1-VO8" secondAttribute="bottom" constant="26" id="F9K-Fh-sct"/>
+                            <constraint firstItem="hXv-Pf-Sip" firstAttribute="top" secondItem="Fjf-2a-zof" secondAttribute="top" constant="23" id="mFb-k2-PDY"/>
+                            <constraint firstItem="Fjf-2a-zof" firstAttribute="trailing" secondItem="Hlb-I1-VO8" secondAttribute="trailing" constant="49" id="oEz-Xl-qsf"/>
+                            <constraint firstItem="Hlb-I1-VO8" firstAttribute="top" secondItem="hXv-Pf-Sip" secondAttribute="bottom" constant="26" id="oom-sS-EH9"/>
+                            <constraint firstItem="Fjf-2a-zof" firstAttribute="trailing" secondItem="hXv-Pf-Sip" secondAttribute="trailing" constant="49" id="suo-Fu-Ksb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z61-Rm-gOS"/>
-                    <connections>
-                        <outlet property="label" destination="Xek-l7-eAJ" id="nay-b6-uMQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByH-fc-N01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1866,6 +1902,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

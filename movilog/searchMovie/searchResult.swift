@@ -123,10 +123,15 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
               
 //          print(row)
           
-          test = booklists[0].Items?[row].Item?.title ?? "kk"
+//          test = booklists[0].Items?[row].Item?.title ?? "kk"
           
 //        ここでデータを送る
-          secondViewController.halfTitle = test
+        secondViewController.halfTitle = booklists[0].Items?[row].Item?.title ?? "no data"
+        
+        secondViewController.artist = booklists[0].Items?[row].Item?.artistName ?? "no data"
+        secondViewController.imageUrl = booklists[0].Items?[row].Item?.largeImageUrl ?? "no data"
+        secondViewController.sales = booklists[0].Items?[row].Item?.salesDate ?? "no data"
+        secondViewController.review = booklists[0].Items?[row].Item?.reviewAverage ?? "no data"
         
         self.present(secondViewController, animated: true, completion:nil)
         
