@@ -36,13 +36,29 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var bestReviews: [String] = []
     
     
-//    映画情報
+//    全映画情報
     var collectionItem: [String:Any] = [:]
     var imageData = ""
     var titleData = ""
     var artistData = ""
     var saleDateData = ""
     var reviewData = ""
+    
+//    観たい映画情報
+    var watchItems: [String:Any] = [:]
+    var watchImageData = ""
+    var watchTitleData = ""
+    var watchArtistData = ""
+    var watchSaleDateData = ""
+    var watchReviewData = ""
+    
+//    マイベスト映画情報
+    var myBestItems: [String:Any] = [:]
+    var myBestImageData = ""
+    var myBestTitleData = ""
+    var myBestArtistData = ""
+    var myBestSaleDateData = ""
+    var myBestReviewData = ""
     
 //    ユーザー情報
     var nickname = ""
@@ -254,12 +270,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        
         self.imageData = viewTable[indexPath.row]
             
         cell.collectionImage.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder"))
-
-
         
         return cell
                 
@@ -270,13 +283,41 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     // Cell が選択された場合
       func collectionView(_ collectionView: UICollectionView,
                             didSelectItemAt indexPath: IndexPath) {
-   
+        
+        if changeTag.selectedSegmentIndex == 0 {
+               // value for first index selected here
+           
+//          全ポスト
         self.imageData = imageItems[indexPath.row]
         self.titleData = titleItems[indexPath.row]
         self.artistData = artistItems[indexPath.row]
         self.saleDateData = saleDataItems[indexPath.row]
         self.reviewData = reviewItems[indexPath.row]
-        
+          
+          } else if changeTag.selectedSegmentIndex == 1 {
+              
+          
+////          観たいポスト
+        self.watchImageData = watchImages[indexPath.row]
+        self.watchTitleData = watchTitles[indexPath.row]
+        self.watchArtistData = watchArtists[indexPath.row]
+        self.watchSaleDateData = watchSaleDatas[indexPath.row]
+        self.watchReviewData = watchReviews[indexPath.row]
+   
+          
+          }
+          
+          else if changeTag.selectedSegmentIndex == 2{
+   
+////          マイベストポスト
+        self.myBestImageData = bestImages[indexPath.row]
+        self.myBestTitleData = bestTitles[indexPath.row]
+        self.myBestArtistData = bestArtists[indexPath.row]
+        self.myBestSaleDateData = bestSaleDatas[indexPath.row]
+        self.myBestReviewData = bestReviews[indexPath.row]
+//
+              
+          }
         performSegue(withIdentifier: "collectionDetail",sender: nil)
    
       }
@@ -287,16 +328,35 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
               let subVC: movieCollectionDetail = (segue.destination as? movieCollectionDetail)!
               // SubViewController のselectedImgに選択された画像を設定する
             
+              if changeTag.selectedSegmentIndex == 0 {
               
+//              全て
             subVC.selectedImage = imageData
             subVC.selectedTitle = titleData
             subVC.selectedArtist = artistData
             subVC.selectedSaleDate = saleDateData
             subVC.selectedReviewAverage = reviewData
-         
-          
-           
-              }
+              
+              
+          } else if changeTag.selectedSegmentIndex == 1 {
+//              観たいタグ
+            subVC.selectedImage = watchImageData
+            subVC.selectedTitle = watchTitleData
+            subVC.selectedArtist = watchArtistData
+            subVC.selectedSaleDate = watchSaleDateData
+            subVC.selectedReviewAverage = watchSaleDateData
+          }
+              
+            else if changeTag.selectedSegmentIndex == 2{
+//              マイベスト
+            subVC.selectedImage = myBestImageData
+            subVC.selectedTitle = myBestTitleData
+            subVC.selectedArtist = myBestArtistData
+            subVC.selectedSaleDate = myBestSaleDateData
+            subVC.selectedReviewAverage = myBestReviewData
+            
+}
+          }
               
               
           
