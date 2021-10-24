@@ -722,6 +722,9 @@
                                     <segment title="観たい"/>
                                     <segment title="マイベスト"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeTags:" destination="ibM-Zt-Mxq" eventType="valueChanged" id="pcr-7u-bCs"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y2m-IY-nFj"/>
@@ -754,6 +757,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changeTag" destination="9VF-Xg-5kS" id="hhR-eQ-iEv"/>
                         <outlet property="movieFriend" destination="l2i-Gt-uT5" id="5I1-ag-QBA"/>
                         <outlet property="movilogColleciton" destination="OY7-O9-hNV" id="NuP-hC-X09"/>
                         <outlet property="userImage" destination="QaH-s6-NX1" id="9CK-Bj-m2h"/>
@@ -1889,7 +1893,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sAe-Ur-mhH"/>
+        <segue reference="iXJ-bT-sTt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>
