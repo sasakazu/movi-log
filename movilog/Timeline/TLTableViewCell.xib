@@ -13,7 +13,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="195" id="KGk-i7-Jjw" customClass="TLTableViewCell" customModule="movilog" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="384" height="195"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="384" height="195"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -61,6 +61,16 @@
                             <constraint firstAttribute="height" constant="34" id="pFq-PD-sv2"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021/10/22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Us7-uX-Xer">
+                        <rect key="frame" x="301" y="11" width="63" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="1Zh-7S-gPS"/>
+                            <constraint firstAttribute="height" constant="15" id="xzS-Ae-OLb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Tam-iK-L4k" firstAttribute="leading" secondItem="elD-ze-AgA" secondAttribute="trailing" constant="24" id="5tM-NP-icb"/>
@@ -69,19 +79,23 @@
                     <constraint firstItem="jan-s1-JGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="DIJ-xn-BcC"/>
                     <constraint firstItem="elD-ze-AgA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EoV-tO-VZA"/>
                     <constraint firstItem="Tam-iK-L4k" firstAttribute="top" secondItem="jan-s1-JGq" secondAttribute="bottom" constant="30" id="Fe5-vz-v1Z"/>
+                    <constraint firstItem="Us7-uX-Xer" firstAttribute="leading" secondItem="jan-s1-JGq" secondAttribute="trailing" constant="42" id="IH0-ci-qzA"/>
                     <constraint firstItem="waC-vS-FFi" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="IMo-Qs-9v7"/>
                     <constraint firstItem="waC-vS-FFi" firstAttribute="top" secondItem="Tam-iK-L4k" secondAttribute="bottom" constant="8" symbolic="YES" id="K8o-B6-6Qy"/>
                     <constraint firstAttribute="trailing" secondItem="jan-s1-JGq" secondAttribute="trailing" constant="125" id="Myo-Bw-o43"/>
                     <constraint firstItem="jan-s1-JGq" firstAttribute="leading" secondItem="hbC-on-l37" secondAttribute="trailing" constant="19" id="NOF-gA-1tE"/>
                     <constraint firstItem="Tam-iK-L4k" firstAttribute="top" secondItem="jan-s1-JGq" secondAttribute="bottom" constant="30" id="RWk-Wf-DEI"/>
                     <constraint firstItem="elD-ze-AgA" firstAttribute="top" secondItem="hbC-on-l37" secondAttribute="bottom" constant="21" id="a8E-AI-PGa"/>
+                    <constraint firstAttribute="trailing" secondItem="Us7-uX-Xer" secondAttribute="trailing" constant="11" id="aOO-aq-bsJ"/>
                     <constraint firstItem="Tam-iK-L4k" firstAttribute="leading" secondItem="elD-ze-AgA" secondAttribute="trailing" constant="24" id="daK-GH-bEM"/>
                     <constraint firstItem="elD-ze-AgA" firstAttribute="top" secondItem="hbC-on-l37" secondAttribute="bottom" constant="21" id="jxh-fS-ywm"/>
                     <constraint firstItem="Tam-iK-L4k" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="keI-r5-Dq4"/>
                     <constraint firstItem="hbC-on-l37" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="l80-tE-UTq"/>
                     <constraint firstItem="waC-vS-FFi" firstAttribute="leading" secondItem="elD-ze-AgA" secondAttribute="trailing" constant="24" id="ogW-IZ-bJg"/>
                     <constraint firstAttribute="bottomMargin" secondItem="waC-vS-FFi" secondAttribute="bottom" constant="71" id="qxI-Nh-sDo"/>
+                    <constraint firstItem="Tam-iK-L4k" firstAttribute="top" secondItem="Us7-uX-Xer" secondAttribute="bottom" constant="40" id="swh-9R-6pV"/>
                     <constraint firstItem="waC-vS-FFi" firstAttribute="top" secondItem="Tam-iK-L4k" secondAttribute="bottom" constant="8" symbolic="YES" id="ucH-4u-IPX"/>
+                    <constraint firstItem="Us7-uX-Xer" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ze8-j3-C4z"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -91,6 +105,7 @@
                 <outlet property="followAction" destination="jan-s1-JGq" id="W2n-VT-f1W"/>
                 <outlet property="followIcon" destination="hbC-on-l37" id="5cB-Gs-Pi8"/>
                 <outlet property="movieImage" destination="elD-ze-AgA" id="OXc-Yk-Vaf"/>
+                <outlet property="postDate" destination="Us7-uX-Xer" id="dew-JO-Bgh"/>
             </connections>
             <point key="canvasLocation" x="184.05797101449278" y="138.95089285714286"/>
         </tableViewCell>

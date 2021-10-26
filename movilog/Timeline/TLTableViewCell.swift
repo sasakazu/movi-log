@@ -10,6 +10,9 @@ import Firebase
 
 class TLTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var postDate: UILabel!
+    
 //    映画情報
     @IBOutlet weak var TLMovieTitle: UILabel!
     @IBOutlet weak var artistLable: UILabel!

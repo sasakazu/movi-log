@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+    
     private let cellId = "cellId"
     
     private var FollwingPosts: [String] = []
@@ -28,6 +28,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private var movieImage:[String] = []
     private var artistArray: [String] = []
     private var followImageArray: [String] = []
+    private var postDateArray:[String] = []
     private var salesDateArray: [String] = []
     
     var test = ""
@@ -51,6 +52,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let db = Firestore.firestore()
     
+        
+        
 
 //        フォローしたユーザーのIDを取得する
         
@@ -79,7 +82,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                         self.movieImage = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String}
                         self.salesDateArray = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String}
                         self.reviewArray = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String}
-                                
+                        self.postDateArray = querySnapshot!.documents.compactMap { $0.data()["postDate"] as? String}
+
 //                                ユーザー情報
                         self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
                         self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
@@ -105,6 +109,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
 }
 
     
+
+    
     //    セルの高さ
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
                return 190
@@ -123,9 +129,12 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TLTableViewCell
         
+  
+        
 //        post情報
         cell.TLMovieTitle?.text = allTitle[indexPath.row]
         cell.artistLable.text = artistArray[indexPath.row]
+        cell.postDate?.text = postDateArray[indexPath.row]
 
         
         let myurl = URL(string: movieImage[indexPath.row])

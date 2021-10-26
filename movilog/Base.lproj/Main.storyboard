@@ -168,10 +168,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-QL-TQ1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-QL-TQ1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="DBU-8U-sxZ"/>
+                                    <constraint firstAttribute="height" constant="725" id="kDl-Z7-SQg"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9mf-xs-QNd" customClass="TLTableViewCell" customModule="movilog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -190,6 +193,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XDy-QL-TQ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jwd-wf-RXH"/>
+                            <constraint firstItem="XDy-QL-TQ1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mMQ-2f-DpN"/>
+                            <constraint firstItem="XDy-QL-TQ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sTH-ap-115"/>
+                            <constraint firstItem="XDy-QL-TQ1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yAO-Wg-JLG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="タイムライン" id="e43-la-uyI">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="人物線画アイコン　プラス" id="UPN-aa-sc0">
@@ -1893,7 +1902,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sAe-Ur-mhH"/>
+        <segue reference="iXJ-bT-sTt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home" width="24" height="24"/>

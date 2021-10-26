@@ -22,6 +22,7 @@ class halfModalViewController: UIViewController {
     var userid:String = ""
     var userimage:String = ""
   
+    var postDate:String = ""
     
     @IBOutlet weak var label: UILabel!
     
@@ -53,6 +54,46 @@ class halfModalViewController: UIViewController {
             }
                 
                 print(halfTitle)
+        
+        
+        
+//        投稿日時を取得したい
+        // 日時に変換したい文字列を準備
+//        let dtStr = "2019/06/19 12:30:20"
+//
+//        // DateFormatter のインスタンスを作成
+//        let formatter: DateFormatter = DateFormatter()
+//
+//        // 日付の書式を文字列に合わせて設定
+//        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+//
+//        formatter.dateStyle = .short
+//
+//        // 日時文字列からDate型の日付を生成する
+//        let dt : Date  = formatter.date(from: dtStr)!
+//
+//
+//
+//        // 作成した日付を表示してみる
+//        print(formatter.string(from: dt))
+
+        // 日付型の値を直接表示してみる
+//        print(dt)
+        
+        
+        // 現在日時を dt に代入
+        let dt = Date()
+        // DateFormatter のインスタンスを作成
+        let formatter: DateFormatter = DateFormatter()
+
+        // ロケールを日本（日本語）に設定
+        formatter.locale = Locale(identifier: "ja_JP")
+        
+        formatter.dateStyle = .short
+//        print(formatter.string(from: dt))
+        
+        postDate = formatter.string(from: dt)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -70,6 +111,7 @@ class halfModalViewController: UIViewController {
                     "artistName": artist,
                     "salesDate": sales,
                     "reviewAverage": review,
+                    "postDate": postDate,
                     "tag": "観たい"
         
                 ])
@@ -83,6 +125,7 @@ class halfModalViewController: UIViewController {
                     "userID": user?.uid ?? "",
                     "nickName" :self.username,
                     "userIcon": self.userimage,
+                    "postDate": postDate,
                     "tag": "観たい"
         
                     ]) { err in
@@ -111,6 +154,7 @@ class halfModalViewController: UIViewController {
                     "artistName": artist,
                     "salesDate": sales,
                     "reviewAverage": review,
+                    "postDate": postDate,
                     "tag": "観た"
         
                 ])
@@ -124,6 +168,7 @@ class halfModalViewController: UIViewController {
                     "userID": user?.uid ?? "",
                     "nickName" :self.username,
                     "userIcon": self.userimage,
+                    "postDate": postDate,
                     "tag": "観た"
         
                     ]) { err in
@@ -152,6 +197,7 @@ class halfModalViewController: UIViewController {
                     "artistName": artist,
                     "salesDate": sales,
                     "reviewAverage": review,
+                    "postDate": postDate,
                     "tag": "マイベスト"
         
             ])
@@ -165,6 +211,7 @@ class halfModalViewController: UIViewController {
                     "userID": user?.uid ?? "",
                     "nickName" :self.username,
                     "userIcon": self.userimage,
+                    "postDate": postDate,
                     "tag": "マイベスト"
         
                     ]) { err in
