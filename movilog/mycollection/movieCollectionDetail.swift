@@ -15,7 +15,7 @@ class movieCollectionDetail: UIViewController {
     var selectedArtist:String = ""
     var selectedSaleDate:String = ""
     var selectedReviewAverage:String = ""
-    
+    var selectedAffili:String = ""
 
     @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
@@ -34,6 +34,8 @@ class movieCollectionDetail: UIViewController {
         saleDate.text = selectedSaleDate
         averageLabel.setTitle(selectedReviewAverage, for: .normal)
         
+        print("ddddd\(selectedAffili)")
+        
         //        画像表示
         let url = URL(string: selectedImage)
             do {
@@ -49,4 +51,15 @@ class movieCollectionDetail: UIViewController {
     }
     
 
+    @IBAction func goRakuten(_ sender: Any) {
+        
+        let url = NSURL(string: "\(selectedAffili)")
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+        
+    }
+    
+    
+    
 }

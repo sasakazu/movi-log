@@ -20,6 +20,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var artistItems: [String] = []
     private var saleDataItems: [String] = []
     private var reviewItems: [String] = []
+    private var affiliItems: [String] = []
     
 //    観たい映画タグ
     private var watchTitles: [String] = []
@@ -27,6 +28,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var watchArtists: [String] = []
     private var watchSaleDatas: [String] = []
     private var watchReviews: [String] = []
+    private var watchAffili: [String] = []
     
 //    マイベスト映画タグ
     private var bestTitles: [String] = []
@@ -34,7 +36,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var bestArtists: [String] = []
     private var bestSaleDatas: [String] = []
     private var bestReviews: [String] = []
-    
+    private var bestAffilis: [String] = []
     
 //    全映画情報
     var collectionItem: [String:Any] = [:]
@@ -43,6 +45,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var artistData = ""
     var saleDateData = ""
     var reviewData = ""
+    var affiliData = ""
     
 //    観たい映画情報
     var watchItems: [String:Any] = [:]
@@ -51,6 +54,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var watchArtistData = ""
     var watchSaleDateData = ""
     var watchReviewData = ""
+    var watchAffiliData = ""
     
 //    マイベスト映画情報
     var myBestItems: [String:Any] = [:]
@@ -59,6 +63,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var myBestArtistData = ""
     var myBestSaleDateData = ""
     var myBestReviewData = ""
+    var myBestAffiliData = ""
     
 //    ユーザー情報
     var nickname = ""
@@ -129,6 +134,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.saleDataItems = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String }
                     
                     self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
+                    self.affiliItems = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
                     
                     
                     self.collectionItem = document.data()
@@ -162,6 +168,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.watchSaleDatas = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String }
                             
                     self.watchReviews = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
+                    self.watchAffili = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
+                    
 //                  print("観たいcount\(self.watchTitles.count)")
                    
                         
@@ -191,6 +199,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.bestSaleDatas = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String }
                             
                     self.bestReviews = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
+                    self.bestAffilis = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
 //                  print("観たいcount\(self.watchTitles.count)")
                    
                         
@@ -293,6 +302,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.artistData = artistItems[indexPath.row]
         self.saleDateData = saleDataItems[indexPath.row]
         self.reviewData = reviewItems[indexPath.row]
+        self.affiliData = affiliItems[indexPath.row]
           
           } else if changeTag.selectedSegmentIndex == 1 {
               
@@ -303,11 +313,12 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.watchArtistData = watchArtists[indexPath.row]
         self.watchSaleDateData = watchSaleDatas[indexPath.row]
         self.watchReviewData = watchReviews[indexPath.row]
+        self.watchAffiliData = watchAffili[indexPath.row]
    
           
           }
           
-          else if changeTag.selectedSegmentIndex == 2{
+        else if changeTag.selectedSegmentIndex == 2{
    
 ////          マイベストポスト
         self.myBestImageData = bestImages[indexPath.row]
@@ -315,9 +326,10 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.myBestArtistData = bestArtists[indexPath.row]
         self.myBestSaleDateData = bestSaleDatas[indexPath.row]
         self.myBestReviewData = bestReviews[indexPath.row]
-//
-              
+        self.myBestAffiliData = bestAffilis[indexPath.row]
+            
           }
+          
         performSegue(withIdentifier: "collectionDetail",sender: nil)
    
       }
@@ -328,7 +340,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
               let subVC: movieCollectionDetail = (segue.destination as? movieCollectionDetail)!
               // SubViewController のselectedImgに選択された画像を設定する
             
-              if changeTag.selectedSegmentIndex == 0 {
+            if changeTag.selectedSegmentIndex == 0 {
               
 //              全て
             subVC.selectedImage = imageData
@@ -336,6 +348,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedArtist = artistData
             subVC.selectedSaleDate = saleDateData
             subVC.selectedReviewAverage = reviewData
+            subVC.selectedAffili = affiliData
               
               
           } else if changeTag.selectedSegmentIndex == 1 {
@@ -344,7 +357,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedTitle = watchTitleData
             subVC.selectedArtist = watchArtistData
             subVC.selectedSaleDate = watchSaleDateData
-            subVC.selectedReviewAverage = watchSaleDateData
+            subVC.selectedReviewAverage = watchReviewData
+            subVC.selectedAffili = watchAffiliData
+          
           }
               
             else if changeTag.selectedSegmentIndex == 2{
@@ -354,7 +369,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedArtist = myBestArtistData
             subVC.selectedSaleDate = myBestSaleDateData
             subVC.selectedReviewAverage = myBestReviewData
-            
+            subVC.selectedAffili = myBestAffiliData
 }
           }
               
@@ -374,6 +389,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
              default:break
 
         }
+        
         movilogColleciton.reloadData()
     }
     
