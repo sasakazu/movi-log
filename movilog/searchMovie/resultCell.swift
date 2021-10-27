@@ -62,6 +62,7 @@ class resultCell: UITableViewCell {
             didSet {
                 resultTitle.text = recip?.title
                 directedTitle.text = recip?.artistName
+//                directedTitle.text = recip.dis
                 let url = URL(string: recip?.largeImageUrl ?? "")
                 do {
                     let data = try Data(contentsOf: url!)

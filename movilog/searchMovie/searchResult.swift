@@ -15,6 +15,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     var booklists = [SerchBookKList]()
     var inputKeyword:String = ""
     var words:String = ""
+    var titlewords:String = ""
     
     var test:String = ""
     
@@ -43,6 +44,8 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         let item = self.inputKeyword
         self.words = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
+//        self.titlewords = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
         getRApi()
     
         
@@ -51,8 +54,20 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 //    rakuten api 叩く
     private func getRApi(){
-           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&applicationId=1024730205059605378") else {return}
-
+           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378") else {return}
+        
+//        &artistName=\(words)
+        
+    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&title=%E3%82%BD%E3%83%8A%E3%83%81%E3%83%8D&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
+        
+//                   "https:app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
+        
+    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
+        
+        
+    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
+        
+        
            let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
                if let err = err {
                    print("情報の取得に失敗しました。:", err)
@@ -132,6 +147,8 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         secondViewController.imageUrl = booklists[0].Items?[row].Item?.largeImageUrl ?? "no data"
         secondViewController.sales = booklists[0].Items?[row].Item?.salesDate ?? "no data"
         secondViewController.review = booklists[0].Items?[row].Item?.reviewAverage ?? "no data"
+        secondViewController.affiliUrl = booklists[0].Items?[row].Item?.affiliateUrl ?? "no data"
+        
         
         self.present(secondViewController, animated: true, completion:nil)
         
@@ -180,7 +197,8 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
                     nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
                     nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
                     nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
-
+                nextVC.affiliUrl = booklists[0].Items?[index].Item?.affiliateUrl ?? ""
+                
 
             }
         }
@@ -193,8 +211,13 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
             textField.resignFirstResponder()
             
             let itemString = textField.text
+//            let titleString = textField.text
             
             self.words = itemString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
+//        self.titlewords = titleString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
+//            self.titlewords = titleString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
 
             getRApi()
             

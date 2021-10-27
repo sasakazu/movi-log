@@ -14,12 +14,14 @@ class resultDetail: UIViewController {
     var salesDate:String = ""
     var average:String = ""
     var imageUrl:String = ""
+    var affiliUrl:String = ""
     
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var directedLabel: UILabel!
     @IBOutlet weak var saleDateLabel: UILabel!
     @IBOutlet weak var averageLabel: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var goRakuten: UIButton!
     
     
     override func viewDidLoad() {
@@ -42,6 +44,20 @@ class resultDetail: UIViewController {
         }
         
     
+//        print(affiliUrl)
+        
+    }
+    
+    
+    
+    
+    @IBAction func affiliBtn(_ sender: Any) {
+        
+        let url = NSURL(string: "\(affiliUrl)")
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+        
     }
     
 

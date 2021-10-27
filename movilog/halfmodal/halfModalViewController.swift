@@ -16,6 +16,7 @@ class halfModalViewController: UIViewController {
     var imageUrl:String = ""
     var review:String = ""
     var sales:String = ""
+    var affiliUrl:String = ""
     
 //    user情報
     var username:String = ""
@@ -112,6 +113,7 @@ class halfModalViewController: UIViewController {
                     "salesDate": sales,
                     "reviewAverage": review,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "観たい"
         
                 ])
@@ -126,6 +128,7 @@ class halfModalViewController: UIViewController {
                     "nickName" :self.username,
                     "userIcon": self.userimage,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "観たい"
         
                     ]) { err in
@@ -155,6 +158,7 @@ class halfModalViewController: UIViewController {
                     "salesDate": sales,
                     "reviewAverage": review,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "観た"
         
                 ])
@@ -169,6 +173,7 @@ class halfModalViewController: UIViewController {
                     "nickName" :self.username,
                     "userIcon": self.userimage,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "観た"
         
                     ]) { err in
@@ -198,6 +203,7 @@ class halfModalViewController: UIViewController {
                     "salesDate": sales,
                     "reviewAverage": review,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "マイベスト"
         
             ])
@@ -212,6 +218,7 @@ class halfModalViewController: UIViewController {
                     "nickName" :self.username,
                     "userIcon": self.userimage,
                     "postDate": postDate,
+                    "affiliUrl": affiliUrl,
                     "tag": "マイベスト"
         
                     ]) { err in
