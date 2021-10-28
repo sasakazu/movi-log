@@ -433,13 +433,13 @@
                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHV-KZ-PIs">
-                                <rect key="frame" x="20" y="347" width="374" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhb-k3-RvV">
+                                <rect key="frame" x="47" y="371" width="321" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="映画の詳細を見る"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="楽天ブックスへ詳細をみにいく"/>
                                 <connections>
-                                    <action selector="gotoRakuten:" destination="nbL-tE-gxq" eventType="touchUpInside" id="NjW-nB-mdn"/>
+                                    <action selector="gotoRakuten:" destination="nbL-tE-gxq" eventType="touchUpInside" id="4Kf-2A-rzE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -457,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgx-1Z-tTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3499" y="-273"/>
+            <point key="canvasLocation" x="3498.5507246376815" y="-273.21428571428572"/>
         </scene>
         <!--Signup-->
         <scene sceneID="26k-1O-Dmj">

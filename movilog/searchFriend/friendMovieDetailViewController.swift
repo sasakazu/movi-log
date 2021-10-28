@@ -16,6 +16,7 @@ class friendMovieDetailViewController: UIViewController {
     var movieArtist:String = ""
     var movieSaleDate:String = ""
     var movieReview:String = ""
+    var afiiliUrl:String = ""
     
     
     @IBOutlet weak var movieImage: UIImageView!
@@ -50,7 +51,14 @@ class friendMovieDetailViewController: UIViewController {
 
     
     @IBAction func gotoRakuten(_ sender: Any) {
+    
+        let url = NSURL(string: "\(afiiliUrl)")
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+    
     }
+    
     
 
 }

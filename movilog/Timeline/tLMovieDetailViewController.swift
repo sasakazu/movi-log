@@ -18,6 +18,7 @@ class tLMovieDetailViewController: UIViewController {
     var artisthoge:String = ""
     var saleDatehoge:String = ""
     var reviewhoge:String = ""
+    var affilihoge:String = ""
     
     @IBOutlet weak var movieIcon: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
@@ -49,6 +50,12 @@ class tLMovieDetailViewController: UIViewController {
     
 
     @IBAction func goToSiteBtn(_ sender: Any) {
+        
+        let url = NSURL(string: "\(affilihoge)")
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+        
         
         
     }

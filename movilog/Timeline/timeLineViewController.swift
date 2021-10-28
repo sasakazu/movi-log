@@ -30,6 +30,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     private var followImageArray: [String] = []
     private var postDateArray:[String] = []
     private var salesDateArray: [String] = []
+    private var affiliDateArray: [String] = []
     
     var test = ""
     
@@ -83,7 +84,8 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                         self.salesDateArray = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String}
                         self.reviewArray = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String}
                         self.postDateArray = querySnapshot!.documents.compactMap { $0.data()["postDate"] as? String}
-
+                        self.affiliDateArray = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String}
+                                
 //                                ユーザー情報
                         self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
                         self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
@@ -188,6 +190,7 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
                     nextVC.saleDatehoge = salesDateArray[index]
                     nextVC.reviewhoge = reviewArray[index]
                     nextVC.Imagehoge = movieImage[index]
+                    nextVC.affilihoge = affiliDateArray[index]
             }
         }
     }

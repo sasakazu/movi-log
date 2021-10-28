@@ -17,12 +17,14 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     var friendIcon = ""
     var friendArray:[String] = []
     var friendcout:[String] = []
+    
 //    コレクション
     private var movietitleItems: [String] = []
     private var imageItems: [String] = []
     private var artistItems: [String] = []
     private var saleItems: [String] = []
     private var reviewItems: [String] = []
+    private var affiliItems: [String] = []
     
 //    映画の中身
     var collectionItem: [String:Any] = [:]
@@ -31,6 +33,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     var artistData = ""
     var saleDateData = ""
     var reviewData = ""
+    var affiliData = ""
     
     @IBOutlet weak var friendsLabel: UILabel!
     @IBOutlet weak var userIcon: UIImageView!
@@ -98,6 +101,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
                     self.saleItems = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String }
                     
                     self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
+                    self.affiliItems = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
                     
                     self.collectionItem = document.data()
                     
@@ -132,7 +136,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
         }
 
 //        アイコン表示
-        let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(friendUserID).child("\(self.friendUserID).jpg")
+    let storageref = Storage.storage().reference(forURL: "gs://movi-log.appspot.com/").child("images").child(friendUserID).child("\(self.friendUserID).jpg")
 
         self.userIcon.sd_setImage(with:storageref)
 
@@ -182,6 +186,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return imageItems.count
     }
     
@@ -201,13 +206,14 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
       func collectionView(_ collectionView: UICollectionView,
                             didSelectItemAt indexPath: IndexPath) {
    
-        self.imageData = imageItems[indexPath.row]
-        self.titleData = movietitleItems[indexPath.row]
-        self.artistData = artistItems[indexPath.row]
-        self.saleDateData = saleItems[indexPath.row]
-        self.reviewData = reviewItems[indexPath.row]
-        
-        performSegue(withIdentifier: "goFriendMovieDetail",sender: nil)
+          self.imageData = imageItems[indexPath.row]
+          self.titleData = movietitleItems[indexPath.row]
+          self.artistData = artistItems[indexPath.row]
+          self.saleDateData = saleItems[indexPath.row]
+          self.reviewData = reviewItems[indexPath.row]
+          self.affiliData = affiliItems[indexPath.row]
+          
+          performSegue(withIdentifier: "goFriendMovieDetail",sender: nil)
           
           
    
@@ -223,6 +229,7 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
           subVC.movieArtist = artistData
           subVC.movieSaleDate = saleDateData
           subVC.movieReview = reviewData
+          subVC.afiiliUrl = affiliData
           
         }
         
