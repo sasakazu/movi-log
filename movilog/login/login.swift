@@ -25,7 +25,13 @@ class login: UIViewController {
         
         Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] authResult, error in
           guard let strongSelf = self else { return }
-          // ...
+          
+            let storyboard: UIStoryboard = (self?.storyboard!)!
+    
+            let nextView = storyboard.instantiateViewController(withIdentifier: "top") as! UITabBarController
+    
+            self?.present(nextView, animated: true, completion: nil)
+            
         }
     
     
