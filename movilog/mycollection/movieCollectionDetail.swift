@@ -21,10 +21,11 @@ class movieCollectionDetail: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var artist: UILabel!
     @IBOutlet weak var companyLabe: UILabel!
-    
     @IBOutlet weak var saleDate: UILabel!
-    
     @IBOutlet weak var averageLabel: UIButton!
+    
+    
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,5 +62,9 @@ class movieCollectionDetail: UIViewController {
     }
     
     
+    @IBAction func writeComment(_ sender: Any) {
+        
+        
+    }
     
 }

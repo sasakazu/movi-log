@@ -10,12 +10,14 @@ import Firebase
 
 class halfModalViewController: UIViewController {
 
+    
 //    映画変数
     var halfTitle:String = ""
     var artist:String = ""
     var imageUrl:String = ""
     var review:String = ""
     var sales:String = ""
+    var documentId: String = ""
     var affiliUrl:String = ""
     
 //    user情報
@@ -102,88 +104,93 @@ class halfModalViewController: UIViewController {
     @IBAction func registerBtn(_ sender: Any) {
         
         
-                let db = Firestore.firestore()
+        let db = Firestore.firestore()
         
-                let user = Auth.auth().currentUser
+        let user = Auth.auth().currentUser
         
-                db.collection("users").document(user!.uid).collection("post").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "観たい"
+        let testRef = db.collection("users").document(user!.uid).collection("post")
         
-                ])
+        let postRef = db.collection("allPosts")
         
-                db.collection("allPosts").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "userID": user?.uid ?? "",
-                    "nickName" :self.username,
-                    "userIcon": self.userimage,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "観たい"
+        let aDoc = testRef.document()
         
-                    ]) { err in
-                        if let err = err {
-                            print("Error writing document: \(err)")
-                        } else {
-                            print("Document successfully written!")
+        print(aDoc.documentID)
         
-                    }
-            }
+        let someData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "観たい"] as [String : Any]
+        
+        
+        let postData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "観たい",
+                        "userID": user?.uid ?? "",
+                        "nickName" :self.username,
+                        "userIcon": self.userimage] as [String : Any]
+        
+        
+        testRef.document(aDoc.documentID).setData(someData)
+        postRef.addDocument(data: postData)
         
         dismiss(animated: true, completion: nil)
+        
         
     }
     
 
     @IBAction func watchedBtn(_ sender: Any) {
         
-                let db = Firestore.firestore()
+        let db = Firestore.firestore()
         
-                let user = Auth.auth().currentUser
+        let user = Auth.auth().currentUser
         
-                db.collection("users").document(user!.uid).collection("post").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "観た"
+        let testRef = db.collection("users").document(user!.uid).collection("post")
         
-                ])
+        let postRef = db.collection("allPosts")
         
-                db.collection("allPosts").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "userID": user?.uid ?? "",
-                    "nickName" :self.username,
-                    "userIcon": self.userimage,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "観た"
+        let aDoc = testRef.document()
         
-                    ]) { err in
-                        if let err = err {
-                            print("Error writing document: \(err)")
-                        } else {
-                            print("Document successfully written!")
+        print(aDoc.documentID)
         
-                    }
-            }
+        let someData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "観た"] as [String : Any]
+        
+        
+        let postData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "観た",
+                        "userID": user?.uid ?? "",
+                        "nickName" :self.username,
+                        "userIcon": self.userimage] as [String : Any]
+        
+        
+        testRef.document(aDoc.documentID).setData(someData)
+        postRef.addDocument(data: postData)
         
         dismiss(animated: true, completion: nil)
         
@@ -192,45 +199,48 @@ class halfModalViewController: UIViewController {
     
     @IBAction func myBestBtn(_ sender: Any) {
         
-            let db = Firestore.firestore()
+        let db = Firestore.firestore()
         
-            let user = Auth.auth().currentUser
+        let user = Auth.auth().currentUser
         
-            db.collection("users").document(user!.uid).collection("post").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "マイベスト"
+        let testRef = db.collection("users").document(user!.uid).collection("post")
         
-            ])
+        let postRef = db.collection("allPosts")
         
-            db.collection("allPosts").addDocument(data:[
-                    "title": halfTitle,
-                    "largeImageUrl": imageUrl,
-                    "artistName": artist,
-                    "salesDate": sales,
-                    "reviewAverage": review,
-                    "userID": user?.uid ?? "",
-                    "nickName" :self.username,
-                    "userIcon": self.userimage,
-                    "postDate": postDate,
-                    "affiliUrl": affiliUrl,
-                    "tag": "マイベスト"
+        let aDoc = testRef.document()
         
-                    ]) { err in
-                        if let err = err {
-                            print("Error writing document: \(err)")
-                        } else {
-                            print("Document successfully written!")
+        print(aDoc.documentID)
         
-                }
-        }
+        let someData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "マイベスト"] as [String : Any]
+        
+        
+        let postData = ["title": halfTitle,
+                        "largeImageUrl": imageUrl,
+                        "artistName": artist,
+                        "salesDate": sales,
+                        "reviewAverage": review,
+                        "postDate": postDate,
+                        "affiliUrl": affiliUrl,
+                        "documentID": aDoc.documentID,
+                        "tag": "マイベスト",
+                        "userID": user?.uid ?? "",
+                        "nickName" :self.username,
+                        "userIcon": self.userimage] as [String : Any]
+        
+        
+        testRef.document(aDoc.documentID).setData(someData)
+        postRef.addDocument(data: postData)
         
         dismiss(animated: true, completion: nil)
+        
     }
     
 }

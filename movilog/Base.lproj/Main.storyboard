@@ -1069,9 +1069,20 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="336" style="plain" systemItem="fixedSpace" id="cZi-Gn-nV7"/>
-                                    <barButtonItem title="書く" id="jeo-cI-UdP"/>
+                                    <barButtonItem title="書く" id="jeo-cI-UdP">
+                                        <connections>
+                                            <action selector="writeComment:" destination="mGs-R2-VAy" id="kXj-9T-KMe"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKV-h6-UVM">
+                                <rect key="frame" x="20" y="498" width="374" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4T-1t-Myp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1108,6 +1119,7 @@
                     <connections>
                         <outlet property="artist" destination="5yT-dz-RSn" id="inG-4e-iPl"/>
                         <outlet property="averageLabel" destination="6fp-0I-paa" id="ioH-na-Umh"/>
+                        <outlet property="commentLabel" destination="IKV-h6-UVM" id="tez-3K-Q0L"/>
                         <outlet property="companyLabe" destination="AtS-4g-k58" id="4ul-hk-Btq"/>
                         <outlet property="movieTitle" destination="76G-te-kHF" id="ZF5-qb-gMx"/>
                         <outlet property="saleDate" destination="2oH-I8-4P1" id="9C7-Bw-CR7"/>
