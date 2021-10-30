@@ -21,6 +21,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var saleDataItems: [String] = []
     private var reviewItems: [String] = []
     private var affiliItems: [String] = []
+    private var documentidItems: [String] = []
     
 //    観たい映画タグ
     private var watchTitles: [String] = []
@@ -29,6 +30,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var watchSaleDatas: [String] = []
     private var watchReviews: [String] = []
     private var watchAffili: [String] = []
+    private var watchDocumentid: [String] = []
+    
     
 //    マイベスト映画タグ
     private var bestTitles: [String] = []
@@ -37,6 +40,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var bestSaleDatas: [String] = []
     private var bestReviews: [String] = []
     private var bestAffilis: [String] = []
+    private var bestDocumentid: [String] = []
     
 //    全映画情報
     var collectionItem: [String:Any] = [:]
@@ -46,6 +50,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var saleDateData = ""
     var reviewData = ""
     var affiliData = ""
+    var documentidData = ""
     
 //    観たい映画情報
     var watchItems: [String:Any] = [:]
@@ -55,6 +60,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var watchSaleDateData = ""
     var watchReviewData = ""
     var watchAffiliData = ""
+    var watchDocumentidData = ""
     
 //    マイベスト映画情報
     var myBestItems: [String:Any] = [:]
@@ -64,6 +70,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var myBestSaleDateData = ""
     var myBestReviewData = ""
     var myBestAffiliData = ""
+    var myBestDocumentidData = ""
     
 //    ユーザー情報
     var nickname = ""
@@ -135,6 +142,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     
                     self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     self.affiliItems = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
+                    self.documentidItems = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
                     
                     
                     self.collectionItem = document.data()
@@ -169,6 +177,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                             
                     self.watchReviews = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     self.watchAffili = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
+                            
+                    self.watchDocumentid = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
                     
 //                  print("観たいcount\(self.watchTitles.count)")
                    
@@ -200,6 +210,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                             
                     self.bestReviews = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     self.bestAffilis = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
+                    self.bestDocumentid = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
+                    
 //                  print("観たいcount\(self.watchTitles.count)")
                    
                         
@@ -303,6 +315,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.saleDateData = saleDataItems[indexPath.row]
         self.reviewData = reviewItems[indexPath.row]
         self.affiliData = affiliItems[indexPath.row]
+        self.documentidData = documentidItems[indexPath.row]
           
           } else if changeTag.selectedSegmentIndex == 1 {
               
@@ -314,7 +327,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.watchSaleDateData = watchSaleDatas[indexPath.row]
         self.watchReviewData = watchReviews[indexPath.row]
         self.watchAffiliData = watchAffili[indexPath.row]
-   
+        self.watchDocumentidData = watchDocumentid[indexPath.row]
           
           }
           
@@ -327,8 +340,10 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.myBestSaleDateData = bestSaleDatas[indexPath.row]
         self.myBestReviewData = bestReviews[indexPath.row]
         self.myBestAffiliData = bestAffilis[indexPath.row]
-            
-          }
+        self.myBestDocumentidData = bestDocumentid[indexPath.row]
+        
+        
+        }
           
         performSegue(withIdentifier: "collectionDetail",sender: nil)
    
@@ -349,6 +364,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedSaleDate = saleDateData
             subVC.selectedReviewAverage = reviewData
             subVC.selectedAffili = affiliData
+            subVC.documentid = documentidData
               
               
           } else if changeTag.selectedSegmentIndex == 1 {
@@ -359,6 +375,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedSaleDate = watchSaleDateData
             subVC.selectedReviewAverage = watchReviewData
             subVC.selectedAffili = watchAffiliData
+            subVC.documentid = watchDocumentidData
+              
           
           }
               
@@ -370,6 +388,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedSaleDate = myBestSaleDateData
             subVC.selectedReviewAverage = myBestReviewData
             subVC.selectedAffili = myBestAffiliData
+            subVC.documentid = myBestDocumentidData
+                
 }
           }
               
