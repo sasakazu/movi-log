@@ -58,14 +58,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         
 //        &artistName=\(words)
         
-    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&title=%E3%82%BD%E3%83%8A%E3%83%81%E3%83%8D&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
-        
-//                   "https:app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
-        
-    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
-        
-        
-    //app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378
+
         
         
            let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
