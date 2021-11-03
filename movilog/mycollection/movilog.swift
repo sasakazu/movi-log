@@ -82,11 +82,21 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var movieFriend: UIButton!
     @IBOutlet weak var changeTag: UISegmentedControl!
     
+    @IBOutlet weak var collectionHeight: NSLayoutConstraint!
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        viewTable = imageItems
+
+        collectionHeight.constant = movilogColleciton.contentSize.height
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewTable = imageItems
+       
         
         SDImageCache.shared.clearMemory()
         SDImageCache.shared.clearDisk()
