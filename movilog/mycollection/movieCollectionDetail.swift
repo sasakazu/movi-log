@@ -12,6 +12,9 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 
     private let cellId = "cellId"
 
+//    section
+    let sectionTitles = ["自分のコメント","みんなのコメント"]
+    
 //      自分のコメント用
     var documentid:String = ""
     var myComment:[String] = []
@@ -136,7 +139,19 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return myComment.count
+//        自分のコメント
+        if section == 0{
+            
+                return myComment.count
+            
+        }else if section == 1 {
+                return 0
+        
+        }else{
+                return 0
+            }
+
+      
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -155,6 +170,20 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
         return cell
         
     }
+    
+    
+//    section setting
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+           //セクションの数
+           return 2
+       }
+       
+       func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+           //セクションのタイトルを設定する。
+           return sectionTitles[section]
+       }
+    
     
     
 }
