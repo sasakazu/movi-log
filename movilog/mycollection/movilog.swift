@@ -14,6 +14,35 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
     var viewTable: [String] = []
     
+    
+//    let imageArr = [
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!,
+//        UIImage(named: "a")!
+//    ]
+    
 //    全部の映画タグ
     private var titleItems: [String] = []
     private var imageItems: [String] = []
@@ -87,7 +116,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     override func viewDidAppear(_ animated: Bool) {
         
-        viewTable = imageItems
+        
 
         collectionHeight.constant = movilogColleciton.contentSize.height
     }
@@ -97,7 +126,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
         
        
-        
+        viewTable = imageItems
+
         SDImageCache.shared.clearMemory()
         SDImageCache.shared.clearDisk()
 
@@ -305,6 +335,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             
         cell.collectionImage.sd_setImage(with: URL(string:imageData), placeholderImage: UIImage(named: "placeholder"))
         
+//        cell.collectionImage.image = imageArr[indexPath.row]
+        
         return cell
                 
     }
@@ -420,7 +452,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
         }
         
-        movilogColleciton.reloadData()
+        self.movilogColleciton.reloadData()
     }
     
     

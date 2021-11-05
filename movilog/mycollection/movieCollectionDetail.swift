@@ -78,7 +78,7 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
                 for document in querySnapshot!.documents {
     
 //                                映画情報
-                    self.myComment = querySnapshot!.documents.compactMap { $0.data()["comment"] as! String
+                    self.myComment = querySnapshot!.documents.compactMap { $0.data()["comment"] as? String
         
         
 //

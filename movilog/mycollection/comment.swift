@@ -28,7 +28,7 @@ class comment: UIViewController {
             if let document = document, document.exists {
                 
                 
-                self.comment = document.data()?["comment"] as! String
+                self.comment = document.data()?["comment"] as? String ?? ""
 //
                 self.commentTV.text = self.comment
                 
