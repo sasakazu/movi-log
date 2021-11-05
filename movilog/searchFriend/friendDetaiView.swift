@@ -40,6 +40,15 @@ class friendDetaiView: UIViewController,UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var friendsCollectionView: UICollectionView!
     @IBOutlet weak var movieFriendCount: UIButton!
     
+//    collection height
+    
+    @IBOutlet weak var height: NSLayoutConstraint!
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        height.constant = friendsCollectionView.contentSize.height
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
