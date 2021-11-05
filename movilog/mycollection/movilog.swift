@@ -115,8 +115,6 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
 
         collectionHeight.constant = movilogColleciton.contentSize.height
     }

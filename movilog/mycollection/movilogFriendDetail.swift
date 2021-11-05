@@ -29,6 +29,14 @@ class movilogFriendDetail: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var moviTomo: UIButton!
     @IBOutlet weak var movieFColloection: UICollectionView!
     
+    @IBOutlet weak var height: NSLayoutConstraint!
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        height.constant = movieFColloection.contentSize.height
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
