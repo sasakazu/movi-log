@@ -141,8 +141,7 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
         secondViewController.sales = booklists[0].Items?[row].Item?.salesDate ?? "no data"
         secondViewController.review = booklists[0].Items?[row].Item?.reviewAverage ?? "no data"
         secondViewController.affiliUrl = booklists[0].Items?[row].Item?.affiliateUrl ?? "no data"
-        
-        
+        secondViewController.jancode = booklists[0].Items?[row].Item?.jan ?? "no data"
         self.present(secondViewController, animated: true, completion:nil)
         
         if #available(iOS 15.0, *) {
@@ -190,8 +189,8 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
                     nextVC.salesDate = booklists[0].Items?[index].Item?.salesDate ?? ""
                     nextVC.average = booklists[0].Items?[index].Item?.reviewAverage ?? ""
                     nextVC.imageUrl = booklists[0].Items?[index].Item?.largeImageUrl ?? ""
-                nextVC.affiliUrl = booklists[0].Items?[index].Item?.affiliateUrl ?? ""
-                
+                    nextVC.affiliUrl = booklists[0].Items?[index].Item?.affiliateUrl ?? ""
+                 
 
             }
         }

@@ -71,6 +71,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentText" destination="J66-6s-AFb" id="MgT-Jg-fMD"/>
+                <outlet property="dateLabel" destination="v9u-cs-1xN" id="QfK-ON-VyX"/>
+                <outlet property="userIcon" destination="A2B-xJ-L7x" id="Y5l-kz-1ju"/>
+                <outlet property="username" destination="cZJ-ts-yas" id="6Un-ud-uZ9"/>
             </connections>
             <point key="canvasLocation" x="149.27536231884059" y="143.63839285714286"/>
         </tableViewCell>

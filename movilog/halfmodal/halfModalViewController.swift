@@ -19,6 +19,7 @@ class halfModalViewController: UIViewController {
     var sales:String = ""
     var documentId: String = ""
     var affiliUrl:String = ""
+    var jancode:String = ""
     
 //    user情報
     var username:String = ""
@@ -100,6 +101,7 @@ class halfModalViewController: UIViewController {
                         "reviewAverage": review,
                         "postDate": postDate,
                         "affiliUrl": affiliUrl,
+                        "jancode": jancode,
                         "documentID": aDoc.documentID,
                         "tag": "観たい"] as [String : Any]
         
@@ -111,6 +113,7 @@ class halfModalViewController: UIViewController {
                         "reviewAverage": review,
                         "postDate": postDate,
                         "affiliUrl": affiliUrl,
+                        "jancode": jancode,
                         "documentID": aDoc.documentID,
                         "tag": "観たい",
                         "userID": user?.uid ?? "",
@@ -147,6 +150,7 @@ class halfModalViewController: UIViewController {
                         "salesDate": sales,
                         "reviewAverage": review,
                         "postDate": postDate,
+                        "jancode": jancode,
                         "affiliUrl": affiliUrl,
                         "documentID": aDoc.documentID,
                         "tag": "観た"] as [String : Any]
@@ -158,6 +162,7 @@ class halfModalViewController: UIViewController {
                         "salesDate": sales,
                         "reviewAverage": review,
                         "postDate": postDate,
+                        "jancode": jancode,
                         "affiliUrl": affiliUrl,
                         "documentID": aDoc.documentID,
                         "tag": "観た",
@@ -194,6 +199,7 @@ class halfModalViewController: UIViewController {
                         "salesDate": sales,
                         "reviewAverage": review,
                         "postDate": postDate,
+                        "jancode": jancode,
                         "affiliUrl": affiliUrl,
                         "documentID": aDoc.documentID,
                         "tag": "マイベスト"] as [String : Any]
@@ -205,6 +211,7 @@ class halfModalViewController: UIViewController {
                         "salesDate": sales,
                         "reviewAverage": review,
                         "postDate": postDate,
+                        "jancode": jancode,
                         "affiliUrl": affiliUrl,
                         "documentID": aDoc.documentID,
                         "tag": "マイベスト",

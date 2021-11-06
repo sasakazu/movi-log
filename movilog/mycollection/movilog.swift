@@ -14,34 +14,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
     var viewTable: [String] = []
     
-    
-//    let imageArr = [
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!,
-//        UIImage(named: "a")!
-//    ]
+
     
 //    全部の映画タグ
     private var titleItems: [String] = []
@@ -51,6 +24,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var reviewItems: [String] = []
     private var affiliItems: [String] = []
     private var documentidItems: [String] = []
+    private var jancodeItems: [String] = []
     
 //    観たい映画タグ
     private var watchTitles: [String] = []
@@ -60,7 +34,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var watchReviews: [String] = []
     private var watchAffili: [String] = []
     private var watchDocumentid: [String] = []
-    
+    private var watchJancode: [String] = []
     
 //    マイベスト映画タグ
     private var bestTitles: [String] = []
@@ -70,6 +44,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     private var bestReviews: [String] = []
     private var bestAffilis: [String] = []
     private var bestDocumentid: [String] = []
+    private var bestJancode: [String] = []
     
 //    全映画情報
     var collectionItem: [String:Any] = [:]
@@ -80,6 +55,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var reviewData = ""
     var affiliData = ""
     var documentidData = ""
+    var jancodeData = ""
     
 //    観たい映画情報
     var watchItems: [String:Any] = [:]
@@ -90,6 +66,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var watchReviewData = ""
     var watchAffiliData = ""
     var watchDocumentidData = ""
+    var watchJancodeData = ""
     
 //    マイベスト映画情報
     var myBestItems: [String:Any] = [:]
@@ -100,6 +77,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var myBestReviewData = ""
     var myBestAffiliData = ""
     var myBestDocumentidData = ""
+    var myBestJancodeData = ""
     
 //    ユーザー情報
     var nickname = ""
@@ -181,7 +159,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.reviewItems = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     self.affiliItems = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
                     self.documentidItems = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
-                    
+                    self.jancodeItems = querySnapshot!.documents.compactMap { $0.data()["jancode"] as? String }
                     
                     self.collectionItem = document.data()
                     
@@ -217,7 +195,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.watchAffili = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
                             
                     self.watchDocumentid = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
-                    
+                    self.watchJancode = querySnapshot!.documents.compactMap { $0.data()["jancode"] as? String }
+                            
 //                  print("観たいcount\(self.watchTitles.count)")
                    
                         
@@ -249,15 +228,12 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
                     self.bestReviews = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String }
                     self.bestAffilis = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String }
                     self.bestDocumentid = querySnapshot!.documents.compactMap { $0.data()["documentID"] as? String }
-                    
+                    self.bestJancode = querySnapshot!.documents.compactMap { $0.data()["jancode"] as? String }
 //                  print("観たいcount\(self.watchTitles.count)")
-                   
-                        
+                      
                         }
                         
-                        
                     }
-                
                 
 //                self.movilogColleciton.reloadData()
                 
@@ -279,23 +255,12 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
  
                         }
                     }
-            
-
             }
             
-            
-            
-            
         }
-              
-            
        
         self.movilogColleciton.reloadData()
 
-        
-        
-        
-        
         
         if let user = Auth.auth().currentUser {
 //        ユーザーアイコンの取得
@@ -356,10 +321,10 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.reviewData = reviewItems[indexPath.row]
         self.affiliData = affiliItems[indexPath.row]
         self.documentidData = documentidItems[indexPath.row]
-          
-          } else if changeTag.selectedSegmentIndex == 1 {
-              
-          
+        self.jancodeData = jancodeItems[indexPath.row]
+            
+            } else if changeTag.selectedSegmentIndex == 1 {
+            
 ////          観たいポスト
         self.watchImageData = watchImages[indexPath.row]
         self.watchTitleData = watchTitles[indexPath.row]
@@ -368,8 +333,9 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.watchReviewData = watchReviews[indexPath.row]
         self.watchAffiliData = watchAffili[indexPath.row]
         self.watchDocumentidData = watchDocumentid[indexPath.row]
-          
-          }
+        self.watchJancodeData = watchJancode[indexPath.row]
+            
+    }
           
         else if changeTag.selectedSegmentIndex == 2{
    
@@ -381,7 +347,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         self.myBestReviewData = bestReviews[indexPath.row]
         self.myBestAffiliData = bestAffilis[indexPath.row]
         self.myBestDocumentidData = bestDocumentid[indexPath.row]
-        
+        self.myBestJancodeData = bestJancode[indexPath.row]
+            
         
         }
           
@@ -405,7 +372,8 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedReviewAverage = reviewData
             subVC.selectedAffili = affiliData
             subVC.documentid = documentidData
-              
+            subVC.selectedJancode = jancodeData
+                
               
           } else if changeTag.selectedSegmentIndex == 1 {
 //              観たいタグ
@@ -416,7 +384,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedReviewAverage = watchReviewData
             subVC.selectedAffili = watchAffiliData
             subVC.documentid = watchDocumentidData
-              
+            subVC.selectedJancode = watchJancodeData
           
           }
               
@@ -429,7 +397,7 @@ class movilog: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             subVC.selectedReviewAverage = myBestReviewData
             subVC.selectedAffili = myBestAffiliData
             subVC.documentid = myBestDocumentidData
-                
+            subVC.selectedJancode = myBestJancodeData
 }
           }
               
