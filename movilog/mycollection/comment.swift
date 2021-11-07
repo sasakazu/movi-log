@@ -55,6 +55,8 @@ class comment: UIViewController {
         
         let Ref = db.collection("users").document(user!.uid).collection("post").document(documentID)
 
+        let allRef = db.collection("allPosts").document(documentID)
+        
         Ref.updateData([
             "comment": commentTV.text
         ]) { err in
@@ -64,6 +66,17 @@ class comment: UIViewController {
                 print("Document successfully updated")
             }
         }
+    
+        allRef.updateData([
+            "comment": commentTV.text
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+        
         
         self.navigationController?.popViewController(animated: true)
 

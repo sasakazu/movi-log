@@ -25,6 +25,11 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     var documentid:String = ""
     var myComment:[String] = []
     
+//    みんなのコメント用
+    var everyname:[String] = []
+    var everyIcon:[String] = []
+    var allComments:[String] = []
+    
     var selectedTitle:String = ""
     var selectedImage:String = ""
     var selectedArtist:String = ""
@@ -42,8 +47,6 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var commentTable: UITableView!
     
-    
-    @IBOutlet weak var commentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,16 +116,7 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 //                                映画情報
                     self.myComment = querySnapshot!.documents.compactMap { $0.data()["comment"] as? String
         
-        
-//
-//                self.commentLabel.text = self.someComment
-                
-//                print(self.someComment)
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//
-              
+
             }
             
                 }
@@ -135,6 +129,28 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 //        みんなのコメントをjancodeで取得する
         
         print(selectedJancode)
+        
+        db.collection("allPosts").whereField("jancode", isEqualTo: self.selectedJancode).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+    
+            self.allComments = querySnapshot!.documents.compactMap { $0.data()["comment"] as? String}
+        
+            self.everyname = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
+                    
+            self.everyIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+                                
+            print("kokokokokooko\(self.allComments)")
+        
+                    
+                }
+                
+            }
+        
+        
+        }
         
         
         
@@ -184,9 +200,9 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
                 return myComment.count
             
         }else if section == 1 {
-                return 0
-        
-        }else{
+            return allComments.count
+            
+        } else {
                 return 0
             }
 
@@ -204,28 +220,45 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! commentTableViewCell
+ 
         
-        cell.username.text = username
-        cell.commentText.text = myComment[indexPath.row]
-       
-        
-//        cell.userIcon.sd_setImage(with: URL(string:userImage), placeholderImage: UIImage(named: "placeholder"))
-        
-        
-        let url = URL(string: userImage)
-            do {
-                let data = try Data(contentsOf: url!)
-                let image = UIImage(data: data)
-                cell.userIcon.image = image
+        if indexPath.section == 0 {
+            
+            cell.username.text = username
+            cell.commentText.text = myComment[indexPath.row]
 
-            }catch let err {
-                print("Error : \(err.localizedDescription)")
+            let url = URL(string: userImage)
+                    do {
+                        let data = try Data(contentsOf: url!)
+                        let image = UIImage(data: data)
+                        cell.userIcon.image = image
+
+                    }catch let err {
+                        print("Error : \(err.localizedDescription)")
+                    }
+
+            } else if indexPath.section == 1{
+                
+                cell.username.text = everyname[indexPath.row]
+                cell.commentText.text = allComments[indexPath.row]
+
+                let url = URL(string: everyIcon[indexPath.row])
+                        do {
+                            let data = try Data(contentsOf: url!)
+                            let image = UIImage(data: data)
+                            cell.userIcon.image = image
+
+                        }catch let err {
+                            print("Error : \(err.localizedDescription)")
+                        }
+                
+                
+            
             }
-        
+
         return cell
-        
-    }
-    
+
+        }
     
 //    section setting
     

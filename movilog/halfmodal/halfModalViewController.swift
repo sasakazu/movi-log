@@ -122,7 +122,7 @@ class halfModalViewController: UIViewController {
         
         
         testRef.document(aDoc.documentID).setData(someData)
-        postRef.addDocument(data: postData)
+        postRef.document(aDoc.documentID).setData(postData)
         
         dismiss(animated: true, completion: nil)
         
@@ -172,7 +172,7 @@ class halfModalViewController: UIViewController {
         
         
         testRef.document(aDoc.documentID).setData(someData)
-        postRef.addDocument(data: postData)
+        postRef.document(aDoc.documentID).setData(postData)
         
         dismiss(animated: true, completion: nil)
         
@@ -221,7 +221,7 @@ class halfModalViewController: UIViewController {
         
         
         testRef.document(aDoc.documentID).setData(someData)
-        postRef.addDocument(data: postData)
+        postRef.document(aDoc.documentID).setData(postData)
         
         dismiss(animated: true, completion: nil)
         
