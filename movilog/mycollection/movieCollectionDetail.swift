@@ -47,6 +47,13 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var commentTable: UITableView!
     
+    @IBOutlet weak var height: NSLayoutConstraint!
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        height.constant = commentTable.contentSize.height
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
