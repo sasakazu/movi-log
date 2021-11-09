@@ -63,6 +63,8 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
         
         commentTable.register(UINib(nibName: "commentTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         
+        commentTable.rowHeight = UITableView.automaticDimension
+        commentTable.estimatedRowHeight = 10000
         
 //        print("ID→\(documentid)")
 

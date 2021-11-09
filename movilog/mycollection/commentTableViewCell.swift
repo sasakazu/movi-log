@@ -22,6 +22,7 @@ class commentTableViewCell: UITableViewCell {
         userIcon.layer.cornerRadius = userIcon.frame.size.width * 0.5
         userIcon.clipsToBounds = true
         
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

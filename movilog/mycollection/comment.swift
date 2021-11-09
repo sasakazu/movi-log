@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class comment: UIViewController {
+class comment: UIViewController, UITextViewDelegate {
 
     
     var documentID:String = ""
@@ -18,6 +18,13 @@ class comment: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        commentTV.becomeFirstResponder()
+        commentTV.delegate = self
+        
+        commentTV.layer.cornerRadius = 5.0
+        commentTV.layer.masksToBounds = true
         
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser
@@ -29,7 +36,7 @@ class comment: UIViewController {
                 
                 
                 self.comment = document.data()?["comment"] as? String ?? ""
-//
+
                 self.commentTV.text = self.comment
                 
                 print(self.comment)
@@ -38,8 +45,6 @@ class comment: UIViewController {
                 print("Document does not exist")
             }
         }
-        
-        
         
         print(documentID)
         
