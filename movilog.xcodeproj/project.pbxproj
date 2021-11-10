@@ -16,6 +16,7 @@
 		7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */; };
 		7324FAA527197E80003791A0 /* movilogFDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324FAA327197E80003791A0 /* movilogFDetailCell.swift */; };
 		7324FAA627197E80003791A0 /* movilogFDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7324FAA427197E80003791A0 /* movilogFDetailCell.xib */; };
+		7325E61F273B981D00A6F28A /* PlaceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7325E61E273B981D00A6F28A /* PlaceTextView.swift */; };
 		7358461B272D40EA0006ACE2 /* comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7358461A272D40EA0006ACE2 /* comment.swift */; };
 		7358461E272E86D00006ACE2 /* commentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7358461C272E86D00006ACE2 /* commentTableViewCell.swift */; };
 		7358461F272E86D00006ACE2 /* commentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7358461D272E86D00006ACE2 /* commentTableViewCell.xib */; };
@@ -94,6 +95,7 @@
 		7324FA9F2716D5AA003791A0 /* movilogFriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFriendDetail.swift; sourceTree = "<group>"; };
 		7324FAA327197E80003791A0 /* movilogFDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movilogFDetailCell.swift; sourceTree = "<group>"; };
 		7324FAA427197E80003791A0 /* movilogFDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = movilogFDetailCell.xib; sourceTree = "<group>"; };
+		7325E61E273B981D00A6F28A /* PlaceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTextView.swift; sourceTree = "<group>"; };
 		7358461A272D40EA0006ACE2 /* comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comment.swift; sourceTree = "<group>"; };
 		7358461C272E86D00006ACE2 /* commentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentTableViewCell.swift; sourceTree = "<group>"; };
 		7358461D272E86D00006ACE2 /* commentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentTableViewCell.xib; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				7358461A272D40EA0006ACE2 /* comment.swift */,
 				7358461C272E86D00006ACE2 /* commentTableViewCell.swift */,
 				7358461D272E86D00006ACE2 /* commentTableViewCell.xib */,
+				7325E61E273B981D00A6F28A /* PlaceTextView.swift */,
 			);
 			path = mycollection;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				73B9E2A926ECA0B3005CA82F /* searchFriendsTableViewCell.swift in Sources */,
 				7371F55A26BBF4290099F69C /* AppDelegate.swift in Sources */,
 				738400F026C67A8C0070F8CF /* signup.swift in Sources */,
+				7325E61F273B981D00A6F28A /* PlaceTextView.swift in Sources */,
 				73A3CBE026F466620010EF42 /* TLTableViewCell.swift in Sources */,
 				73B9E2AD26ECBFC3005CA82F /* friendDetaiView.swift in Sources */,
 				7324FAA02716D5AA003791A0 /* movilogFriendDetail.swift in Sources */,

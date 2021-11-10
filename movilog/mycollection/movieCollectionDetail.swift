@@ -58,6 +58,9 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk()
+        
         self.commentTable.dataSource = self
         self.commentTable.dataSource = self
         
