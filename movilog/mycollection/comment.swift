@@ -14,15 +14,10 @@ class comment: UIViewController, UITextViewDelegate {
     var documentID:String = ""
     var comment:String = ""
     
-//    @IBOutlet weak var commentTV: UITextView!
-    
-    @IBOutlet weak var commentTV: PlaceTextView!
+    @IBOutlet weak var commentTV: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        commentTV.placeHolder = "おすすめポイントなどを入力。"
         
         
         commentTV.becomeFirstResponder()

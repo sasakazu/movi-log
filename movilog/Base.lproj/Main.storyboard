@@ -1086,15 +1086,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-Ul-h1y" customClass="PlaceTextView" customModule="movilog" customModuleProvider="target">
-                                <rect key="frame" x="20" y="119" width="374" height="44"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-Ul-h1y">
+                                <rect key="frame" x="20" y="119" width="374" height="39"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140字以内" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkI-T8-cyP">
-                                <rect key="frame" x="20" y="232" width="118" height="21"/>
+                                <rect key="frame" x="20" y="183" width="118" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="Ddn-JC-KPH"/>
+                                    <constraint firstAttribute="height" constant="21" id="Yff-DB-5kP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1103,17 +1107,12 @@
                         <viewLayoutGuide key="safeArea" id="ZGO-yj-dai"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="vkI-T8-cyP" secondAttribute="trailing" constant="276" id="3Ug-FT-Hcc"/>
-                            <constraint firstItem="vkI-T8-cyP" firstAttribute="top" secondItem="Rgw-Ul-h1y" secondAttribute="bottom" constant="69" id="4r1-hC-l5X"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="trailing" secondItem="Dxb-hf-1Lp" secondAttribute="trailingMargin" id="VZP-kz-KTs"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="leading" secondItem="Dxb-hf-1Lp" secondAttribute="leadingMargin" id="Xno-d0-GGw"/>
-                            <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="Rgw-Ul-h1y" secondAttribute="trailing" constant="20" id="cEV-7e-9v9"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="top" secondItem="ZGO-yj-dai" secondAttribute="top" constant="31" id="dQf-wg-mq7"/>
-                            <constraint firstItem="ZGO-yj-dai" firstAttribute="bottom" secondItem="vkI-T8-cyP" secondAttribute="bottom" constant="560" id="k7q-4s-v3e"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="leading" secondItem="vkI-T8-cyP" secondAttribute="leading" id="n0H-D6-AW5"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="top" secondItem="ZGO-yj-dai" secondAttribute="top" constant="31" id="rtL-5c-Ukj"/>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="leading" secondItem="ZGO-yj-dai" secondAttribute="leading" constant="20" id="tdQ-Jp-hTE"/>
-                            <constraint firstItem="vkI-T8-cyP" firstAttribute="top" secondItem="Rgw-Ul-h1y" secondAttribute="bottom" constant="69" id="z1B-ff-aNl"/>
+                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="top" secondItem="ZGO-yj-dai" secondAttribute="top" constant="31" id="5Wv-lv-U89"/>
+                            <constraint firstItem="vkI-T8-cyP" firstAttribute="leading" secondItem="ZGO-yj-dai" secondAttribute="leading" constant="20" id="Ez1-mv-i0j"/>
+                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="leading" secondItem="ZGO-yj-dai" secondAttribute="leading" constant="20" id="PNm-Ue-1zA"/>
+                            <constraint firstItem="vkI-T8-cyP" firstAttribute="top" secondItem="Rgw-Ul-h1y" secondAttribute="bottom" constant="25" id="ZPQ-cB-agH"/>
+                            <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="Rgw-Ul-h1y" secondAttribute="trailing" constant="20" id="nPo-bz-k3y"/>
+                            <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="vkI-T8-cyP" secondAttribute="trailing" constant="276" id="qmc-1a-uR5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="評価とコメント" id="7w4-le-VO3">
@@ -1124,7 +1123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentTV" destination="Rgw-Ul-h1y" id="E28-Xd-hPu"/>
+                        <outlet property="commentTV" destination="Rgw-Ul-h1y" id="et4-Tx-dLj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAB-52-j3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
