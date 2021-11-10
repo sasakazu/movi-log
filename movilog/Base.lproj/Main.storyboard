@@ -1086,8 +1086,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-Ul-h1y">
-                                <rect key="frame" x="20" y="119" width="374" height="39"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-Ul-h1y" customClass="PlaceTextView" customModule="movilog" customModuleProvider="target">
+                                <rect key="frame" x="20" y="118" width="374" height="39"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -1107,10 +1107,10 @@
                         <viewLayoutGuide key="safeArea" id="ZGO-yj-dai"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="top" secondItem="ZGO-yj-dai" secondAttribute="top" constant="31" id="5Wv-lv-U89"/>
+                            <constraint firstItem="Rgw-Ul-h1y" firstAttribute="top" secondItem="ZGO-yj-dai" secondAttribute="top" constant="30" id="5Wv-lv-U89"/>
                             <constraint firstItem="vkI-T8-cyP" firstAttribute="leading" secondItem="ZGO-yj-dai" secondAttribute="leading" constant="20" id="Ez1-mv-i0j"/>
                             <constraint firstItem="Rgw-Ul-h1y" firstAttribute="leading" secondItem="ZGO-yj-dai" secondAttribute="leading" constant="20" id="PNm-Ue-1zA"/>
-                            <constraint firstItem="vkI-T8-cyP" firstAttribute="top" secondItem="Rgw-Ul-h1y" secondAttribute="bottom" constant="25" id="ZPQ-cB-agH"/>
+                            <constraint firstItem="vkI-T8-cyP" firstAttribute="top" secondItem="Rgw-Ul-h1y" secondAttribute="bottom" constant="26" id="ZPQ-cB-agH"/>
                             <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="Rgw-Ul-h1y" secondAttribute="trailing" constant="20" id="nPo-bz-k3y"/>
                             <constraint firstItem="ZGO-yj-dai" firstAttribute="trailing" secondItem="vkI-T8-cyP" secondAttribute="trailing" constant="276" id="qmc-1a-uR5"/>
                         </constraints>
@@ -1123,7 +1123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentTV" destination="Rgw-Ul-h1y" id="et4-Tx-dLj"/>
+                        <outlet property="commentTV" destination="Rgw-Ul-h1y" id="Inp-xV-lo1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAB-52-j3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

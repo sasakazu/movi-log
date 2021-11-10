@@ -14,7 +14,8 @@ class comment: UIViewController, UITextViewDelegate {
     var documentID:String = ""
     var comment:String = ""
     
-    @IBOutlet weak var commentTV: UITextView!
+    
+    @IBOutlet weak var commentTV: PlaceTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,28 +26,43 @@ class comment: UIViewController, UITextViewDelegate {
         
         commentTV.layer.cornerRadius = 5.0
         commentTV.layer.masksToBounds = true
+                
         
-        let db = Firestore.firestore()
-        let user = Auth.auth().currentUser
+        if commentTV.text == "" {
+//
+        commentTV.placeHolder = "入力してください。"
         
-        let docRef = db.collection("users").document(user!.uid).collection("post").document(documentID)
+           
+        }
+    
 
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
+               
+            let db = Firestore.firestore()
+            let user = Auth.auth().currentUser
                 
+            let docRef = db.collection("users").document(user!.uid).collection("post").document(documentID)
+
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
                 
+
                 self.comment = document.data()?["comment"] as? String ?? ""
 
-                self.commentTV.text = self.comment
-                
-                print(self.comment)
-//                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
+                    
+                    self.commentTV.text = self.comment
+                        
+                    print(self.comment)
+        //                print("Document data: \(dataDescription)")
+                    } else {
+                        
+
+                        print("Document does not exist")
+                    }
         
-        print(documentID)
+                        
+                }
+    
+
         
 
         // Do any additional setup after loading the view.
