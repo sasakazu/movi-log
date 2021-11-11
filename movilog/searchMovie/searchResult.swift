@@ -19,6 +19,9 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     var test:String = ""
     
+//    監督名
+    var inputDirect:String = ""
+    
     private let cellId = "cellId"
     
 ////    user情報
@@ -31,35 +34,38 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        print("dddddkkkkkkkkkkkk\(inputDirect)")
+        print("dddddkkkkkkkkkkkk\(inputKeyword)")
+        
         tableviewTest.delegate = self
         tableviewTest.dataSource = self
         searchTF.delegate = self
         
         tableviewTest.register(UINib(nibName: "resultCell", bundle: nil), forCellReuseIdentifier: cellId)
         
+  
         searchTF.text = inputKeyword
+        searchTF.text = inputDirect
         
 //        utf8に変換
         let item = self.inputKeyword
+        let directitem = self.inputDirect
+        
         self.words = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
-//        self.titlewords = item.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        self.titlewords = directitem.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
         getRApi()
+        getDApi()
     
         
 
     }
 
-//    rakuten api 叩く
+//    タイトルで検索api
     private func getRApi(){
-           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(words)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378") else {return}
-        
-//        &artistName=\(words)
-        
-
-        
+           guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&title=\(words)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378") else {return}
         
            let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
                if let err = err {
@@ -85,6 +91,34 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
            task.resume()
        }
    
+    //    監督名で検索api
+        private func getDApi(){
+               guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=\(titlewords)&booksGenreId=003&affiliateId=1828b17e.d3807f48.1828b17f.30ede62b&applicationId=1024730205059605378") else {return}
+            
+               let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
+                   if let err = err {
+                       print("情報の取得に失敗しました。:", err)
+                       return
+                   }
+                   if let data = data{
+                       do{
+                           let resultList = try JSONDecoder().decode(SerchBookKList.self, from: data)
+                           self.booklists = [resultList]
+                        
+                           DispatchQueue.main.async {
+                                                  self.tableviewTest.reloadData()
+                                              }
+                        print("json: ", resultList)
+                        
+                       }catch(let err){
+                            print("情報の取得に失敗しました。:", err)
+
+                       }
+                   }
+               }
+               task.resume()
+           }
+       
    
 //    セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -203,18 +237,19 @@ class searchResult: UIViewController, UITableViewDelegate, UITableViewDataSource
             textField.resignFirstResponder()
             
             let itemString = textField.text
-//            let titleString = textField.text
+            let String = textField.text
             
             self.words = itemString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        
-//        self.titlewords = titleString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        
-//            self.titlewords = titleString?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+
+            self.titlewords = String?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+ 
 
             getRApi()
+            getDApi()
             
             return true
-        }
+        
+    }
     
     
     

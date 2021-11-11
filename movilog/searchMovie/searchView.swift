@@ -11,6 +11,9 @@ class searchView: UIViewController,UITextFieldDelegate {
 
     
     @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var directedTF: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,7 @@ class searchView: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         searchTF.delegate = self
+        directedTF.delegate = self
         
         
     }
@@ -41,6 +45,7 @@ class searchView: UIViewController,UITextFieldDelegate {
             if let nextVC = segue.destination as? searchResult {
            
                 nextVC.inputKeyword = searchTF.text ?? ""
+                nextVC.inputDirect = directedTF.text ?? ""
             
                 
             
