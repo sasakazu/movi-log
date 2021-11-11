@@ -40,72 +40,84 @@ class timeLineViewController: UIViewController,UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TLtableview.register(UINib(nibName: "TLTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         
-        let user = Auth.auth().currentUser
+        if Auth.auth().currentUser != nil {
+          // User is signed in.
+          // ...
         
-        let email = user?.email
-        
-        print(email ?? "no user")
+            let user = Auth.auth().currentUser
+                          
+            let email = user?.email
+                    
+            print(email ?? "no user")
+            
+            let db = Firestore.firestore()
 
-        TLtableview.delegate = self
-        TLtableview.dataSource = self
-        
-        let db = Firestore.firestore()
-    
-        
-        
-
-//        フォローしたユーザーのIDを取得する
-        
-        db.collection("following").document(user!.uid).collection("followingUser").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    
-                    
-                    self.followid = querySnapshot!.documents.compactMap { $0.data()["followID"] as? String }
-                 
-                    
-                    print(self.followid)
-        //        取得したIDからタイムラインを表示させる
-        
-                    db.collection("allPosts").whereField("userID", in: self.followid).getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print("Error getting documents: \(err)")
-                        } else {
-                            for document in querySnapshot!.documents {
-                
-//                                映画情報
-                        self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
-                        self.artistArray = querySnapshot!.documents.compactMap { $0.data()["artistName"] as? String}
-                        self.movieImage = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String}
-                        self.salesDateArray = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String}
-                        self.reviewArray = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String}
-                        self.postDateArray = querySnapshot!.documents.compactMap { $0.data()["postDate"] as? String}
-                        self.affiliDateArray = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String}
-                                
-//                                ユーザー情報
-                        self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
-                        self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+    //        フォローしたユーザーのIDを取得する
+            
+            db.collection("following").document(user!.uid).collection("followingUser").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
                         
                         
-//                        print(self.allTitle)
-//                    print("\(document.documentID) => \(document.data())")
-                }
-            }    
+                        self.followid = querySnapshot!.documents.compactMap { $0.data()["followID"] as? String }
+                     
                         
-                        self.TLtableview.reloadData()
+                        print(self.followid)
+            //        取得したIDからタイムラインを表示させる
+            
+                        db.collection("allPosts").whereField("userID", in: self.followid).getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                for document in querySnapshot!.documents {
                     
+    //                                映画情報
+                            self.allTitle = querySnapshot!.documents.compactMap { $0.data()["title"] as? String}
+                            self.artistArray = querySnapshot!.documents.compactMap { $0.data()["artistName"] as? String}
+                            self.movieImage = querySnapshot!.documents.compactMap { $0.data()["largeImageUrl"] as? String}
+                            self.salesDateArray = querySnapshot!.documents.compactMap { $0.data()["salesDate"] as? String}
+                            self.reviewArray = querySnapshot!.documents.compactMap { $0.data()["reviewAverage"] as? String}
+                            self.postDateArray = querySnapshot!.documents.compactMap { $0.data()["postDate"] as? String}
+                            self.affiliDateArray = querySnapshot!.documents.compactMap { $0.data()["affiliUrl"] as? String}
+                                    
+    //                                ユーザー情報
+                            self.followUsername = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
+                            self.followUserIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+                            
+                            
+    //                        print(self.allTitle)
+    //                    print("\(document.documentID) => \(document.data())")
                     }
+                }
+                            
+                            self.TLtableview.reloadData()
+                        
+                        }
+                        
+                    }
+                   
                     
                 }
-               
                 
             }
+
+        } else {
+          // No user is signed in.
+          // ...
             
+//            signupへ
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "signup") as! signup
+            self.present(secondViewController, animated: true, completion: nil)
+ 
         }
+        
+        TLtableview.register(UINib(nibName: "TLTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
+        TLtableview.delegate = self
+        TLtableview.dataSource = self
 
        
 }

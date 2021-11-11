@@ -13,6 +13,7 @@ class comment: UIViewController, UITextViewDelegate {
     
     var documentID:String = ""
     var comment:String = ""
+    var commentDate:String = ""
     
     
     @IBOutlet weak var commentTV: PlaceTextView!
@@ -62,7 +63,14 @@ class comment: UIViewController, UITextViewDelegate {
                         
                 }
     
-
+        // 現在日時を dt に代入
+        let dt = Date()
+        // DateFormatter のインスタンスを作成
+        let formatter: DateFormatter = DateFormatter()
+        // ロケールを日本（日本語）に設定
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateStyle = .short
+        commentDate = formatter.string(from: dt)
         
 
         // Do any additional setup after loading the view.
@@ -79,7 +87,8 @@ class comment: UIViewController, UITextViewDelegate {
         let allRef = db.collection("allPosts").document(documentID)
         
         Ref.updateData([
-            "comment": commentTV.text
+            "comment": commentTV.text,
+            "commentDate": commentDate
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
@@ -89,7 +98,8 @@ class comment: UIViewController, UITextViewDelegate {
         }
     
         allRef.updateData([
-            "comment": commentTV.text
+            "comment": commentTV.text,
+            "commentDate": commentDate
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")

@@ -24,11 +24,13 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 //      自分のコメント用
     var documentid:String = ""
     var myComment:[String] = []
+    var myCommentDate:[String] = []
     
 //    みんなのコメント用
     var everyname:[String] = []
     var everyIcon:[String] = []
     var allComments:[String] = []
+    var allCommentDate:[String] = []
     
     var selectedTitle:String = ""
     var selectedImage:String = ""
@@ -99,7 +101,7 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                _ = document.data().map(String.init(describing:)) ?? "nil"
 //                print("Document data: \(dataDescription)")
                 
                 self.username = document["nickname"] as? String ?? "no name"
@@ -122,22 +124,20 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 for document in querySnapshot!.documents {
     
-//                                映画情報
-                    self.myComment = querySnapshot!.documents.compactMap { $0.data()["comment"] as? String
-        
-
-            }
+                    self.myComment = querySnapshot!.documents.compactMap { $0.data()["comment"] as? String}
+                    self.myCommentDate = querySnapshot!.documents.compactMap { $0.data()["commentDate"] as? String}
+                    
             
                 }
                 
                 self.commentTable.reloadData()
+            
             }
         }
         
-        
 //        みんなのコメントをjancodeで取得する
         
-        print(selectedJancode)
+            print(self.selectedJancode)
         
         db.collection("allPosts").whereField("jancode", isEqualTo: self.selectedJancode).getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -150,17 +150,16 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
             self.everyname = querySnapshot!.documents.compactMap { $0.data()["nickName"] as? String}
                     
             self.everyIcon = querySnapshot!.documents.compactMap { $0.data()["userIcon"] as? String}
+            self.allCommentDate = querySnapshot!.documents.compactMap { $0.data()["commentDate"] as? String}
                                 
             print("kokokokokooko\(self.allComments)")
         
                     
                 }
-                
+        
             }
-        
-        
+            
         }
-        
         
         
         
@@ -221,9 +220,12 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        print(myComment)
-        print(username)
-        print(userImage)
+//        print(myComment)
+//        print(username)
+//        print(userImage)
+        
+        print(allCommentDate)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -235,25 +237,29 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
             
             cell.username.text = username
             cell.commentText.text = myComment[indexPath.row]
-
-            let url = URL(string: userImage)
+            cell.dateLabel.text = myCommentDate[indexPath.row]
+            
+            if let url = URL(string: userImage) {
+                
                     do {
-                        let data = try Data(contentsOf: url!)
+                        let data = try Data(contentsOf: url)
                         let image = UIImage(data: data)
                         cell.userIcon.image = image
 
                     }catch let err {
                         print("Error : \(err.localizedDescription)")
                     }
-
+            }
+            
             } else if indexPath.section == 1{
                 
                 cell.username.text = everyname[indexPath.row]
                 cell.commentText.text = allComments[indexPath.row]
+                cell.dateLabel.text = allCommentDate[indexPath.row]
 
-                let url = URL(string: everyIcon[indexPath.row])
+                if let url = URL(string: everyIcon[indexPath.row]) {
                         do {
-                            let data = try Data(contentsOf: url!)
+                            let data = try Data(contentsOf: url)
                             let image = UIImage(data: data)
                             cell.userIcon.image = image
 
@@ -261,7 +267,7 @@ class movieCollectionDetail: UIViewController, UITableViewDelegate, UITableViewD
                             print("Error : \(err.localizedDescription)")
                         }
                 
-                
+                }
             
             }
 
